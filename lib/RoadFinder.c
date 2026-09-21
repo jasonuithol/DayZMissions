@@ -114,4 +114,40 @@ class RoadFinder
 		pos = Centre(pos, heading, width);
 		return true;
 	}
+
+	// Follows the road from a centre-line position for `distance` metres (negative = the
+	// other way), re-measuring the road every few metres so curves are followed.
+	// pos and heading are updated in place; heading keeps pointing the way we walked.
+	static void Walk(out vector pos, out float heading, float distance)
+	{
+		float travel = heading;
+		if (distance < 0)
+			travel = heading + 180;
+
+		float remaining = Math.AbsFloat(distance);
+		float width;
+		while (remaining > 0)
+		{
+			float step = Math.Min(5, remaining);
+			remaining -= step;
+
+			vector next = pos + HeadingToDir(travel) * step;
+			if (!IsRoad(next[0], next[2]))
+				next = Centre(next, travel, width);
+
+			// FindHeading can't tell the two directions of a road apart; keep ours
+			float found = FindHeading(next);
+			float diff = Math.AbsFloat(found - travel);
+			while (diff > 180)
+				diff = Math.AbsFloat(diff - 360);
+			if (diff > 90)
+				found += 180;
+			travel = found;
+			pos = Centre(next, travel, width);
+		}
+
+		heading = travel;
+		if (distance < 0)
+			heading = travel - 180;
+	}
 }

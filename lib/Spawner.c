@@ -3,36 +3,6 @@ class Spawner
 {
 	static const float LIFETIME = 3888000; // 45 days, same as vanilla vehicles
 
-	// Spawns a ready-to-ride motorbike: universal parts, the given attachments
-	// (wheels, shields...) and a full tank. heading is in degrees, 0 = north.
-	static MotorbikeScript Motorbike(string type, vector pos, float heading, array<string> attachments)
-	{
-		MotorbikeScript bike = MotorbikeScript.Cast(GetGame().CreateObjectEx(type, pos, ECE_PLACE_ON_SURFACE));
-		if (!bike)
-		{
-			Print("[Spawner] failed to create " + type);
-			return null;
-		}
-
-		bike.SetOrientation(Vector(heading, 0, 0));
-		bike.SetLifetime(LIFETIME);
-
-		bike.GetInventory().CreateInInventory("HeadlightH7");
-		if (bike.IsVitalSparkPlug())
-			bike.GetInventory().CreateInInventory("SparkPlug");
-		if (bike.NeedElectricitySourceDevice())
-			bike.GetInventory().CreateInInventory(bike.GetElectricitySourceDeviceType());
-
-		foreach (string attachment : attachments)
-		{
-			if (!bike.GetInventory().CreateInInventory(attachment))
-				Print("[Spawner] " + type + ": could not attach " + attachment);
-		}
-
-		bike.Fill(MotorbikeFluid.FUEL, bike.GetFluidCapacity(MotorbikeFluid.FUEL));
-		return bike;
-	}
-
 	// Drops a single item on the ground at pos.
 	static EntityAI GroundItem(string type, vector pos, float heading)
 	{
@@ -46,6 +16,71 @@ class Spawner
 		item.SetOrientation(Vector(heading, 0, 0));
 		item.SetLifetime(LIFETIME);
 		return item;
+	}
+
+	// Spawns a car-based vehicle (that includes DayZ Expansion helicopters) with the given
+	// attachments and every fluid topped up. heading in degrees, 0 = north.
+	static CarScript Vehicle(string type, vector pos, float heading, array<string> attachments)
+	{
+		CarScript vehicle = CarScript.Cast(GetGame().CreateObjectEx(type, pos, ECE_PLACE_ON_SURFACE));
+		if (!vehicle)
+		{
+			Print("[Spawner] failed to create " + type);
+			return null;
+		}
+
+		vehicle.SetOrientation(Vector(heading, 0, 0));
+		vehicle.SetLifetime(LIFETIME);
+
+		foreach (string attachment : attachments)
+		{
+			if (!vehicle.GetInventory().CreateInInventory(attachment))
+				Print("[Spawner] " + type + ": could not attach " + attachment);
+		}
+
+		vehicle.Fill(CarFluid.FUEL, vehicle.GetFluidCapacity(CarFluid.FUEL));
+		vehicle.Fill(CarFluid.OIL, vehicle.GetFluidCapacity(CarFluid.OIL));
+		vehicle.Fill(CarFluid.COOLANT, vehicle.GetFluidCapacity(CarFluid.COOLANT));
+		vehicle.Fill(CarFluid.BRAKE, vehicle.GetFluidCapacity(CarFluid.BRAKE));
+		return vehicle;
+	}
+
+	// Creates attachments (optics, magazines, pouches...) on an item.
+	static void Attach(EntityAI item, array<string> attachments)
+	{
+		if (!item)
+			return;
+
+		foreach (string attachment : attachments)
+		{
+			if (!item.GetInventory().CreateAttachment(attachment))
+				Print("[Spawner] " + item.GetType() + ": could not attach " + attachment);
+		}
+	}
+
+	// Places a static object (wreck, building...) on the ground. heading in degrees, 0 = north.
+	static Object StaticObject(string type, vector pos, float heading)
+	{
+		Object obj = GetGame().CreateObjectEx(type, pos, ECE_PLACE_ON_SURFACE);
+		if (!obj)
+		{
+			Print("[Spawner] failed to create " + type);
+			return null;
+		}
+
+		obj.SetOrientation(Vector(heading, 0, 0));
+		obj.PlaceOnSurface();
+		return obj;
+	}
+
+	// Half of an object's footprint along its longest horizontal axis.
+	static float HalfLength(Object obj)
+	{
+		vector minMax[2];
+		obj.ClippingInfo(minMax);
+		float x = Math.Max(Math.AbsFloat(minMax[0][0]), Math.AbsFloat(minMax[1][0]));
+		float z = Math.Max(Math.AbsFloat(minMax[0][2]), Math.AbsFloat(minMax[1][2]));
+		return Math.Max(x, z);
 	}
 
 	// Lays items out on the ground in a grid of `columns` columns centred on pos;

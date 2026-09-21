@@ -7,10 +7,12 @@ resolve_mission "$1"
 
 "$PROJECT_DIR/tools/deploy.sh" "$MISSION" || exit 1
 
+setup_mods "$SERVER_DIR" 1
+
 PROFILES="$(mktemp -d)"
 cd "$SERVER_DIR" || exit 1
 ./DayZServer -config=serverDZ.cfg -port=2302 \
-	"-profiles=$PROFILES" "-mission=./mpmissions/$MISSION" -dologs -missiontest=1 \
+	"-profiles=$PROFILES" "-mission=./mpmissions/$MISSION" "${MOD_ARGS[@]}" -dologs -missiontest=1 \
 	> "$PROFILES/stdout.txt" 2>&1 &
 SERVER_PID=$!
 

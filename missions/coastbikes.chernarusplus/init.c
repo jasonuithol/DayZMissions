@@ -4,6 +4,8 @@
 // of riding gear on the ground in front of it. Players spawn next to the line-up.
 #include "lib/RoadFinder.c"
 #include "lib/Spawner.c"
+#include "lib/Motorbikes.c"
+#include "lib/Loadouts.c"
 
 void main()
 {
@@ -82,20 +84,11 @@ class CustomMission: MissionServer
 			float width;
 			vector pos = RoadFinder.Centre(roadPos + along * offset, roadHeading, width);
 
-			MotorbikeScript bike = Spawner.Motorbike(types[i], pos, bikeHeading, KitFor(types[i]));
+			MotorbikeScript bike = Motorbikes.Spawn(types[i], pos, bikeHeading, KitFor(types[i]));
 			if (bike)
 				m_Bikes.Insert(bike);
 
-			array<string> gear = {"LeatherJacket_Black", "Jeans_Blue", "HikingBoots_Brown", "AviatorGlasses", "LeatherGloves_Black"};
-			gear.InsertAt(helmets[i], 0);
-			array<EntityAI> items = Spawner.GroundPile(gear, pos + bikeFwd * GEAR_DISTANCE, bikeHeading, 3, 0.5);
-
-			EntityAI helmet = items[0];
-			if (helmet)
-			{
-				helmet.GetInventory().CreateAttachment("DirtBikeHelmet_Visor");
-				helmet.GetInventory().CreateAttachment("DirtBikeHelmet_Mouthguard");
-			}
+			Loadouts.Rider(pos + bikeFwd * GEAR_DISTANCE, bikeHeading, helmets[i]);
 		}
 
 		// players arrive behind the bikes, in the middle of the line

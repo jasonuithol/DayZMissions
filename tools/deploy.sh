@@ -31,6 +31,7 @@ done
 
 # overlay: mission files replace the vanilla symlinks
 for f in "$PROJECT_DIR/missions/$MISSION"/*; do
+	case "$(basename "$f")" in mods.txt|mission.conf) continue ;; esac
 	rm -rf "$TARGET/$(basename "$f")"
 	cp -r "$f" "$TARGET/"
 done

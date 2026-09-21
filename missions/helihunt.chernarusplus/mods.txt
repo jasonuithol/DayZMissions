@@ -1,0 +1,13 @@
+# <workshop id> <@Name>, in load order.
+# Dabs Framework isn't listed as a dependency on Steam, but Expansion Vehicles needs it.
+1559212036 @CF
+2545327648 @DabsFramework
+2116157322 @DayZ-Expansion-Licensed
+2291785308 @DayZ-Expansion-Core
+2291785437 @DayZ-Expansion-Vehicles
+3419019141 @MBM_HondaCRF450R
+# Vehicle Shooting needs Survivor Animations
+2918418331 @SurvivorAnimations
+3436144357 @VehicleShooting
+# ours (mods/HeliHuntCompat): Vehicle Shooting in Expansion helicopters with any firearm, Honda steering
+local @HeliHuntCompat

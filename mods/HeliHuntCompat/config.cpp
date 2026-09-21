@@ -1,0 +1,57 @@
+class CfgPatches
+{
+	class HeliHuntCompat
+	{
+		units[] = {};
+		weapons[] = {};
+		requiredVersion = 0.1;
+		requiredAddons[] = {"DZ_Data", "DZ_Scripts", "DZ_Vehicles_Wheeled", "VehicleShooting", "MBM_HondaCRF450"};
+	};
+};
+
+class CfgMods
+{
+	class HeliHuntCompat
+	{
+		dir = "HeliHuntCompat";
+		name = "HeliHuntCompat";
+		type = "mod";
+		dependencies[] = {"World"};
+
+		class defs
+		{
+			class worldScriptModule
+			{
+				value = "";
+				files[] = {"HeliHuntCompat/Scripts/4_World"};
+			};
+		};
+	};
+};
+
+// MBM Honda CRF450R handling. As shipped it understeers badly: 25 degrees of lock, steering
+// that slows to 10 deg/s at speed and a locked centre differential. Everything not listed
+// here keeps the mod's own value.
+class CfgVehicles
+{
+	class CarScript;
+	class MBM_HondaCRF450_base: CarScript
+	{
+		class SimulationModule
+		{
+			class Steering
+			{
+				maxSteeringAngle = 38;
+				// pairs of {speed km/h, degrees per second}
+				increaseSpeed[] = {0, 70, 60, 45, 100, 25};
+				decreaseSpeed[] = {0, 90, 60, 60, 100, 35};
+				centeringSpeed[] = {0, 0, 15, 30, 60, 50, 100, 70};
+			};
+			class CentralDifferential
+			{
+				ratio = 1.0;
+				type = "DIFFERENTIAL_OPEN";
+			};
+		};
+	};
+};
