@@ -69,6 +69,32 @@ MBM_HondaCRF450R, Survivor Animations and Vehicle Shooting (ids in `mods.txt`).
 - The bikes are the handlebar variants, which need Survivor Animations for the riding pose;
   the `MBM_HondaCRF450_W_<Colour>` ones have a steering wheel and don't.
 
+### roles.chernarusplus
+Vanilla Chernarus, but every new character spawns as one of 22 roles - police officer, doctor,
+nurse, paramedic, soldier, military police, sniper, tank crew, pilot, technician, tradesman,
+hunter, hiker, motorcyclist, firefighter, lumberjack, prisoner, journalist, athlete, executive,
+NBC specialist, medieval re-enactor - in the matching outfit with a few things that fit the job
+(the doctor's first-aid kit is stocked, the lumberjack holds an axe, the police officer has
+handcuffs and a radio...). No guns. Vanilla freshie basics (bandage, chemlight, fruit) on top.
+
+The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
+`items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
+at random. `lib/Roles.c` loads and applies it; `tools/test.sh roles` checks every class name
+exists and every container actually takes what it is given.
+
+### bikespawns.chernarusplus
+Vanilla Chernarus with about 160 ready-to-ride motorbikes: mopeds (`Motorbike_01`) outside
+schools, police stations, shops, hospitals and petrol stations in the built-up towns, dirt bikes
+(`Motorbike_02`) at deer stands, feed shacks, the summer camps and fire stations. Each bike gets a
+clear patch of ground near its building - the kerb of the nearest road if there is one, otherwise
+open ground, and failing that a roof, platform or floor (never clipped into walls).
+
+`bikes.json` holds the rules (building classes, bike types, bikes per building, how built-up the
+area must be, spacing, a cap per rule); `tools/bike_spots.py bikespawns` turns them into
+`spots.json` using the vanilla `mapgrouppos.xml`, and `init.c` does the placement in game.
+Re-run the tool after editing the rules. `tools/test.sh bikespawns` reports upright / fuelled /
+fallen-through counts; `TEST_ARGS=-bikelimit=N` caps a test run.
+
 ### roadprobe.chernarusplus
 Dev tool. Scans north-south columns, logs the surface types to the script log and exits.
 Handy for finding roads / anchor points for new missions (`tools/test.sh roadprobe`).
@@ -81,6 +107,17 @@ Handy for finding roads / anchor points for new missions (`tools/test.sh roadpro
   or containing non-constants - build arrays with `Insert`.
 - A server with an `init.c` compile error hangs rather than exits; `test.sh` detects this.
 - `-missiontest` on the command line is the convention for "log state after 20 s and quit".
+- `GetMissionFolderPath()` is empty on a dedicated server; the path handed to
+  `CreateCustomMission` (`./mpmissions/<mission>/mission.c`) is the way to find mission files.
+- `JsonFileLoader<T>` maps JSON keys to class members; `set` is a reserved word.
+- Vehicles created in the first ~10 s after server start end up with no fuel and can't be
+  filled later, ever. `Fill()` right after `CreateObjectEx` also reads back as 0 for a moment
+  even when it worked. Spawn vehicles from a `CallLater`, and check fuel a few seconds on.
+- `IsBoxCollidingGeometry` + `SurfaceY`/`SurfaceRoadY` (roads and roofs) is enough to find
+  clear ground; see `lib/Placement.c`.
+- `foreach` over an array that comes from a function call (`foreach (X x : Foo())`) or from a
+  member of a loop variable is unreliable: it raised "Virtual Machine Exception" and made a
+  weighted random pick return the first element every time. Index loops are safe.
 
 ## Open items
 

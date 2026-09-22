@@ -1,0 +1,258 @@
+{
+	"roles": [
+		{
+			"name": "Police officer",
+			"weight": 1,
+			"clothing": ["PoliceCap", "PoliceJacket|PoliceJacketOrel", "PolicePants|PolicePantsOrel", "MilitaryBoots_Black|CombatBoots_Black", "PoliceVest", "TacticalGloves_Black|LeatherGloves_Black"],
+			"items": [
+				{"type": "Flashlight", "hands": true, "attachments": ["Battery9V"], "cargo": []},
+				{"type": "Handcuffs", "hands": false, "attachments": [], "cargo": []},
+				{"type": "HandcuffKeys", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []}
+			]
+		},
+		{
+			"name": "Doctor",
+			"weight": 1,
+			"clothing": ["MedicalScrubsHat_White|MedicalScrubsHat_Blue|MedicalScrubsHat_Green", "LabCoat", "MedicalScrubsPants_White|MedicalScrubsPants_Blue|MedicalScrubsPants_Green", "DressShoes_White|DressShoes_Black", "SurgicalGloves_White", "SurgicalMask", "CanvasBag_Medical"],
+			"items": [
+				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "Morphine", "Epinephrine"]},
+				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
+				{"type": "BloodTestKit", "hands": false, "attachments": [], "cargo": []},
+				{"type": "DisinfectantSpray", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PainkillerTablets", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Thermometer", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Nurse",
+			"weight": 1,
+			"clothing": ["MedicalScrubsHat_White|MedicalScrubsHat_Blue", "NurseDress_White|NurseDress_Blue", "DressShoes_White", "SurgicalGloves_LightBlue|SurgicalGloves_Blue", "HipPack_Medical"],
+			"items": [
+				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "TetracyclineAntibiotics", "VitaminBottle"]},
+				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PainkillerTablets", "hands": false, "attachments": [], "cargo": []},
+				{"type": "DisinfectantAlcohol", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Thermometer", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Paramedic",
+			"weight": 1,
+			"clothing": ["MedicalScrubsHat_Blue|BaseballCap_Blue", "ParamedicJacket_Blue|ParamedicJacket_Crimson|ParamedicJacket_Green", "ParamedicPants_Blue|ParamedicPants_Crimson|ParamedicPants_Green", "WorkingBoots_Grey|CombatBoots_Black", "SurgicalGloves_Blue", "DuffelBagSmall_Medical"],
+			"items": [
+				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "Morphine", "Epinephrine"]},
+				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
+				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PainkillerTablets", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []}
+			]
+		},
+		{
+			"name": "Soldier",
+			"weight": 1,
+			"clothing": ["Ssh68Helmet|MilitaryBeret_CDF|MilitaryCap_Woodland", "TTsKOJacket_Camo", "TTSKOPants", "TTSKOBoots", "TacticalGloves_Green", "MilitaryBelt", "AssaultBag_Ttsko"],
+			"items": [
+				{"type": "TacticalBaconCan", "hands": false, "attachments": [], "cargo": []},
+				{"type": "TacticalBaconCan", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Compass|OrienteeringCompass", "hands": true, "attachments": [], "cargo": []},
+				{"type": "CanOpener", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Canteen", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Technician",
+			"weight": 1,
+			"clothing": ["BaseballCap_Black|BaseballCap_Beige", "JumpsuitJacket_Blue|JumpsuitJacket_Gray|JumpsuitJacket_Green|JumpsuitJacket_Red", "JumpsuitPants_Blue|JumpsuitPants_Grey|JumpsuitPants_Green|JumpsuitPants_Red", "WorkingBoots_Grey|WorkingBoots_Yellow", "WorkingGloves_Yellow|WorkingGloves_Black", "ReflexVest"],
+			"items": [
+				{"type": "Screwdriver", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Pliers|Wrench", "hands": false, "attachments": [], "cargo": []},
+				{"type": "DuctTape", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Headtorch_Black|Headtorch_Grey", "hands": true, "attachments": ["Battery9V"], "cargo": []}
+			]
+		},
+		{
+			"name": "Hunter",
+			"weight": 1,
+			"clothing": ["BoonieHat_Olive|BoonieHat_Tan|CowboyHat_Brown|Ushanka_Green", "HuntingJacket_Autumn|HuntingJacket_Brown|HuntingJacket_Spring|HuntingJacket_Summer", "HunterPants_Autumn|HunterPants_Brown|HunterPants_Spring|HunterPants_Summer", "HikingBoots_Brown|HikingBoots_Black", "HuntingVest", "LeatherGloves_Brown|LeatherGloves_Natural", "HuntingBag"],
+			"items": [
+				{"type": "HuntingKnife", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Matchbox", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Rope", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Binoculars", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Motorcyclist",
+			"weight": 1,
+			"clothing": ["MotoHelmet_Black|MotoHelmet_Red|MotoHelmet_Blue|DarkMotoHelmet_Black|DarkMotoHelmet_Red", "RidersJacket_Black|LeatherJacket_Black|LeatherJacket_Brown", "Jeans_Black|Jeans_BlueDark", "HikingBoots_Black|MilitaryBoots_Black", "LeatherGloves_Black", "AviatorGlasses"],
+			"items": [
+				{"type": "LugWrench", "hands": true, "attachments": [], "cargo": []},
+				{"type": "SparkPlug", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Roadflare", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Rag", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Firefighter",
+			"weight": 1,
+			"clothing": ["FirefightersHelmet_Red|FirefightersHelmet_Yellow|FirefightersHelmet_White", "FirefighterJacket_Beige|FirefighterJacket_Black", "FirefightersPants_Beige|FirefightersPants_Black", "MilitaryBoots_Black|CombatBoots_Black", "WorkingGloves_Black|WorkingGloves_Beige"],
+			"items": [
+				{"type": "FirefighterAxe|FirefighterAxe_Black|FirefighterAxe_Green", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Roadflare", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Rope", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Lumberjack",
+			"weight": 1,
+			"clothing": ["BeanieHat_Red|ZmijovkaCap_Red|FlatCap_BrownCheck", "Shirt_RedCheck|Shirt_BlueCheck|Shirt_GreenCheck|Shirt_BlueCheckBright", "Jeans_Blue|Jeans_Brown|Breeches_Beetcheck", "WorkingBoots_Brown|WorkingBoots_Beige", "WorkingGloves_Brown|WorkingGloves_Beige"],
+			"items": [
+				{"type": "WoodAxe", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Matchbox", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Whetstone", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Prisoner",
+			"weight": 1,
+			"clothing": ["PrisonerCap", "PrisonUniformJacket", "PrisonUniformPants", "AthleticShoes_Grey|AthleticShoes_Black"],
+			"items": [
+				{"type": "Lockpick", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Rag", "hands": false, "attachments": [], "cargo": []},
+				{"type": "SpaghettiCan|BakedBeansCan", "hands": false, "attachments": [], "cargo": []},
+				{"type": "CanOpener", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Journalist",
+			"weight": 1,
+			"clothing": ["PressVest_Blue|PressVest_LightBlue", "Shirt_WhiteCheck|Shirt_BlueCheck|Blouse_White|Blouse_Blue", "SlacksPants_Khaki|SlacksPants_DarkGrey|Jeans_Blue", "DressShoes_Brown|AthleticShoes_Brown", "ThinFramesGlasses|ThickFramesGlasses", "SlingBag_Brown|SlingBag_Gray"],
+			"items": [
+				{"type": "Binoculars", "hands": true, "attachments": [], "cargo": []},
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []},
+				{"type": "Paper", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Paper", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Pen_Black|Pen_Blue|Pen_Red|Pen_Green", "hands": false, "attachments": [], "cargo": []},
+				{"type": "ChernarusMap", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Athlete",
+			"weight": 1,
+			"clothing": ["BaseballCap_Red|BaseballCap_Blue|RadarCap_Red", "TrackSuitJacket_Black|TrackSuitJacket_Blue|TrackSuitJacket_Green|TrackSuitJacket_LightBlue|TrackSuitJacket_Red", "TrackSuitPants_Black|TrackSuitPants_Blue|TrackSuitPants_Green|TrackSuitPants_LightBlue|TrackSuitPants_Red", "JoggingShoes_Black|JoggingShoes_Blue|JoggingShoes_Red|JoggingShoes_White", "SportGlasses_Black|SportGlasses_Blue|SportGlasses_Orange", "DrysackBag_Green|DrysackBag_Orange|DrysackBag_Yellow"],
+			"items": [
+				{"type": "WaterBottle", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Apple|Pear|Plum", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Apple|Pear|Plum", "hands": false, "attachments": [], "cargo": []},
+				{"type": "VitaminBottle", "hands": false, "attachments": [], "cargo": []},
+				{"type": "BandageDressing", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Executive",
+			"weight": 1,
+			"clothing": ["ManSuit_Black|ManSuit_DarkGrey|ManSuit_Blue|WomanSuit_Black|WomanSuit_DarkGrey|WomanSuit_Blue", "SlacksPants_Black|SlacksPants_DarkGrey|SlacksPants_Blue", "DressShoes_Black|DressShoes_Brown", "DesignerGlasses|ThinFramesGlasses"],
+			"items": [
+				{"type": "ScientificBriefcase", "hands": true, "attachments": [], "cargo": ["Paper", "Paper", "Pen_Black", "Matchbox", "Chemlight_White"]},
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []}
+			]
+		},
+		{
+			"name": "NBC specialist",
+			"weight": 1,
+			"clothing": ["NBCHoodGray|NBCHoodYellow|NBCHoodWhite", "NBCJacketGray|NBCJacketYellow|NBCJacketWhite", "NBCPantsGray|NBCPantsYellow|NBCPantsWhite", "NBCBootsGray|NBCBootsYellow|NBCBootsWhite", "NBCGlovesGray|NBCGlovesYellow", "GasMask|GP5GasMask"],
+			"items": [
+				{"type": "GasMask_Filter", "hands": true, "attachments": [], "cargo": []},
+				{"type": "GasMask_Filter", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PurificationTablets", "hands": false, "attachments": [], "cargo": []},
+				{"type": "TetracyclineAntibiotics", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Flashlight", "hands": false, "attachments": ["Battery9V"], "cargo": []}
+			]
+		},
+		{
+			"name": "Tradesman",
+			"weight": 1,
+			"clothing": ["ConstructionHelmet_Yellow|ConstructionHelmet_Orange|ConstructionHelmet_White|ConstructionHelmet_Blue", "Sweater_Gray|Hoodie_Grey|DenimJacket|TShirt_Grey", "Jeans_Blue|Jeans_Grey|CargoPants_Grey", "WorkingBoots_Brown|WorkingBoots_Grey|WorkingBoots_Yellow", "WorkingGloves_Yellow|WorkingGloves_Brown", "ReflexVest"],
+			"items": [
+				{"type": "Hammer", "hands": true, "attachments": [], "cargo": []},
+				{"type": "NailBox", "hands": false, "attachments": [], "cargo": []},
+				{"type": "HandSaw|Hacksaw", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Pliers", "hands": false, "attachments": [], "cargo": []},
+				{"type": "DuctTape", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Medieval re-enactor",
+			"weight": 1,
+			"clothing": ["GreatHelm|NorseHelm|Chainmail_Coif", "Chainmail", "Chainmail_Leggings", "MedievalBoots", "LeatherGloves_Natural|LeatherGloves_Brown", "Chestplate"],
+			"items": [
+				{"type": "Sword", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Whetstone", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Waterskin_Natural", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Matchbox", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Sniper",
+			"weight": 1,
+			"clothing": ["GhillieHood_Woodland|GhillieHood_Mossy|GhillieHood_Tan", "GorkaEJacket_Summer|GorkaEJacket_Autumn|GorkaEJacket_PautRev", "GorkaPants_Summer|GorkaPants_Autumn|GorkaPants_PautRev", "CombatBoots_Green|JungleBoots_Olive", "TacticalGloves_Green", "GhillieSuit_Woodland|GhillieSuit_Mossy|GhillieSuit_Tan"],
+			"items": [
+				{"type": "Rangefinder", "hands": true, "attachments": [], "cargo": []},
+				{"type": "WeaponCleaningKit", "hands": false, "attachments": [], "cargo": []},
+				{"type": "TacticalBaconCan", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Canteen", "hands": false, "attachments": [], "cargo": []},
+				{"type": "HuntingKnife", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Tank crew",
+			"weight": 1,
+			"clothing": ["TankerHelmet|T56TankerHelmet_Olive|T56TankerHelmet_Tan", "GorkaEJacket_Flat|TTsKOJacket_Camo", "GorkaPants_Flat|TTSKOPants", "CombatBoots_Black|TTSKOBoots", "WorkingGloves_Black|TacticalGloves_Black", "MilitaryBelt"],
+			"items": [
+				{"type": "LugWrench", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Wrench", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Rag", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Binoculars", "hands": false, "attachments": [], "cargo": []},
+				{"type": "TacticalBaconCan", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Military police",
+			"weight": 1,
+			"clothing": ["MilitaryBeret_Red|OfficerHat", "BDUJacket", "BDUPants", "CombatBoots_Black|MilitaryBoots_Black", "TacticalGloves_Black", "Armband_White", "MilitaryBelt", "PlateCarrierVest"],
+			"items": [
+				{"type": "Flashlight", "hands": true, "attachments": ["Battery9V"], "cargo": []},
+				{"type": "Handcuffs", "hands": false, "attachments": [], "cargo": []},
+				{"type": "HandcuffKeys", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []},
+				{"type": "TacticalBaconCan", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Pilot",
+			"weight": 1,
+			"clothing": ["ZSh3PilotHelmet|ZSh3PilotHelmet_Black|ZSh3PilotHelmet_Green|PilotkaCap", "PilotJacket_Black|PilotJacket_Brown|PilotJacket_Yellow", "CargoPants_Green|CargoPants_Beige|SlacksPants_Khaki", "CombatBoots_Brown|MilitaryBoots_Brown", "LeatherGloves_Brown|TacticalGloves_Beige", "AviatorGlasses"],
+			"items": [
+				{"type": "ChernarusMap", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Compass|OrienteeringCompass", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Roadflare", "hands": false, "attachments": [], "cargo": []},
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []},
+				{"type": "Binoculars", "hands": false, "attachments": [], "cargo": []}
+			]
+		},
+		{
+			"name": "Hiker",
+			"weight": 1,
+			"clothing": ["SherpaHat_Red|SherpaHat_Blue|SnowstormUshanka_Navy|WinterCoif_Blue", "HikingJacket_Red|HikingJacket_Blue|HikingJacket_Green|DownJacket_Orange|DownJacket_Blue", "CargoPants_Blue|CargoPants_Black|CargoPants_Grey", "HikingBoots_Black|HikingBoots_Brown", "SkiGloves_Blue|SkiGloves_Red|SkiGloves_90s", "SkiGoggles_BlackYellow|SkiGoggles_WhiteClear", "MountainBag_Blue|MountainBag_Green|MountainBag_Orange|MountainBag_Red"],
+			"items": [
+				{"type": "ChernarusMap", "hands": true, "attachments": [], "cargo": []},
+				{"type": "Compass|OrienteeringCompass", "hands": false, "attachments": [], "cargo": []},
+				{"type": "WaterBottle", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Rope", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Matchbox", "hands": false, "attachments": [], "cargo": []},
+				{"type": "SpaghettiCan|BakedBeansCan|Rice", "hands": false, "attachments": [], "cargo": []}
+			]
+		}
+	]
+}

@@ -39,24 +39,6 @@ class CustomMission: MissionServer
 			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 20000, false);
 	}
 
-	// wheels for every bike, plus the colour matched shields on the Motorbike_02
-	array<string> KitFor(string type)
-	{
-		string model = type.Substring(0, 12); // "Motorbike_0x"
-		array<string> kit = new array<string>();
-		kit.Insert(model + "_Wheel_1");
-		kit.Insert(model + "_Wheel_2");
-
-		if (model == "Motorbike_02")
-		{
-			string colour = type.Substring(13, type.Length() - 13);
-			kit.Insert(model + "_ShieldFront_" + colour);
-			kit.Insert(model + "_ShieldLeft_" + colour);
-			kit.Insert(model + "_ShieldRight_" + colour);
-		}
-		return kit;
-	}
-
 	void SpawnLineup()
 	{
 		vector roadPos;
@@ -84,7 +66,7 @@ class CustomMission: MissionServer
 			float width;
 			vector pos = RoadFinder.Centre(roadPos + along * offset, roadHeading, width);
 
-			MotorbikeScript bike = Motorbikes.Spawn(types[i], pos, bikeHeading, KitFor(types[i]));
+			MotorbikeScript bike = Motorbikes.SpawnReady(types[i], pos, bikeHeading);
 			if (bike)
 				m_Bikes.Insert(bike);
 

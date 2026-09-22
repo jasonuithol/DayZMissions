@@ -1,0 +1,57 @@
+{
+	"rules": [
+		{
+			"name": "mopeds in towns",
+			"buildings": [
+				"Land_City_School",
+				"Land_City_PoliceStation",
+				"Land_Village_PoliceStation",
+				"Land_City_Store",
+				"Land_City_Store_WithStairs",
+				"Land_Village_store",
+				"Land_City_Stand_Grocery",
+				"Land_City_Hospital",
+				"Land_FuelStation_Build"
+			],
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 2,
+			"min_neighbours": 120,
+			"neighbour_radius": 400,
+			"min_spacing": 30,
+			"max": 45
+		},
+		{
+			"name": "dirt bikes at deer stands and feed shacks",
+			"buildings": [
+				"Land_Misc_DeerStand1",
+				"Land_Misc_DeerStand2",
+				"Land_Misc_FeedShack"
+			],
+			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
+			"count": 1,
+			"min_spacing": 60,
+			"max": 34
+		},
+		{
+			"name": "dirt bikes at hunting camps",
+			"buildings": [
+				"Land_Camp_House_white",
+				"Land_Camp_House_red",
+				"Land_Camp_House_brown"
+			],
+			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
+			"count": 1,
+			"min_spacing": 40,
+			"max": 15
+		},
+		{
+			"name": "dirt bikes at fire stations",
+			"buildings": [
+				"Land_City_FireStation",
+				"Land_Mil_FireStation"
+			],
+			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
+			"count": 3
+		}
+	]
+}
