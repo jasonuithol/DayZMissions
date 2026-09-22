@@ -34,6 +34,14 @@ class CfgMods
 // here keeps the mod's own value.
 class CfgVehicles
 {
+	// The street tyre (also used for the bike's two invisible stabiliser wheels) has about
+	// half the grip of the mod's own offroad tyres (1.9), and slides around. Match them.
+	class CarWheel;
+	class MBM_HondaCRF450_Wheel: CarWheel
+	{
+		tyreGrip = 1.9;
+	};
+
 	class CarScript;
 	class MBM_HondaCRF450_base: CarScript
 	{
@@ -43,7 +51,7 @@ class CfgVehicles
 			{
 				maxSteeringAngle = 38;
 				// pairs of {speed km/h, degrees per second}
-				increaseSpeed[] = {0, 70, 60, 45, 100, 25};
+				increaseSpeed[] = {0, 70, 60, 40, 100, 20};
 				decreaseSpeed[] = {0, 90, 60, 60, 100, 35};
 				centeringSpeed[] = {0, 0, 15, 30, 60, 50, 100, 70};
 			};

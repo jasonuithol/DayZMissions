@@ -108,7 +108,7 @@ class CustomMission: MissionServer
 			if (bike)
 			{
 				m_Bikes.Insert(bike);
-				Print("[HeliHunt] " + bike.GetType() + " max steering angle " + GetGame().ConfigGetFloat("CfgVehicles " + bike.GetType() + " SimulationModule Steering maxSteeringAngle") + " torque curve points " + ConfigArrayCount("CfgVehicles " + bike.GetType() + " SimulationModule Engine torqueCurve"));
+				Print("[HeliHunt] " + bike.GetType() + " max steering angle " + GetGame().ConfigGetFloat("CfgVehicles " + bike.GetType() + " SimulationModule Steering maxSteeringAngle") + " tyre grip " + GetGame().ConfigGetFloat("CfgVehicles MBM_HondaCRF450_Wheel tyreGrip") + " tyre width " + GetGame().ConfigGetFloat("CfgVehicles MBM_HondaCRF450_Wheel width") + " torque curve points " + ConfigArrayCount("CfgVehicles " + bike.GetType() + " SimulationModule Engine torqueCurve"));
 			}
 
 			Loadouts.Rider(pos + bikeFwd * GEAR_DISTANCE, bikeHeading, helmets[i]);
