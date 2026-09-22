@@ -81,3 +81,15 @@ Handy for finding roads / anchor points for new missions (`tools/test.sh roadpro
   or containing non-constants - build arrays with `Insert`.
 - A server with an `init.c` compile error hangs rather than exits; `test.sh` detects this.
 - `-missiontest` on the command line is the convention for "log state after 20 s and quit".
+
+## Open items
+
+- **helihunt bike handling** - the CRF450R still slides; the current tuning (grip 1.9, 38 deg lock,
+  faster steering, open centre diff) is in `mods/HeliHuntCompat/config.cpp` and hasn't been judged
+  in game yet. Next experiment: put the centre differential back to `DIFFERENTIAL_LOCKED`.
+- **Expansion on 1.30** - recheck the DayZ-Expansion-Vehicles(-Experimental) change notes; once it
+  compiles on 1.30, helicopters and the vanilla bikes can share one mission.
+- **Friend pack** - other players need the Workshop mods plus a copy of `build/@HeliHuntCompat`;
+  a zip + Windows launch shortcut would make that easier.
+- **Multiplayer spawns** - both missions spawn everyone on the same spot; spread them out, or give
+  hunters and riders separate spawns.
