@@ -68,7 +68,7 @@ class CustomMission: MissionServer
 	static const int MAX_BIKES = 170;
 	// Vehicles created in the first seconds after startup end up with no fuel and can't
 	// be refilled (the world is still initialising), so spawning waits, then goes in batches.
-	static const int START_DELAY_MS = 10000;
+	static const int START_DELAY_MS = 20000;
 	static const int BATCH = 5;
 	static const int BATCH_MS = 250;
 

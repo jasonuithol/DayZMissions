@@ -29,6 +29,8 @@ class Motorbikes
 	// (wheels, shields...) and a full tank. heading is in degrees, 0 = north.
 	static MotorbikeScript Spawn(string type, vector pos, float heading, array<string> attachments)
 	{
+		// a touch above the ground: created a hair below it, a bike falls through the map
+		pos[1] = pos[1] + 0.3;
 		MotorbikeScript bike = MotorbikeScript.Cast(GetGame().CreateObjectEx(type, pos, ECE_PLACE_ON_SURFACE | ECE_SETUP));
 		if (!bike)
 		{

@@ -83,9 +83,10 @@ at random. `lib/Roles.c` loads and applies it; `tools/test.sh roles` checks ever
 exists and every container actually takes what it is given.
 
 ### bikespawns.chernarusplus
-Vanilla Chernarus with about 160 ready-to-ride motorbikes: mopeds (`Motorbike_01`) outside
-schools, police stations, shops, hospitals and petrol stations in the built-up towns, dirt bikes
-(`Motorbike_02`) at deer stands, feed shacks, the summer camps and fire stations. Each bike gets a
+Vanilla Chernarus with about 160 ready-to-ride motorbikes, one per spot: mopeds (`Motorbike_01`)
+outside schools, police stations, shops, hospitals and petrol stations in the built-up towns, dirt
+bikes (`Motorbike_02`) at rail warehouses, big garages, trail-head shelters, the summer camps and
+feed shacks. Each bike gets a
 clear patch of ground near its building - the kerb of the nearest road if there is one, otherwise
 open ground, and failing that a roof, platform or floor (never clipped into walls).
 

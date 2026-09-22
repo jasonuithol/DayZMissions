@@ -9,7 +9,7 @@ class Placement
 	// a roof, platform or floor.
 	static bool IsClear(vector pos, float heading, vector size, bool allowRaised = false)
 	{
-		if (GetGame().SurfaceIsSea(pos[0], pos[2]) || GetGame().SurfaceIsPond(pos[0], pos[2]))
+		if (GetGame().SurfaceIsSea(pos[0], pos[2]) || GetGame().SurfaceIsPond(pos[0], pos[2]) || GetGame().SurfaceIsHole(pos[0], pos[2]))
 			return false;
 		if (GetGame().SurfaceGetNormal(pos[0], pos[2])[1] < MAX_SLOPE)
 			return false;

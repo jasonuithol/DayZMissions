@@ -14,23 +14,43 @@
 				"Land_FuelStation_Build"
 			],
 			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
-			"count": 2,
+			"count": 1,
 			"min_neighbours": 120,
 			"neighbour_radius": 400,
 			"min_spacing": 30,
-			"max": 45
+			"max": 60
 		},
 		{
-			"name": "dirt bikes at deer stands and feed shacks",
+			"name": "dirt bikes at warehouses",
 			"buildings": [
-				"Land_Misc_DeerStand1",
-				"Land_Misc_DeerStand2",
-				"Land_Misc_FeedShack"
+				"Land_Rail_Warehouse_Small"
+			],
+			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
+			"count": 1,
+			"min_spacing": 40,
+			"max": 15
+		},
+		{
+			"name": "dirt bikes at big garages",
+			"buildings": [
+				"Land_Garage_Big",
+				"Land_Garage_Row_Big"
+			],
+			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
+			"count": 1,
+			"min_spacing": 40,
+			"max": 25
+		},
+		{
+			"name": "dirt bikes at trail heads",
+			"buildings": [
+				"Land_Misc_TrailRoof_Small",
+				"Land_Misc_TrailRoof_Big"
 			],
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"min_spacing": 60,
-			"max": 34
+			"max": 25
 		},
 		{
 			"name": "dirt bikes at hunting camps",
@@ -45,13 +65,14 @@
 			"max": 15
 		},
 		{
-			"name": "dirt bikes at fire stations",
+			"name": "dirt bikes at feed shacks",
 			"buildings": [
-				"Land_City_FireStation",
-				"Land_Mil_FireStation"
+				"Land_Misc_FeedShack"
 			],
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 3
+			"count": 1,
+			"min_spacing": 60,
+			"max": 20
 		}
 	]
 }
