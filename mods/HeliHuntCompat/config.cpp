@@ -5,27 +5,7 @@ class CfgPatches
 		units[] = {};
 		weapons[] = {};
 		requiredVersion = 0.1;
-		requiredAddons[] = {"DZ_Data", "DZ_Scripts", "DZ_Vehicles_Wheeled", "VehicleShooting", "MBM_HondaCRF450"};
-	};
-};
-
-class CfgMods
-{
-	class HeliHuntCompat
-	{
-		dir = "HeliHuntCompat";
-		name = "HeliHuntCompat";
-		type = "mod";
-		dependencies[] = {"World"};
-
-		class defs
-		{
-			class worldScriptModule
-			{
-				value = "";
-				files[] = {"HeliHuntCompat/Scripts/4_World"};
-			};
-		};
+		requiredAddons[] = {"DZ_Data", "DZ_Vehicles_Wheeled", "MBM_HondaCRF450"};
 	};
 };
 

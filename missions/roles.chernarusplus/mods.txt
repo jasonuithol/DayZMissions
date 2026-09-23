@@ -1,7 +1,11 @@
-# <workshop id> <@Name>, in load order. For the Little Bird on the Chernogorsk helipad.
+# <workshop id> <@Name>, in load order. Expansion for the helicopters; Vehicle Shooting
+# (which needs Survivor Animations) plus our VehicleShootingAnywhere to fire from any seat.
 # Dabs Framework isn't listed as a dependency on Steam, but Expansion Vehicles needs it.
 1559212036 @CF
 2545327648 @DabsFramework
 2116157322 @DayZ-Expansion-Licensed
 2291785308 @DayZ-Expansion-Core
 2291785437 @DayZ-Expansion-Vehicles
+2918418331 @SurvivorAnimations
+3436144357 @VehicleShooting
+local @VehicleShootingAnywhere

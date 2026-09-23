@@ -9,5 +9,6 @@
 # Vehicle Shooting needs Survivor Animations
 2918418331 @SurvivorAnimations
 3436144357 @VehicleShooting
-# ours (mods/HeliHuntCompat): Vehicle Shooting in Expansion helicopters with any firearm, Honda steering
+# ours: Vehicle Shooting from any seat with any firearm; Honda steering and tyre tuning
+local @VehicleShootingAnywhere
 local @HeliHuntCompat

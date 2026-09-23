@@ -61,11 +61,11 @@ MBM_HondaCRF450R, Survivor Animations and Vehicle Shooting (ids in `mods.txt`).
   Experimental (1.30 reworked the vehicle script API). Expansion's own motorbikes are disabled
   in the mod (`scope 0`), hence the Honda.
 - Vehicle Shooting only allows pistols, in vehicles with vanilla seat animations. Our own
-  `mods/HeliHuntCompat` (built into `build/` by `tools/build_mod.py`, listed as `local` in
-  `mods.txt`) opens it up to every passenger seat and every firearm. It is unsigned, so the
-  mission sets `VERIFY_SIGNATURES=0` and other players need a copy of `build/@HeliHuntCompat`.
-- HeliHuntCompat also retunes the Honda's steering (more lock, faster response, open centre
-  differential) - the values are in `mods/HeliHuntCompat/config.cpp`.
+  `mods/VehicleShootingAnywhere` (built into `build/` by `tools/build_mod.py`, listed as `local`
+  in `mods.txt`) opens it up to every passenger seat and every firearm. It is unsigned, so the
+  mission sets `VERIFY_SIGNATURES=0` and other players need a copy of `build/@VehicleShootingAnywhere`.
+- `mods/HeliHuntCompat` retunes the Honda's steering and tyres (more lock, faster response, open
+  centre differential, more grip) - the values are in `mods/HeliHuntCompat/config.cpp`.
 - The bikes are the handlebar variants, which need Survivor Animations for the riding pose;
   the `MBM_HondaCRF450_W_<Colour>` ones have a steering wheel and don't.
 
@@ -80,7 +80,9 @@ And 150 ready-to-drive cars and trucks, every part fitted and every fluid full, 
 vehicle spawn points (spread evenly over the ~380 the map defines). And a DayZ Expansion helicopter
 on each of the five helipads on the map - Huey, Little Bird, Merlin and Gyrocopter, each once,
 plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framework and the
-three Expansion mods (`mods.txt`). Players spawn beside the Chernogorsk camp pad.
+three Expansion mods (`mods.txt`). Passengers can shoot from every vehicle (Vehicle Shooting +
+Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
+`VERIFY_SIGNATURES=0`). Players spawn beside the Chernogorsk camp pad.
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one

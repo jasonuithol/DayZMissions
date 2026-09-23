@@ -1,4 +1,5 @@
-// Companion to Hunterz' "Vehicle Shooting" (load this after it).
+// Companion to Hunterz' "Vehicle Shooting" (load this after it): shoot from any passenger
+// seat of any vehicle, with any firearm.
 
 modded class PlayerBase
 {
