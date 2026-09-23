@@ -3,7 +3,7 @@
 // doctor, soldier, lumberjack... - wearing the matching outfit and carrying a few things
 // that fit the job. The roles live in roles.json next to this file. And there are ready
 // to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json),
-// and a DayZ Expansion Little Bird on the helipad of the military camp east of Chernogorsk.
+// and a DayZ Expansion helicopter on each of the five helipads on the map.
 #include "lib/JsonFile.c"
 #include "lib/RoadFinder.c"
 #include "lib/Spawner.c"
@@ -88,14 +88,12 @@ class CustomMission: MissionServer
 {
 	static const int MAX_CARS = 150; // to keep the server load sane
 
-	// the helipad (decal_heli_army) between the two fortified nests, east of Chernogorsk.
-	// The other four on Chernarus: Balota 5030/2356 and 5055/2333, Vybor base 4156/11028
-	// and 4169/10991 (tools: objprobe -findmodel=decal_heli).
-	static const vector HELIPAD = "7236.25 0 3063.27";
-	static const float HELIPAD_HEADING = 153; // lined up with the H
-	static const string HELI_TYPE = "ExpansionMh6";
-	static const vector PLAYER_SPAWN = "7247 0 3061"; // 10 m east of the pad, on the grass
-	protected CarScript m_Heli;
+	// Chernarus has five helipads (decal_heli_army; tools: objprobe -findmodel=decal_heli):
+	// the camp east of Chernogorsk, two at Balota, two at the Vybor military base. Headings
+	// line the aircraft up with the H.
+	static const vector CHERNO_PAD = "7236.25 0 3063.27";
+	static const vector PLAYER_SPAWN = "7247 0 3061"; // 10 m east of the Chernogorsk pad
+	protected ref array<CarScript> m_Helis = new array<CarScript>();
 
 	protected string m_Path; // mission folder, e.g. "./mpmissions/roles.chernarusplus"
 	protected ref VehicleSpots m_Cars;
@@ -116,8 +114,8 @@ class CustomMission: MissionServer
 		m_Cars = new VehicleSpots("Cars", new CarFactory());
 		m_Cars.Start(m_Path + "/spots.json", MAX_CARS);
 
-		// like the cars: not in the first seconds after startup, or it comes up empty
-		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(SpawnHeli, VehicleSpots.START_DELAY_MS, false);
+		// like the cars: not in the first seconds after startup, or they come up empty
+		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(SpawnHelis, VehicleSpots.START_DELAY_MS, false);
 
 		string value;
 		if (GetGame().CommandlineGetParam("missiontest", value))
@@ -152,18 +150,54 @@ class CustomMission: MissionServer
 		player.SetQuickBarEntityShortcut(itemEnt, 3);
 	}
 
-	void SpawnHeli()
+	// One helicopter per pad: each type once, the fifth pad gets a random one, shuffled.
+	void SpawnHelis()
 	{
-		vector pos = HELIPAD;
-		pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
-		if (!Placement.IsClear(pos, HELIPAD_HEADING, "3.0 3.0 8.0", true))
-			Print("[Heli] the helipad at " + pos + " is not clear, spawning anyway");
+		array<vector> pads = {CHERNO_PAD, "5030.24 0 2355.83", "5054.59 0 2333.00", "4155.93 0 11027.65", "4169.05 0 10990.72"};
+		array<float> headings = {153, 73, 170, 117, -76};
 
-		// Little Bird: no doors, hydraulic hoses, igniter plug, battery, light, everything full
-		array<string> kit = {"ExpansionHydraulicHoses", "ExpansionIgniterPlug", "ExpansionHelicopterBattery", "HeadlightH7"};
-		m_Heli = Spawner.Vehicle(HELI_TYPE, pos, HELIPAD_HEADING, kit);
-		if (m_Heli)
-			Print("[Heli] " + HELI_TYPE + " on the helipad at " + m_Heli.GetPosition());
+		array<string> types = {"ExpansionUh1h", "ExpansionMh6", "ExpansionMerlin", "ExpansionGyrocopter"};
+		array<string> order = new array<string>();
+		for (int t = 0; t < types.Count(); t++)
+			order.Insert(types[t]);
+		order.Insert(types.GetRandomElement());
+		for (int shuffle = order.Count() - 1; shuffle > 0; shuffle--)
+			order.SwapItems(shuffle, Math.RandomInt(0, shuffle + 1));
+
+		for (int i = 0; i < pads.Count(); i++)
+		{
+			vector pos = pads[i];
+			pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
+			CarScript heli = Spawner.Vehicle(order[i], pos, headings[i], HeliKit(order[i]));
+			if (heli)
+			{
+				m_Helis.Insert(heli);
+				Print("[Heli] " + order[i] + " on the helipad at " + heli.GetPosition());
+			}
+		}
+	}
+
+	// what each Expansion helicopter needs to fly (from the mod's own debug spawn routines)
+	array<string> HeliKit(string type)
+	{
+		array<string> kit = new array<string>();
+		kit.Insert("ExpansionHelicopterBattery");
+		kit.Insert("HeadlightH7");
+		if (type == "ExpansionGyrocopter")
+		{
+			kit.Insert("SparkPlug");
+			return kit;
+		}
+		kit.Insert("ExpansionHydraulicHoses");
+		kit.Insert("ExpansionIgniterPlug");
+		if (type == "ExpansionMerlin")
+		{
+			kit.Insert("ExpansionMerlinFrontWheel");
+			kit.Insert("ExpansionMerlinFrontWheel");
+			kit.Insert("ExpansionMerlinBackWheel");
+			kit.Insert("ExpansionMerlinBackWheel");
+		}
+		return kit;
 	}
 
 	// everyone spawns beside the helicopter instead of on the coast
@@ -188,10 +222,12 @@ class CustomMission: MissionServer
 			return;
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(TestReport);
 		m_Cars.Report();
-		if (m_Heli)
-			Print("[Heli] test: " + m_Heli.GetType() + " pos " + m_Heli.GetPosition() + " ori " + m_Heli.GetOrientation() + " fuel " + m_Heli.GetFluidFraction(CarFluid.FUEL) + " hydraulic " + m_Heli.GetFluidFraction(CarFluid.OIL) + " attachments " + m_Heli.GetInventory().AttachmentCount() + " above terrain " + (m_Heli.GetPosition()[1] - GetGame().SurfaceY(m_Heli.GetPosition()[0], m_Heli.GetPosition()[2])));
-		else
-			Print("[Heli] test: no helicopter");
+		for (int h = 0; h < m_Helis.Count(); h++)
+		{
+			CarScript heli = m_Helis[h];
+			Print("[Heli] test: " + heli.GetType() + " pos " + heli.GetPosition() + " ori " + heli.GetOrientation() + " fuel " + heli.GetFluidFraction(CarFluid.FUEL) + " hydraulic " + heli.GetFluidFraction(CarFluid.OIL) + " attachments " + heli.GetInventory().AttachmentCount() + " above terrain " + (heli.GetPosition()[1] - GetGame().SurfaceY(heli.GetPosition()[0], heli.GetPosition()[2])));
+		}
+		Print("[Heli] test: " + m_Helis.Count() + " helicopters");
 
 		array<ref Role> roles = Roles.All();
 		for (int i = 0; i < roles.Count(); i++)

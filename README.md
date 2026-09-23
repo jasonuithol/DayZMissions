@@ -77,11 +77,10 @@ NBC specialist, medieval re-enactor - in the matching outfit with a few things t
 (the doctor's first-aid kit is stocked, the lumberjack holds an axe, the police officer has
 handcuffs and a radio...). No guns. Vanilla freshie basics (bandage, chemlight, fruit) on top.
 And 150 ready-to-drive cars and trucks, every part fitted and every fluid full, at the vanilla
-vehicle spawn points (spread evenly over the ~380 the map defines). And a DayZ Expansion MH-6
-Little Bird, fuelled and ready, on the helipad of the military camp east of Chernogorsk (the
-packed-dirt square between the two fortified nests, ~7237/3065) - which is why this mission
-loads CF, Dabs Framework and the three Expansion mods (`mods.txt`). Players spawn 10 m from the
-helicopter rather than on the coast.
+vehicle spawn points (spread evenly over the ~380 the map defines). And a DayZ Expansion helicopter
+on each of the five helipads on the map - Huey, Little Bird, Merlin and Gyrocopter, each once,
+plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framework and the
+three Expansion mods (`mods.txt`). Players spawn beside the Chernogorsk camp pad.
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
@@ -146,8 +145,9 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
 ## Open items
 
 - **Helipads** - Chernarus has exactly five, all `decal_heli_army.p3d` (a nameless terrain
-  object; `objprobe -findmodel=decal_heli` lists them): Chernogorsk camp 7236/3063 (has the
-  Little Bird), Balota 5030/2356 and 5055/2333, Vybor military base 4156/11028 and 4169/10991.
+  object; `objprobe -findmodel=decal_heli` lists them): Chernogorsk camp 7236/3063, Balota
+  5030/2356 and 5055/2333, Vybor military base 4156/11028 and 4169/10991. All have a helicopter
+  in `roles`. Expansion's planes (An-2, C-130J) are `scope 0` like its bikes - not spawnable.
 - **helihunt bike handling** - the CRF450R still slides; the current tuning (grip 1.9, 38 deg lock,
   faster steering, open centre diff) is in `mods/HeliHuntCompat/config.cpp` and hasn't been judged
   in game yet. Next experiment: put the centre differential back to `DIFFERENTIAL_LOCKED`.
