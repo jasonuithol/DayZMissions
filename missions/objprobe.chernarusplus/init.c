@@ -150,8 +150,44 @@ class CustomMission: MissionServer
 		GetGame().RequestExit(0);
 	}
 
+	// -findmodel=substring: every object on the map whose debug name (type or .p3d model,
+	// nameless terrain objects included) contains the text
+	void FindModel()
+	{
+		string wanted;
+		if (!GetGame().CommandlineGetParam("findmodel", wanted))
+			return;
+		wanted.ToLower();
+
+		float size = 15360;
+		float tile = 1536;
+		int found = 0;
+		set<Object> seen = new set<Object>();
+		for (float z = tile * 0.5; z < size; z += tile)
+		{
+			for (float x = tile * 0.5; x < size; x += tile)
+			{
+				array<Object> objects = new array<Object>();
+				GetGame().GetObjectsAtPosition(Vector(x, 0, z), tile * 0.75, objects, null);
+				for (int i = 0; i < objects.Count(); i++)
+				{
+					string name = objects[i].GetDebugName();
+					name.ToLower();
+					if (name.IndexOf(wanted) < 0 || seen.Find(objects[i]) >= 0)
+						continue;
+					seen.Insert(objects[i]);
+					found++;
+					Print("[FindModel] " + objects[i].GetDebugName() + " pos " + objects[i].GetPosition() + " ori " + objects[i].GetOrientation());
+				}
+			}
+		}
+		Print("[FindModel] " + found + " objects matching '" + wanted + "'");
+		GetGame().RequestExit(0);
+	}
+
 	void Probe()
 	{
+		FindModel();
 		Scan();
 		Ray();
 		SurfaceMap();
@@ -182,6 +218,13 @@ class CustomMission: MissionServer
 			counts.Set(key, seen + 1);
 			if (seen < 3)
 				Print("[ObjProbe] " + key + " pos " + objects[i].GetPosition() + " ori " + objects[i].GetOrientation());
+			// nameless terrain objects (decals, rocks, proxies): show their size and debug name
+			if (type == "" && radius <= 20)
+			{
+				vector minMax[2];
+				objects[i].ClippingInfo(minMax);
+				Print("[ObjProbe] nameless " + objects[i].GetDebugName() + " pos " + objects[i].GetPosition() + " box " + minMax[0] + " .. " + minMax[1]);
+			}
 			shown++;
 		}
 		for (int k = 0; k < counts.Count(); k++)

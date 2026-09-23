@@ -88,9 +88,11 @@ class CustomMission: MissionServer
 {
 	static const int MAX_CARS = 150; // to keep the server load sane
 
-	// the packed-dirt helipad between the two fortified nests, east of Chernogorsk
-	static const vector HELIPAD = "7237 0 3065";
-	static const float HELIPAD_HEADING = 163; // same way the tents face
+	// the helipad (decal_heli_army) between the two fortified nests, east of Chernogorsk.
+	// The other four on Chernarus: Balota 5030/2356 and 5055/2333, Vybor base 4156/11028
+	// and 4169/10991 (tools: objprobe -findmodel=decal_heli).
+	static const vector HELIPAD = "7236.25 0 3063.27";
+	static const float HELIPAD_HEADING = 153; // lined up with the H
 	static const string HELI_TYPE = "ExpansionMh6";
 	static const vector PLAYER_SPAWN = "7247 0 3061"; // 10 m east of the pad, on the grass
 	protected CarScript m_Heli;

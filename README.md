@@ -115,9 +115,10 @@ fallen-through counts; `TEST_ARGS=-bikelimit=N` caps a test run.
 
 ### roadprobe.chernarusplus / objprobe.chernarusplus
 Dev tools. `roadprobe` scans north-south columns and logs the surface types (1.30).
-`objprobe` (stable) lists map objects around a point (`TEST_ARGS=-probe=x,z,radius,filter`)
-or prints an ASCII map of surface types (`TEST_ARGS=-surf=x,z,radius,step`) - that is how
-the Chernogorsk helipad was found: it is not an object, just a square of `dirt_ext`.
+`objprobe` (stable) lists map objects around a point (`TEST_ARGS=-probe=x,z,radius,filter`;
+within 20 m it also shows nameless terrain objects - decals, rocks, sandbags - with their
+model and size), finds every object on the map by model name (`-findmodel=decal_heli`),
+raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,z,radius,step`).
 
 ## Writing missions - things learned
 
@@ -144,11 +145,9 @@ the Chernogorsk helipad was found: it is not an object, just a square of `dirt_e
 
 ## Open items
 
-- **Helipads** - the only one placed so far is the camp east of Chernogorsk (~7237/3065). The
-  pad is a decal (a triangle with an H), not an object: `GetObjectsAtPosition` and raycasts
-  see nothing, and scanning surface types for it map-wide gave 5000+ false positives. Find the
-  decal's class/model name some other way (DayZ Tools / world data), or add pads by hand.
-
+- **Helipads** - Chernarus has exactly five, all `decal_heli_army.p3d` (a nameless terrain
+  object; `objprobe -findmodel=decal_heli` lists them): Chernogorsk camp 7236/3063 (has the
+  Little Bird), Balota 5030/2356 and 5055/2333, Vybor military base 4156/11028 and 4169/10991.
 - **helihunt bike handling** - the CRF450R still slides; the current tuning (grip 1.9, 38 deg lock,
   faster steering, open centre diff) is in `mods/HeliHuntCompat/config.cpp` and hasn't been judged
   in game yet. Next experiment: put the centre differential back to `DIFFERENTIAL_LOCKED`.
