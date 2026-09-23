@@ -2,7 +2,8 @@
 // Vanilla Chernarus, except that every new character spawns as a role - police officer,
 // doctor, soldier, lumberjack... - wearing the matching outfit and carrying a few things
 // that fit the job. The roles live in roles.json next to this file. And there are ready
-// to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json).
+// to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json),
+// and a DayZ Expansion Little Bird on the helipad of the military camp east of Chernogorsk.
 #include "lib/JsonFile.c"
 #include "lib/RoadFinder.c"
 #include "lib/Spawner.c"
@@ -87,6 +88,12 @@ class CustomMission: MissionServer
 {
 	static const int MAX_CARS = 150; // to keep the server load sane
 
+	// the packed-dirt helipad between the two fortified nests, east of Chernogorsk
+	static const vector HELIPAD = "7237 0 3065";
+	static const float HELIPAD_HEADING = 163; // same way the tents face
+	static const string HELI_TYPE = "ExpansionMh6";
+	protected CarScript m_Heli;
+
 	protected string m_Path; // mission folder, e.g. "./mpmissions/roles.chernarusplus"
 	protected ref VehicleSpots m_Cars;
 
@@ -105,6 +112,9 @@ class CustomMission: MissionServer
 
 		m_Cars = new VehicleSpots("Cars", new CarFactory());
 		m_Cars.Start(m_Path + "/spots.json", MAX_CARS);
+
+		// like the cars: not in the first seconds after startup, or it comes up empty
+		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(SpawnHeli, VehicleSpots.START_DELAY_MS, false);
 
 		string value;
 		if (GetGame().CommandlineGetParam("missiontest", value))
@@ -139,6 +149,20 @@ class CustomMission: MissionServer
 		player.SetQuickBarEntityShortcut(itemEnt, 3);
 	}
 
+	void SpawnHeli()
+	{
+		vector pos = HELIPAD;
+		pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
+		if (!Placement.IsClear(pos, HELIPAD_HEADING, "3.0 3.0 8.0", true))
+			Print("[Heli] the helipad at " + pos + " is not clear, spawning anyway");
+
+		// Little Bird: no doors, hydraulic hoses, igniter plug, battery, light, everything full
+		array<string> kit = {"ExpansionHydraulicHoses", "ExpansionIgniterPlug", "ExpansionHelicopterBattery", "HeadlightH7"};
+		m_Heli = Spawner.Vehicle(HELI_TYPE, pos, HELIPAD_HEADING, kit);
+		if (m_Heli)
+			Print("[Heli] " + HELI_TYPE + " on the helipad at " + m_Heli.GetPosition());
+	}
+
 	// -missiontest: check every role's class names and attachments and the cars, then quit
 	void TestReport()
 	{
@@ -146,6 +170,10 @@ class CustomMission: MissionServer
 			return;
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(TestReport);
 		m_Cars.Report();
+		if (m_Heli)
+			Print("[Heli] test: " + m_Heli.GetType() + " pos " + m_Heli.GetPosition() + " ori " + m_Heli.GetOrientation() + " fuel " + m_Heli.GetFluidFraction(CarFluid.FUEL) + " hydraulic " + m_Heli.GetFluidFraction(CarFluid.OIL) + " attachments " + m_Heli.GetInventory().AttachmentCount() + " above terrain " + (m_Heli.GetPosition()[1] - GetGame().SurfaceY(m_Heli.GetPosition()[0], m_Heli.GetPosition()[2])));
+		else
+			Print("[Heli] test: no helicopter");
 
 		array<ref Role> roles = Roles.All();
 		for (int i = 0; i < roles.Count(); i++)

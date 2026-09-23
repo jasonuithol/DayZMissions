@@ -77,7 +77,10 @@ NBC specialist, medieval re-enactor - in the matching outfit with a few things t
 (the doctor's first-aid kit is stocked, the lumberjack holds an axe, the police officer has
 handcuffs and a radio...). No guns. Vanilla freshie basics (bandage, chemlight, fruit) on top.
 And 150 ready-to-drive cars and trucks, every part fitted and every fluid full, at the vanilla
-vehicle spawn points (spread evenly over the ~380 the map defines).
+vehicle spawn points (spread evenly over the ~380 the map defines). And a DayZ Expansion MH-6
+Little Bird, fuelled and ready, on the helipad of the military camp east of Chernogorsk (the
+packed-dirt square between the two fortified nests, ~7237/3065) - which is why this mission
+loads CF, Dabs Framework and the three Expansion mods (`mods.txt`).
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
@@ -109,9 +112,11 @@ start, spawns in batches, respawns anything that came up empty or fell through a
 Re-run the tool after editing the rules. `tools/test.sh bikespawns` reports upright / fuelled /
 fallen-through counts; `TEST_ARGS=-bikelimit=N` caps a test run.
 
-### roadprobe.chernarusplus
-Dev tool. Scans north-south columns, logs the surface types to the script log and exits.
-Handy for finding roads / anchor points for new missions (`tools/test.sh roadprobe`).
+### roadprobe.chernarusplus / objprobe.chernarusplus
+Dev tools. `roadprobe` scans north-south columns and logs the surface types (1.30).
+`objprobe` (stable) lists map objects around a point (`TEST_ARGS=-probe=x,z,radius,filter`)
+or prints an ASCII map of surface types (`TEST_ARGS=-surf=x,z,radius,step`) - that is how
+the Chernogorsk helipad was found: it is not an object, just a square of `dirt_ext`.
 
 ## Writing missions - things learned
 
