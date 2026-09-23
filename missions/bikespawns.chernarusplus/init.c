@@ -3,28 +3,14 @@
 // police stations, shops, hospitals and petrol stations in the towns; dirt bikes
 // (Motorbike_02) at deer stands, feed shacks, hunting camps and fire stations. All of
 // them ready to ride. The where and what comes from spots.json, which
-// tools/bike_spots.py generates from bikes.json and the map data.
-//
-// Spawning waits until the world has settled (vehicles created in the first seconds
-// after startup end up with no fuel) and stops at MAX_BIKES to keep the server load sane.
+// tools/vehicle_spots.py generates from vehicles.json and the map data; lib/VehicleSpots.c
+// does the placing.
+#include "lib/JsonFile.c"
 #include "lib/RoadFinder.c"
 #include "lib/Spawner.c"
 #include "lib/Motorbikes.c"
 #include "lib/Placement.c"
-
-class BikeSpot
-{
-	string building;
-	string types;   // "A|B|C" picks one at random
-	int count;
-	ref array<float> pos = new array<float>();
-	float heading;
-}
-
-class BikeSpots
-{
-	ref array<ref BikeSpot> spots = new array<ref BikeSpot>();
-}
+#include "lib/VehicleSpots.c"
 
 void main()
 {
@@ -58,33 +44,38 @@ void main()
 	}
 }
 
+class BikeFactory: VehicleFactory
+{
+	override EntityAI Spawn(string type, vector pos, float heading)
+	{
+		return Motorbikes.SpawnReady(type, pos, heading);
+	}
+
+	override float FuelFraction(EntityAI vehicle)
+	{
+		return MotorbikeScript.Cast(vehicle).GetFluidFraction(MotorbikeFluid.FUEL);
+	}
+
+	override void Refill(EntityAI vehicle)
+	{
+		MotorbikeScript bike = MotorbikeScript.Cast(vehicle);
+		bike.Fill(MotorbikeFluid.FUEL, bike.GetFluidCapacity(MotorbikeFluid.FUEL));
+	}
+
+	override vector Size(string type)
+	{
+		return "1.0 1.2 2.4";
+	}
+}
+
 class CustomMission: MissionServer
 {
-	static const float ROAD_SEARCH = 40.0;   // how far from the building to look for a road
-	static const float ROAD_EDGE = 1.2;      // bikes park this far in from the edge of the road
-	static const float SPACING = 2.0;
-	static const float KEEP_AWAY = 1.8;      // from any other spawned bike
-	static const vector BIKE_SIZE = "1.0 1.2 2.4"; // clearance box: width, height, length
-	static const int MAX_BIKES = 170;
-	// Vehicles created in the first seconds after startup end up with no fuel and can't
-	// be refilled (the world is still initialising), so spawning waits, then goes in batches.
-	static const int START_DELAY_MS = 20000;
-	static const int BATCH = 5;
-	static const int BATCH_MS = 250;
+	static const int MAX_BIKES = 170; // to keep the server load sane
 
 	protected string m_Path;
-	protected ref BikeSpots m_Spots;
-	protected int m_NextSpot;
-	protected int m_Limit;
-	protected ref array<MotorbikeScript> m_Bikes = new array<MotorbikeScript>();
-	protected ref array<vector> m_Taken = new array<vector>();
-	protected ref array<vector> m_Anchors = new array<vector>(); // the building each bike belongs to
-	protected int m_OnRoad;
-	protected int m_NoSpace;
-	protected int m_Raised;
-	protected int m_TopUpRound;
-	protected int m_Failed;
+	protected ref VehicleSpots m_Bikes;
 
+	// path is the mission script, "./mpmissions/<mission>/mission.c"; keep its folder
 	void CustomMission(string path)
 	{
 		m_Path = path.Substring(0, path.LastIndexOf("/"));
@@ -94,231 +85,26 @@ class CustomMission: MissionServer
 	{
 		super.OnInit();
 
-		StartSpawning();
-	}
-
-	void StartSpawning()
-	{
-		string error;
-		if (!JsonFileLoader<BikeSpots>.LoadFile(m_Path + "/spots.json", m_Spots, error))
-		{
-			Print("[BikeSpawns] " + error);
-			return;
-		}
-
 		// -bikelimit=N: stop after N bikes (testing)
-		string limitValue;
-		m_Limit = MAX_BIKES;
-		if (GetGame().CommandlineGetParam("bikelimit", limitValue))
-			m_Limit = limitValue.ToInt();
-
-		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(BeginBatches, START_DELAY_MS, false);
-	}
-
-	void BeginBatches()
-	{
-		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(SpawnBatch, BATCH_MS, true);
-	}
-
-	void SpawnBatch()
-	{
-		for (int n = 0; n < BATCH && m_NextSpot < m_Spots.spots.Count() && m_Bikes.Count() < m_Limit; n++)
-		{
-			SpawnAt(m_Spots.spots[m_NextSpot]);
-			m_NextSpot++;
-		}
-
-		if (m_NextSpot < m_Spots.spots.Count() && m_Bikes.Count() < m_Limit)
-			return;
-
-		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(SpawnBatch);
-		Print("[BikeSpawns] " + m_Bikes.Count() + " bikes at " + m_NextSpot + " buildings (" + m_OnRoad + " on roads, " + m_Raised + " on roofs or platforms, " + m_NoSpace + " skipped for lack of space, " + m_Failed + " failed)");
-		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TopUp, 3000, false);
-		if (m_Bikes.Count() >= m_Limit)
-			Print("[BikeSpawns] hit the " + m_Limit + " bike limit - spots.json has more than that");
-
 		string value;
+		int limit = MAX_BIKES;
+		if (GetGame().CommandlineGetParam("bikelimit", value))
+			limit = value.ToInt();
+
+		m_Bikes = new VehicleSpots("BikeSpawns", new BikeFactory());
+		m_Bikes.Start(m_Path + "/spots.json", limit);
+
 		if (GetGame().CommandlineGetParam("missiontest", value))
-			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 15000, false);
+			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 5000, true);
 	}
 
-	// Once everything has settled: the odd bike comes up empty and stays that way
-	// whatever you do to it, and a bike put on an interior floor can drop through it.
-	// Either way it is deleted and spawned again nearby: on open ground first, then on
-	// the roof of the building if the ground keeps swallowing it, and removed if even
-	// the roof doesn't hold.
-	void TopUp()
-	{
-		m_TopUpRound++;
-		int respawned = 0;
-		for (int i = 0; i < m_Bikes.Count(); i++)
-		{
-			MotorbikeScript bike = m_Bikes[i];
-			string why = "";
-			if (bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99)
-			{
-				bike.Fill(MotorbikeFluid.FUEL, bike.GetFluidCapacity(MotorbikeFluid.FUEL));
-				if (bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99)
-					why = "empty";
-			}
-			if (m_Taken[i][1] - bike.GetPosition()[1] > 2)
-				why = "fell through the floor";
-			if (why == "")
-				continue;
-
-			string type = bike.GetType();
-			vector was = m_Taken[i];
-			float facing = bike.GetOrientation()[0];
-			GetGame().ObjectDelete(bike);
-
-			vector pos;
-			float heading;
-			bool found = false;
-			if (m_TopUpRound == 1)
-				found = Placement.FindClear(was, facing, 3, 30, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading);
-			else if (m_TopUpRound == 2)
-			{
-				found = Placement.FindRoof(m_Anchors[i], 20, 2.5, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading);
-				if (found)
-					m_Raised++;
-			}
-			if (!found)
-			{
-				m_Bikes.Remove(i);
-				m_Taken.Remove(i);
-				m_Anchors.Remove(i);
-				i--;
-				Print("[BikeSpawns] removed a " + type + " that " + why + " at " + was);
-				continue;
-			}
-			MotorbikeScript again = Motorbikes.SpawnReady(type, pos, heading);
-			if (!again)
-				continue;
-			m_Bikes[i] = again;
-			m_Taken[i] = pos;
-			respawned++;
-			string where = "on open ground";
-			if (m_TopUpRound == 2)
-				where = "on a roof";
-			Print("[BikeSpawns] respawned a " + type + " that " + why + " from " + was + " to " + pos + " " + where);
-		}
-		if (respawned > 0)
-		{
-			Print("[BikeSpawns] respawned " + respawned + " bikes");
-			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TopUp, 3000, false);
-		}
-	}
-
-	// Parks a spot's bikes side by side on the nearest road, on the building's side of
-	// it. If there is no road, or the road is blocked, each bike gets its own clear
-	// patch of ground near the building instead.
-	void SpawnAt(BikeSpot spot)
-	{
-		vector anchor = Vector(spot.pos[0], spot.pos[1], spot.pos[2]);
-
-		vector roadPos;
-		float roadHeading, width;
-		bool onRoad = RoadFinder.Locate(anchor, ROAD_SEARCH, roadPos, roadHeading, width);
-		vector centre, along;
-		if (onRoad)
-		{
-			// the side of the road the building is on
-			vector side = RoadFinder.HeadingToDir(roadHeading + 90);
-			if (vector.Dot(side, anchor - roadPos) < 0)
-				side = side * -1;
-			centre = roadPos + side * (width * 0.5 - ROAD_EDGE);
-			along = RoadFinder.HeadingToDir(roadHeading);
-			m_OnRoad++;
-		}
-
-		for (int i = 0; i < spot.count; i++)
-		{
-			vector pos;
-			float heading;
-			bool placed = false;
-
-			if (onRoad)
-			{
-				// along the kerb, sliding further along if something is in the way
-				for (int slide = 0; slide < 6 && !placed; slide++)
-				{
-					float offset = (i - (spot.count - 1) * 0.5 + slide) * SPACING;
-					pos = centre + along * offset;
-					pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
-					heading = roadHeading;
-					placed = Placement.IsClear(pos, heading, BIKE_SIZE) && !Placement.TooClose(pos, m_Taken, KEEP_AWAY);
-				}
-			}
-			if (!placed)
-				placed = Placement.FindClear(anchor, spot.heading, 5, 25, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading);
-			// nowhere on the ground: a roof, platform or floor will do, as long as it is clear
-			if (!placed)
-			{
-				placed = Placement.FindClear(anchor, spot.heading, 3, 25, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading, true);
-				if (placed)
-					m_Raised++;
-			}
-			if (!placed)
-			{
-				m_NoSpace++;
-				continue;
-			}
-
-			MotorbikeScript bike = Motorbikes.SpawnReady(Roles_Choose(spot.types), pos, heading);
-			if (bike)
-			{
-				m_Bikes.Insert(bike);
-				m_Taken.Insert(pos);
-				m_Anchors.Insert(anchor);
-			}
-			else
-				m_Failed++;
-		}
-	}
-
-	// "A|B|C" -> one of them
-	static string Roles_Choose(string spec)
-	{
-		array<string> options = new array<string>();
-		spec.Split("|", options);
-		if (options.Count() == 0)
-			return spec;
-		return options.GetRandomElement();
-	}
-
-	// -missiontest: sanity check the spawned bikes, then quit
+	// -missiontest: once spawning has finished, report and quit
 	void TestReport()
 	{
-		int upright = 0;
-		int fuelled = 0;
-		int damaged = 0;
-		int lost = 0;
-		float closest = 1000;
-		for (int i = 0; i < m_Bikes.Count(); i++)
-		{
-			MotorbikeScript bike = m_Bikes[i];
-			vector ori = bike.GetOrientation();
-			if (Math.AbsFloat(ori[1]) < 15 && Math.AbsFloat(ori[2]) < 15)
-				upright++;
-			if (bike.GetFluidFraction(MotorbikeFluid.FUEL) > 0.99)
-				fuelled++;
-			if (bike.GetHealth01("", "") < 0.99)
-				damaged++;
-			for (int j = i + 1; j < m_Bikes.Count(); j++)
-			{
-				float d = vector.Distance(bike.GetPosition(), m_Bikes[j].GetPosition());
-				if (d < closest)
-					closest = d;
-			}
-			vector p = bike.GetPosition();
-			float above = p[1] - GetGame().SurfaceY(p[0], p[2]);
-			if (above < -3)
-				lost++;
-			bool odd = above < -3 || above > 3 || bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99 || Math.AbsFloat(ori[2]) > 15;
-			if (odd)
-				Print("[BikeSpawns] odd: " + bike.GetType() + " fuel " + bike.GetFluidFraction(MotorbikeFluid.FUEL) + " pos " + p + " above terrain " + above + " pitch " + ori[1] + " roll " + ori[2] + " spawned at " + m_Taken[i]);
-		}
-		Print("[BikeSpawns] test: " + m_Bikes.Count() + " bikes, " + upright + " upright, " + fuelled + " fuelled, " + damaged + " damaged, " + lost + " fallen through the map, closest pair " + closest + " m");
+		if (!m_Bikes.IsDone())
+			return;
+		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(TestReport);
+		m_Bikes.Report();
 		GetGame().RequestExit(0);
 	}
 };

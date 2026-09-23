@@ -45,11 +45,11 @@ class Roles
 	// GetMissionFolderPath() is empty on a dedicated server at this point.
 	static int Load(string path)
 	{
-		string error;
-		RoleSet loaded;
-		if (!JsonFileLoader<RoleSet>.LoadFile(path, loaded, error))
+		string text, error;
+		RoleSet loaded = new RoleSet();
+		if (!JsonFile.Read(path, text, error) || !(new JsonSerializer()).ReadFromString(loaded, text, error))
 		{
-			Print("[Roles] " + error);
+			Print("[Roles] " + path + ": " + error);
 			s_Roles = new RoleSet();
 			return 0;
 		}

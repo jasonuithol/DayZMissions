@@ -16,13 +16,12 @@
 			"weight": 1,
 			"clothing": ["MedicalScrubsHat_White|MedicalScrubsHat_Blue|MedicalScrubsHat_Green", "LabCoat", "MedicalScrubsPants_White|MedicalScrubsPants_Blue|MedicalScrubsPants_Green", "DressShoes_White|DressShoes_Black", "SurgicalGloves_White", "SurgicalMask", "CanvasBag_Medical"],
 			"items": [
-				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "Morphine"]},
+				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "Morphine", "Epinephrine"]},
 				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
 				{"type": "BloodTestKit", "hands": false, "attachments": [], "cargo": []},
 				{"type": "DisinfectantSpray", "hands": false, "attachments": [], "cargo": []},
 				{"type": "PainkillerTablets", "hands": false, "attachments": [], "cargo": []},
-				{"type": "Thermometer", "hands": false, "attachments": [], "cargo": []},
-				{"type": "Epinephrine", "hands": false, "attachments": [], "cargo": []}
+				{"type": "Thermometer", "hands": false, "attachments": [], "cargo": []}
 			]
 		},
 		{
@@ -30,12 +29,11 @@
 			"weight": 1,
 			"clothing": ["MedicalScrubsHat_White|MedicalScrubsHat_Blue", "NurseDress_White|NurseDress_Blue", "DressShoes_White", "SurgicalGloves_LightBlue|SurgicalGloves_Blue", "HipPack_Medical"],
 			"items": [
-				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "TetracyclineAntibiotics"]},
+				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "TetracyclineAntibiotics", "VitaminBottle"]},
 				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
 				{"type": "PainkillerTablets", "hands": false, "attachments": [], "cargo": []},
 				{"type": "DisinfectantAlcohol", "hands": false, "attachments": [], "cargo": []},
-				{"type": "Thermometer", "hands": false, "attachments": [], "cargo": []},
-				{"type": "VitaminBottle", "hands": false, "attachments": [], "cargo": []}
+				{"type": "Thermometer", "hands": false, "attachments": [], "cargo": []}
 			]
 		},
 		{
@@ -43,12 +41,11 @@
 			"weight": 1,
 			"clothing": ["MedicalScrubsHat_Blue|BaseballCap_Blue", "ParamedicJacket_Blue|ParamedicJacket_Crimson|ParamedicJacket_Green", "ParamedicPants_Blue|ParamedicPants_Crimson|ParamedicPants_Green", "WorkingBoots_Grey|CombatBoots_Black", "SurgicalGloves_Blue", "DuffelBagSmall_Medical"],
 			"items": [
-				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "Morphine"]},
+				{"type": "FirstAidKit", "hands": false, "attachments": [], "cargo": ["BandageDressing", "BandageDressing", "Morphine", "Epinephrine"]},
 				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
 				{"type": "SalineBagIV", "hands": false, "attachments": [], "cargo": []},
 				{"type": "PainkillerTablets", "hands": false, "attachments": [], "cargo": []},
-				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []},
-				{"type": "Epinephrine", "hands": false, "attachments": [], "cargo": []}
+				{"type": "PersonalRadio", "hands": false, "attachments": ["Battery9V"], "cargo": []}
 			]
 		},
 		{
@@ -192,7 +189,7 @@
 			"items": [
 				{"type": "Sword", "hands": true, "attachments": [], "cargo": []},
 				{"type": "Whetstone", "hands": false, "attachments": [], "cargo": []},
-				{"type": "Canteen", "hands": false, "attachments": [], "cargo": []},
+				{"type": "Waterskin_Natural", "hands": false, "attachments": [], "cargo": []},
 				{"type": "Matchbox", "hands": false, "attachments": [], "cargo": []}
 			]
 		},

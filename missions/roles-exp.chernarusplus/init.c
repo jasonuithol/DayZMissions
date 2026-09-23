@@ -1,55 +1,9 @@
-// Roles (stable)
+// Roles
 // Vanilla Chernarus, except that every new character spawns as a role - police officer,
 // doctor, soldier, lumberjack... - wearing the matching outfit and carrying a few things
-// that fit the job. The roles live in roles.json next to this file. And there are ready
-// to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json).
+// that fit the job. The roles live in roles.json next to this file.
 #include "lib/JsonFile.c"
-#include "lib/RoadFinder.c"
-#include "lib/Spawner.c"
-#include "lib/Placement.c"
-#include "lib/VehicleSpots.c"
 #include "lib/Roles.c"
-
-// Vanilla cars, kitted out the way the debug menu does it and every fluid topped up.
-class CarFactory: VehicleFactory
-{
-	override EntityAI Spawn(string type, vector pos, float heading)
-	{
-		pos[1] = pos[1] + 0.3; // created a hair below the ground, a vehicle falls through the map
-		CarScript car = CarScript.Cast(GetGame().CreateObjectEx(type, pos, ECE_PLACE_ON_SURFACE | ECE_SETUP));
-		if (!car)
-		{
-			Print("[Cars] failed to create " + type);
-			return null;
-		}
-		car.SetOrientation(Vector(heading, 0, 0));
-		car.SetLifetime(Spawner.LIFETIME);
-		car.OnDebugSpawn();
-		Refill(car);
-		return car;
-	}
-
-	override float FuelFraction(EntityAI vehicle)
-	{
-		return CarScript.Cast(vehicle).GetFluidFraction(CarFluid.FUEL);
-	}
-
-	override void Refill(EntityAI vehicle)
-	{
-		CarScript car = CarScript.Cast(vehicle);
-		car.Fill(CarFluid.FUEL, car.GetFluidCapacity(CarFluid.FUEL));
-		car.Fill(CarFluid.OIL, car.GetFluidCapacity(CarFluid.OIL));
-		car.Fill(CarFluid.COOLANT, car.GetFluidCapacity(CarFluid.COOLANT));
-		car.Fill(CarFluid.BRAKE, car.GetFluidCapacity(CarFluid.BRAKE));
-	}
-
-	override vector Size(string type)
-	{
-		if (type.Contains("Truck"))
-			return "2.6 3.0 7.5";
-		return "2.0 1.8 4.6";
-	}
-}
 
 void main()
 {
@@ -85,10 +39,7 @@ void main()
 
 class CustomMission: MissionServer
 {
-	static const int MAX_CARS = 150; // to keep the server load sane
-
 	protected string m_Path; // mission folder, e.g. "./mpmissions/roles.chernarusplus"
-	protected ref VehicleSpots m_Cars;
 
 	// path is the mission script, "./mpmissions/<mission>/mission.c"; keep its folder
 	void CustomMission(string path)
@@ -103,12 +54,9 @@ class CustomMission: MissionServer
 		int count = Roles.Load(m_Path + "/roles.json");
 		Print("[Roles] loaded " + count + " roles from " + m_Path);
 
-		m_Cars = new VehicleSpots("Cars", new CarFactory());
-		m_Cars.Start(m_Path + "/spots.json", MAX_CARS);
-
 		string value;
 		if (GetGame().CommandlineGetParam("missiontest", value))
-			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 5000, true);
+			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 15000, false);
 	}
 
 	// Instead of the vanilla random clothes, dress the new character as a random role.
@@ -139,14 +87,9 @@ class CustomMission: MissionServer
 		player.SetQuickBarEntityShortcut(itemEnt, 3);
 	}
 
-	// -missiontest: check every role's class names and attachments and the cars, then quit
+	// -missiontest: check every role's class names and attachments, then quit
 	void TestReport()
 	{
-		if (!m_Cars.IsDone())
-			return;
-		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(TestReport);
-		m_Cars.Report();
-
 		array<ref Role> roles = Roles.All();
 		for (int i = 0; i < roles.Count(); i++)
 		{

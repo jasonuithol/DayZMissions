@@ -69,20 +69,29 @@ MBM_HondaCRF450R, Survivor Animations and Vehicle Shooting (ids in `mods.txt`).
 - The bikes are the handlebar variants, which need Survivor Animations for the riding pose;
   the `MBM_HondaCRF450_W_<Colour>` ones have a steering wheel and don't.
 
-### roles.chernarusplus
+### roles.chernarusplus (stable 1.29)
 Vanilla Chernarus, but every new character spawns as one of 22 roles - police officer, doctor,
 nurse, paramedic, soldier, military police, sniper, tank crew, pilot, technician, tradesman,
 hunter, hiker, motorcyclist, firefighter, lumberjack, prisoner, journalist, athlete, executive,
 NBC specialist, medieval re-enactor - in the matching outfit with a few things that fit the job
 (the doctor's first-aid kit is stocked, the lumberjack holds an axe, the police officer has
 handcuffs and a radio...). No guns. Vanilla freshie basics (bandage, chemlight, fruit) on top.
+And 150 ready-to-drive cars and trucks, every part fitted and every fluid full, at the vanilla
+vehicle spawn points (spread evenly over the ~380 the map defines).
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
 at random. `lib/Roles.c` loads and applies it; `tools/test.sh roles` checks every class name
-exists and every container actually takes what it is given.
+exists and every container actually takes what it is given. The cars come from `vehicles.json`
+via `tools/vehicle_spots.py roles` (see bikespawns below).
 
-### bikespawns.chernarusplus
+### roles-exp.chernarusplus (1.30 Experimental)
+The same roles on 1.30, without the cars. 1.30 has motorbikes but, as of 2026-09-23, also
+zombie attacks that land from where the attack started and doors whose interaction point is
+off - so the stable one above is the mission to play until that is fixed. `roles.json` differs
+slightly (1.30's first-aid kit holds one more item, and has the waterskin).
+
+### bikespawns.chernarusplus (1.30 Experimental)
 Vanilla Chernarus with about 160 ready-to-ride motorbikes, one per spot: mopeds (`Motorbike_01`)
 outside schools, police stations, shops, hospitals, petrol stations and some apartment blocks in
 the built-up towns, dirt bikes (`Motorbike_02`) at rail warehouses, big garages, trail-head
@@ -92,9 +101,11 @@ open ground, and failing that a roof, platform or floor (never clipped into wall
 drops through an interior floor is respawned on open ground, and if that keeps swallowing it, on
 the building's roof - the occasional rooftop bike is a feature.
 
-`bikes.json` holds the rules (building classes, bike types, bikes per building, how built-up the
-area must be, spacing, a cap per rule); `tools/bike_spots.py bikespawns` turns them into
-`spots.json` using the vanilla `mapgrouppos.xml`, and `init.c` does the placement in game.
+`vehicles.json` holds the rules (building classes or vanilla spawn events, vehicle types, count
+per spot, how built-up the area must be, spacing, a cap per rule); `tools/vehicle_spots.py
+bikespawns` turns them into `spots.json` using the vanilla `mapgrouppos.xml` /
+`cfgeventspawns.xml`, and `lib/VehicleSpots.c` does the placement in game (waits 20 s after
+start, spawns in batches, respawns anything that came up empty or fell through a floor).
 Re-run the tool after editing the rules. `tools/test.sh bikespawns` reports upright / fuelled /
 fallen-through counts; `TEST_ARGS=-bikelimit=N` caps a test run.
 
@@ -112,7 +123,10 @@ Handy for finding roads / anchor points for new missions (`tools/test.sh roadpro
 - `-missiontest` on the command line is the convention for "log state after 20 s and quit".
 - `GetMissionFolderPath()` is empty on a dedicated server; the path handed to
   `CreateCustomMission` (`./mpmissions/<mission>/mission.c`) is the way to find mission files.
-- `JsonFileLoader<T>` maps JSON keys to class members; `set` is a reserved word.
+- `JsonFileLoader<T>` maps JSON keys to class members; `set` is a reserved word. On 1.29 it
+  won't take mission-script classes, and `JsonSerializer.ReadFromString` fills nothing if the
+  object arrives through a `Class`-typed parameter - deserialise with a typed variable
+  (`lib/JsonFile.c`). 1.29 also needs `$CurrentDir:` on mission file paths.
 - Vehicles created in the first ~10 s after server start end up with no fuel and can't be
   filled later, ever. `Fill()` right after `CreateObjectEx` also reads back as 0 for a moment
   even when it worked. Spawn vehicles from a `CallLater`, and check fuel a few seconds on.

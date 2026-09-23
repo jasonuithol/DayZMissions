@@ -1,0 +1,20 @@
+{
+	"rules": [
+		{
+			"name": "cars at the vanilla car spawn points",
+			"events": ["VehicleCivilianSedan", "VehicleHatchback02", "VehicleOffroadHatchback", "VehicleSedan02", "VehicleOffroad02"],
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"min_spacing": 30,
+			"max": 120
+		},
+		{
+			"name": "trucks at the vanilla truck spawn points",
+			"events": ["VehicleTruck01"],
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"min_spacing": 30,
+			"max": 30
+		}
+	]
+}

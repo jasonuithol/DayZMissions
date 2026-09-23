@@ -9,7 +9,8 @@
 				206.86,
 				5281.03
 			],
-			"heading": -11.74
+			"heading": -11.74,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -20,7 +21,8 @@
 				213.22,
 				5373.81
 			],
-			"heading": -11.69
+			"heading": -11.69,
+			"exact": false
 		},
 		{
 			"building": "Land_FuelStation_Build",
@@ -31,7 +33,8 @@
 				212.62,
 				5599.73
 			],
-			"heading": -7.72
+			"heading": -7.72,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store_WithStairs",
@@ -42,7 +45,8 @@
 				210.35,
 				12667.2
 			],
-			"heading": -79.72
+			"heading": -79.72,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -53,7 +57,8 @@
 				203.16,
 				12782.83
 			],
-			"heading": -138.63
+			"heading": -138.63,
+			"exact": false
 		},
 		{
 			"building": "Land_City_School",
@@ -64,7 +69,8 @@
 				208.73,
 				13045.78
 			],
-			"heading": -156.69
+			"heading": -156.69,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -75,7 +81,8 @@
 				194.76,
 				13034.63
 			],
-			"heading": -126.18
+			"heading": -126.18,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_PoliceStation",
@@ -86,7 +93,8 @@
 				318.03,
 				8923.05
 			],
-			"heading": 64.2
+			"heading": 64.2,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store",
@@ -97,7 +105,8 @@
 				312.54,
 				8875.43
 			],
-			"heading": -115.41
+			"heading": -115.41,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -108,7 +117,8 @@
 				312.76,
 				8866.72
 			],
-			"heading": -115.35
+			"heading": -115.35,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_PoliceStation",
@@ -119,7 +129,8 @@
 				32.78,
 				2920.93
 			],
-			"heading": 107.21
+			"heading": 107.21,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_store",
@@ -130,7 +141,8 @@
 				12.31,
 				2517.21
 			],
-			"heading": 48.21
+			"heading": 48.21,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -141,7 +153,8 @@
 				7.79,
 				2195.84
 			],
-			"heading": 94.95
+			"heading": 94.95,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store_WithStairs",
@@ -152,7 +165,8 @@
 				16.89,
 				2856.48
 			],
-			"heading": -91.55
+			"heading": -91.55,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Hospital",
@@ -163,7 +177,8 @@
 				17.09,
 				2718.59
 			],
-			"heading": 50.19
+			"heading": 50.19,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -174,7 +189,8 @@
 				7.66,
 				2262.37
 			],
-			"heading": 167.99
+			"heading": 167.99,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -185,7 +201,8 @@
 				11.09,
 				2692.95
 			],
-			"heading": 49.85
+			"heading": 49.85,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -196,7 +213,8 @@
 				7.7,
 				2281.59
 			],
-			"heading": 86.64
+			"heading": 86.64,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -207,7 +225,8 @@
 				7.78,
 				2290.87
 			],
-			"heading": 171.18
+			"heading": 171.18,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -218,7 +237,8 @@
 				13.97,
 				2586.65
 			],
-			"heading": 47.69
+			"heading": 47.69,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -229,7 +249,8 @@
 				4.77,
 				2419.49
 			],
-			"heading": 179.6
+			"heading": 179.6,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -240,7 +261,8 @@
 				125.05,
 				12636.64
 			],
-			"heading": -91.82
+			"heading": -91.82,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -251,7 +273,8 @@
 				118.32,
 				12625.1
 			],
-			"heading": -154.02
+			"heading": -154.02,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Hospital",
@@ -262,7 +285,8 @@
 				121.53,
 				12753.25
 			],
-			"heading": -166.06
+			"heading": -166.06,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_PoliceStation",
@@ -273,7 +297,8 @@
 				309.74,
 				8798.79
 			],
-			"heading": -100.35
+			"heading": -100.35,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -284,7 +309,8 @@
 				305.77,
 				8852.38
 			],
-			"heading": 91.44
+			"heading": 91.44,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -295,7 +321,8 @@
 				7.77,
 				1854.96
 			],
-			"heading": -87.72
+			"heading": -87.72,
+			"exact": false
 		},
 		{
 			"building": "Land_City_School",
@@ -306,7 +333,8 @@
 				29.15,
 				2573.98
 			],
-			"heading": 5.83
+			"heading": 5.83,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Hospital",
@@ -317,7 +345,8 @@
 				20.16,
 				2286.09
 			],
-			"heading": -159.46
+			"heading": -159.46,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store",
@@ -328,7 +357,8 @@
 				7.42,
 				2364.85
 			],
-			"heading": -54.83
+			"heading": -54.83,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -339,7 +369,8 @@
 				12.7,
 				2273.03
 			],
-			"heading": -55.69
+			"heading": -55.69,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -350,7 +381,8 @@
 				228.25,
 				12419.92
 			],
-			"heading": 171.87
+			"heading": 171.87,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_store",
@@ -361,7 +393,8 @@
 				230.36,
 				12510.93
 			],
-			"heading": 152.25
+			"heading": 152.25,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_PoliceStation",
@@ -372,7 +405,8 @@
 				233.9,
 				12487.31
 			],
-			"heading": 60.19
+			"heading": 60.19,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store",
@@ -383,7 +417,8 @@
 				200.41,
 				12283.87
 			],
-			"heading": -31.5
+			"heading": -31.5,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -394,7 +429,8 @@
 				197.84,
 				12246.47
 			],
-			"heading": -115.02
+			"heading": -115.02,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Hospital",
@@ -405,7 +441,8 @@
 				85.88,
 				14597.2
 			],
-			"heading": 85.47
+			"heading": 85.47,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -416,7 +453,8 @@
 				53.08,
 				14484.02
 			],
-			"heading": 72.74
+			"heading": 72.74,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -427,7 +465,8 @@
 				59.93,
 				14120.29
 			],
-			"heading": -97.8
+			"heading": -97.8,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -438,7 +477,8 @@
 				59.74,
 				14681.07
 			],
-			"heading": 37.91
+			"heading": 37.91,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -449,7 +489,8 @@
 				47.73,
 				14532.91
 			],
-			"heading": -145.07
+			"heading": -145.07,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store",
@@ -460,7 +501,8 @@
 				34.72,
 				14351.33
 			],
-			"heading": -86.69
+			"heading": -86.69,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Hospital",
@@ -471,7 +513,8 @@
 				61.67,
 				9070.56
 			],
-			"heading": 140.55
+			"heading": 140.55,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -482,7 +525,8 @@
 				92.42,
 				13868.75
 			],
-			"heading": 178.76
+			"heading": 178.76,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store",
@@ -493,7 +537,8 @@
 				55.36,
 				9161.79
 			],
-			"heading": 134.23
+			"heading": 134.23,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -504,7 +549,8 @@
 				60.47,
 				9063.74
 			],
-			"heading": -126.53
+			"heading": -126.53,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Store_WithStairs",
@@ -515,7 +561,8 @@
 				13.54,
 				9761.12
 			],
-			"heading": -13.12
+			"heading": -13.12,
+			"exact": false
 		},
 		{
 			"building": "Land_City_School",
@@ -526,7 +573,8 @@
 				17.1,
 				9756.96
 			],
-			"heading": -14.4
+			"heading": -14.4,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_store",
@@ -537,7 +585,8 @@
 				98.42,
 				13720.19
 			],
-			"heading": -35.89
+			"heading": -35.89,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -548,7 +597,8 @@
 				95.98,
 				13823.19
 			],
-			"heading": 142.64
+			"heading": 142.64,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -559,7 +609,8 @@
 				13.07,
 				9698.15
 			],
-			"heading": 167.88
+			"heading": 167.88,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_store",
@@ -570,7 +621,8 @@
 				13.21,
 				9592.46
 			],
-			"heading": -13.9
+			"heading": -13.9,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -581,7 +633,8 @@
 				7.76,
 				10101.25
 			],
-			"heading": 153.14
+			"heading": 153.14,
+			"exact": false
 		},
 		{
 			"building": "Land_Village_PoliceStation",
@@ -592,7 +645,8 @@
 				13.01,
 				10183.24
 			],
-			"heading": 157.83
+			"heading": 157.83,
+			"exact": false
 		},
 		{
 			"building": "Land_FuelStation_Build",
@@ -603,7 +657,8 @@
 				7.71,
 				10079.39
 			],
-			"heading": 170.0
+			"heading": 170.0,
+			"exact": false
 		},
 		{
 			"building": "Land_City_PoliceStation",
@@ -614,7 +669,8 @@
 				27.27,
 				13218.04
 			],
-			"heading": -117.15
+			"heading": -117.15,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -625,7 +681,8 @@
 				21.26,
 				13208.32
 			],
-			"heading": 60.72
+			"heading": 60.72,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -636,7 +693,8 @@
 				5.06,
 				13493.58
 			],
-			"heading": -147.52
+			"heading": -147.52,
+			"exact": false
 		},
 		{
 			"building": "Land_City_Stand_Grocery",
@@ -647,7 +705,8 @@
 				5.73,
 				13082.42
 			],
-			"heading": 60.35
+			"heading": 60.35,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -658,7 +717,8 @@
 				212.82,
 				12696.07
 			],
-			"heading": 83.65
+			"heading": 83.65,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -669,7 +729,8 @@
 				213.49,
 				12685.24
 			],
-			"heading": 173.74
+			"heading": 173.74,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -680,7 +741,8 @@
 				82.28,
 				2676.38
 			],
-			"heading": 153.37
+			"heading": 153.37,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -691,7 +753,8 @@
 				72.87,
 				2554.61
 			],
-			"heading": 127.04
+			"heading": 127.04,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -702,7 +765,8 @@
 				59.02,
 				3172.69
 			],
-			"heading": -178.71
+			"heading": -178.71,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Big",
@@ -713,7 +777,8 @@
 				75.26,
 				3242.83
 			],
-			"heading": -178.32
+			"heading": -178.32,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Big",
@@ -724,7 +789,8 @@
 				74.44,
 				3313.43
 			],
-			"heading": -177.88
+			"heading": -177.88,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -735,7 +801,8 @@
 				49.87,
 				3208.91
 			],
-			"heading": -0.69
+			"heading": -0.69,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -746,7 +813,8 @@
 				50.06,
 				3141.76
 			],
-			"heading": -0.69
+			"heading": -0.69,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -757,7 +825,8 @@
 				23.31,
 				2810.02
 			],
-			"heading": 140.51
+			"heading": 140.51,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -768,7 +837,8 @@
 				18.53,
 				2765.32
 			],
-			"heading": -38.85
+			"heading": -38.85,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -779,7 +849,8 @@
 				18.67,
 				2815.1
 			],
-			"heading": -38.85
+			"heading": -38.85,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -790,7 +861,8 @@
 				127.97,
 				12888.31
 			],
-			"heading": 120.06
+			"heading": 120.06,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -801,7 +873,8 @@
 				17.31,
 				2106.59
 			],
-			"heading": -163.84
+			"heading": -163.84,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -812,7 +885,8 @@
 				91.21,
 				14608.18
 			],
-			"heading": -93.98
+			"heading": -93.98,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -823,7 +897,8 @@
 				103.18,
 				14704.5
 			],
-			"heading": -70.27
+			"heading": -70.27,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -834,7 +909,8 @@
 				96.86,
 				14643.18
 			],
-			"heading": 136.7
+			"heading": 136.7,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -845,7 +921,8 @@
 				23.13,
 				9756.74
 			],
-			"heading": 74.56
+			"heading": 74.56,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -856,7 +933,8 @@
 				20.8,
 				9698.29
 			],
-			"heading": 75.96
+			"heading": 75.96,
+			"exact": false
 		},
 		{
 			"building": "Land_Tenement_Small",
@@ -867,7 +945,8 @@
 				25.85,
 				9828.72
 			],
-			"heading": 73.28
+			"heading": 73.28,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -878,7 +957,8 @@
 				183.54,
 				7664.56
 			],
-			"heading": -169.75
+			"heading": -169.75,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -889,7 +969,8 @@
 				251.7,
 				11329.48
 			],
-			"heading": -19.62
+			"heading": -19.62,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -900,7 +981,8 @@
 				188.26,
 				5168.22
 			],
-			"heading": -78.22
+			"heading": -78.22,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -911,7 +993,8 @@
 				193.0,
 				5185.08
 			],
-			"heading": -79.23
+			"heading": -79.23,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -922,7 +1005,8 @@
 				222.83,
 				12506.45
 			],
-			"heading": 101.49
+			"heading": 101.49,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -933,7 +1017,8 @@
 				8.05,
 				2935.42
 			],
-			"heading": -35.35
+			"heading": -35.35,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -944,7 +1029,8 @@
 				7.49,
 				3130.93
 			],
-			"heading": 93.11
+			"heading": 93.11,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -955,7 +1041,8 @@
 				8.54,
 				2034.57
 			],
-			"heading": -75.55
+			"heading": -75.55,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -966,7 +1053,8 @@
 				8.54,
 				2097.22
 			],
-			"heading": 104.58
+			"heading": 104.58,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -977,7 +1065,8 @@
 				8.54,
 				2650.37
 			],
-			"heading": 159.33
+			"heading": 159.33,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -988,7 +1077,8 @@
 				37.04,
 				13923.87
 			],
-			"heading": -129.67
+			"heading": -129.67,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -999,7 +1089,8 @@
 				8.51,
 				9971.82
 			],
-			"heading": 154.81
+			"heading": 154.81,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -1010,7 +1101,8 @@
 				8.54,
 				10027.01
 			],
-			"heading": -25.72
+			"heading": -25.72,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -1021,7 +1113,8 @@
 				8.53,
 				10232.43
 			],
-			"heading": 160.85
+			"heading": 160.85,
+			"exact": false
 		},
 		{
 			"building": "Land_Rail_Warehouse_Small",
@@ -1032,7 +1125,8 @@
 				9.17,
 				6110.38
 			],
-			"heading": 1.07
+			"heading": 1.07,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1043,7 +1137,8 @@
 				455.54,
 				14084.61
 			],
-			"heading": 146.73
+			"heading": 146.73,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1054,7 +1149,8 @@
 				456.27,
 				14053.07
 			],
-			"heading": -27.75
+			"heading": -27.75,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1065,7 +1161,8 @@
 				373.14,
 				11614.26
 			],
-			"heading": -110.02
+			"heading": -110.02,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1076,7 +1173,8 @@
 				5.59,
 				2248.32
 			],
-			"heading": 62.43
+			"heading": 62.43,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1087,7 +1185,8 @@
 				337.53,
 				10466.73
 			],
-			"heading": 24.64
+			"heading": 24.64,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1098,7 +1197,8 @@
 				12.08,
 				2752.78
 			],
-			"heading": -39.77
+			"heading": -39.77,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1109,7 +1209,8 @@
 				8.64,
 				2600.89
 			],
-			"heading": 126.74
+			"heading": 126.74,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1120,7 +1221,8 @@
 				8.64,
 				2627.53
 			],
-			"heading": 126.74
+			"heading": 126.74,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1131,7 +1233,8 @@
 				9.3,
 				2755.18
 			],
-			"heading": 179.7
+			"heading": 179.7,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1142,7 +1245,8 @@
 				9.41,
 				3348.12
 			],
-			"heading": 109.59
+			"heading": 109.59,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1153,7 +1257,8 @@
 				9.08,
 				3192.29
 			],
-			"heading": -85.76
+			"heading": -85.76,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1164,7 +1269,8 @@
 				364.2,
 				14852.36
 			],
-			"heading": 178.71
+			"heading": 178.71,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1175,7 +1281,8 @@
 				9.83,
 				3228.97
 			],
-			"heading": 6.51
+			"heading": 6.51,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1186,7 +1293,8 @@
 				120.85,
 				12697.95
 			],
-			"heading": -91.17
+			"heading": -91.17,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1197,7 +1305,8 @@
 				9.33,
 				2037.66
 			],
-			"heading": 90.26
+			"heading": 90.26,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1208,7 +1317,8 @@
 				8.7,
 				1823.27
 			],
-			"heading": -0.13
+			"heading": -0.13,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1219,7 +1329,8 @@
 				8.7,
 				1900.23
 			],
-			"heading": -97.87
+			"heading": -97.87,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1230,7 +1341,8 @@
 				113.2,
 				15101.1
 			],
-			"heading": 147.91
+			"heading": 147.91,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1241,7 +1353,8 @@
 				113.0,
 				15087.61
 			],
-			"heading": 58.02
+			"heading": 58.02,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1252,7 +1365,8 @@
 				30.17,
 				14227.7
 			],
-			"heading": -85.31
+			"heading": -85.31,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1263,7 +1377,8 @@
 				144.09,
 				12544.86
 			],
-			"heading": 81.32
+			"heading": 81.32,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Row_Big",
@@ -1274,7 +1389,8 @@
 				9.4,
 				10009.88
 			],
-			"heading": 60.24
+			"heading": 60.24,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1285,7 +1401,8 @@
 				8.71,
 				9971.12
 			],
-			"heading": -103.56
+			"heading": -103.56,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1296,7 +1413,8 @@
 				8.7,
 				6098.11
 			],
-			"heading": 2.12
+			"heading": 2.12,
+			"exact": false
 		},
 		{
 			"building": "Land_Garage_Big",
@@ -1307,7 +1425,8 @@
 				5.99,
 				13189.03
 			],
-			"heading": -163.16
+			"heading": -163.16,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1318,7 +1437,8 @@
 				545.91,
 				11877.58
 			],
-			"heading": 62.66
+			"heading": 62.66,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1329,7 +1449,8 @@
 				474.22,
 				11407.56
 			],
-			"heading": 150.3
+			"heading": 150.3,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1340,7 +1461,8 @@
 				422.92,
 				11044.67
 			],
-			"heading": 38.94
+			"heading": 38.94,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1351,7 +1473,8 @@
 				306.89,
 				6543.4
 			],
-			"heading": -29.04
+			"heading": -29.04,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1362,7 +1485,8 @@
 				301.0,
 				12079.34
 			],
-			"heading": 103.97
+			"heading": 103.97,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1373,7 +1497,8 @@
 				252.85,
 				11340.34
 			],
-			"heading": 104.31
+			"heading": 104.31,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Big",
@@ -1384,7 +1509,8 @@
 				196.44,
 				5059.2
 			],
-			"heading": 76.19
+			"heading": 76.19,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Big",
@@ -1395,7 +1521,8 @@
 				350.9,
 				14606.93
 			],
-			"heading": -107.43
+			"heading": -107.43,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1406,7 +1533,8 @@
 				340.27,
 				8072.24
 			],
-			"heading": 88.89
+			"heading": 88.89,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1417,7 +1545,8 @@
 				479.47,
 				14762.75
 			],
-			"heading": -1.34
+			"heading": -1.34,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1428,7 +1557,8 @@
 				360.7,
 				9045.07
 			],
-			"heading": -174.32
+			"heading": -174.32,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1439,7 +1569,8 @@
 				386.55,
 				14035.1
 			],
-			"heading": -135.8
+			"heading": -135.8,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1450,7 +1581,8 @@
 				378.18,
 				11608.06
 			],
-			"heading": 88.3
+			"heading": 88.3,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1461,7 +1593,8 @@
 				429.41,
 				8568.19
 			],
-			"heading": 106.69
+			"heading": 106.69,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1472,7 +1605,8 @@
 				150.53,
 				12100.8
 			],
-			"heading": 146.77
+			"heading": 146.77,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1483,7 +1617,8 @@
 				321.86,
 				8839.09
 			],
-			"heading": 87.99
+			"heading": 87.99,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1494,7 +1629,8 @@
 				213.89,
 				6790.96
 			],
-			"heading": 132.76
+			"heading": 132.76,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1505,7 +1641,8 @@
 				7.04,
 				2150.07
 			],
-			"heading": 175.69
+			"heading": 175.69,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1516,7 +1653,8 @@
 				336.38,
 				12864.21
 			],
-			"heading": 49.33
+			"heading": 49.33,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1527,7 +1665,8 @@
 				235.33,
 				4618.8
 			],
-			"heading": 85.44
+			"heading": 85.44,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1538,7 +1677,8 @@
 				57.25,
 				14101.65
 			],
-			"heading": -165.65
+			"heading": -165.65,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Big",
@@ -1549,7 +1689,8 @@
 				45.61,
 				14427.09
 			],
-			"heading": 57.64
+			"heading": 57.64,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Big",
@@ -1560,7 +1701,8 @@
 				219.25,
 				4442.84
 			],
-			"heading": -90.22
+			"heading": -90.22,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1571,7 +1713,8 @@
 				7.22,
 				10246.48
 			],
-			"heading": 158.61
+			"heading": 158.61,
+			"exact": false
 		},
 		{
 			"building": "Land_Misc_TrailRoof_Small",
@@ -1582,7 +1725,8 @@
 				71.21,
 				12095.36
 			],
-			"heading": 153.19
+			"heading": 153.19,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1593,7 +1737,8 @@
 				423.45,
 				11152.85
 			],
-			"heading": 133.45
+			"heading": 133.45,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_red",
@@ -1604,7 +1749,8 @@
 				154.25,
 				6596.32
 			],
-			"heading": -167.08
+			"heading": -167.08,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1615,7 +1761,8 @@
 				311.16,
 				11451.82
 			],
-			"heading": -152.04
+			"heading": -152.04,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1626,7 +1773,8 @@
 				298.37,
 				6090.08
 			],
-			"heading": 139.51
+			"heading": 139.51,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_brown",
@@ -1637,7 +1785,8 @@
 				364.34,
 				14828.02
 			],
-			"heading": 130.13
+			"heading": 130.13,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_red",
@@ -1648,7 +1797,8 @@
 				195.69,
 				4277.22
 			],
-			"heading": -176.13
+			"heading": -176.13,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1659,7 +1809,8 @@
 				255.06,
 				6985.06
 			],
-			"heading": -14.45
+			"heading": -14.45,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1670,7 +1821,8 @@
 				256.73,
 				10926.0
 			],
-			"heading": -22.5
+			"heading": -22.5,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1681,7 +1833,8 @@
 				207.13,
 				13962.41
 			],
-			"heading": -58.34
+			"heading": -58.34,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1692,7 +1845,8 @@
 				127.99,
 				12726.73
 			],
-			"heading": 70.94
+			"heading": 70.94,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_brown",
@@ -1703,7 +1857,8 @@
 				43.11,
 				3519.13
 			],
-			"heading": 177.99
+			"heading": 177.99,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1714,7 +1869,8 @@
 				137.16,
 				7050.47
 			],
-			"heading": 127.53
+			"heading": 127.53,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1725,7 +1881,8 @@
 				162.24,
 				10625.49
 			],
-			"heading": 162.15
+			"heading": 162.15,
+			"exact": false
 		},
 		{
 			"building": "Land_Camp_House_brown",
@@ -1736,7 +1893,8 @@
 				74.77,
 				14573.61
 			],
-			"heading": 129.3
+			"heading": 129.3,
+			"exact": false
 		}
 	]
 }
