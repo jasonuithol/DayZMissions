@@ -81,6 +81,7 @@ class CustomMission: MissionServer
 	protected int m_OnRoad;
 	protected int m_NoSpace;
 	protected int m_Raised;
+	protected int m_TopUpRound;
 	protected int m_Failed;
 
 	void CustomMission(string path)
@@ -140,39 +141,57 @@ class CustomMission: MissionServer
 			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 15000, false);
 	}
 
-	// The odd bike comes up empty and stays that way whatever you do to it. Those are
-	// deleted and spawned again a few metres away, which does work.
+	// Once everything has settled: the odd bike comes up empty and stays that way
+	// whatever you do to it, and a bike put on an interior floor can drop through it.
+	// Either way it is deleted and spawned again nearby, on open ground, which works.
+	// A second pass a few seconds later removes anything that still fell through.
 	void TopUp()
 	{
+		m_TopUpRound++;
 		int respawned = 0;
 		for (int i = 0; i < m_Bikes.Count(); i++)
 		{
 			MotorbikeScript bike = m_Bikes[i];
-			if (bike.GetFluidFraction(MotorbikeFluid.FUEL) > 0.99)
-				continue;
-			bike.Fill(MotorbikeFluid.FUEL, bike.GetFluidCapacity(MotorbikeFluid.FUEL));
-			if (bike.GetFluidFraction(MotorbikeFluid.FUEL) > 0.99)
+			string why = "";
+			if (bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99)
+			{
+				bike.Fill(MotorbikeFluid.FUEL, bike.GetFluidCapacity(MotorbikeFluid.FUEL));
+				if (bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99)
+					why = "empty";
+			}
+			if (m_Taken[i][1] - bike.GetPosition()[1] > 2)
+				why = "fell through the floor";
+			if (why == "")
 				continue;
 
 			string type = bike.GetType();
-			vector was = bike.GetPosition();
+			vector was = m_Taken[i];
 			float facing = bike.GetOrientation()[0];
 			GetGame().ObjectDelete(bike);
 
 			vector pos;
 			float heading;
-			if (!Placement.FindClear(was, facing, 3, 20, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading, true))
+			if (m_TopUpRound > 1 || !Placement.FindClear(was, facing, 3, 30, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading))
+			{
+				m_Bikes.Remove(i);
+				m_Taken.Remove(i);
+				i--;
+				Print("[BikeSpawns] removed a " + type + " that " + why + " at " + was);
 				continue;
+			}
 			MotorbikeScript again = Motorbikes.SpawnReady(type, pos, heading);
 			if (!again)
 				continue;
 			m_Bikes[i] = again;
 			m_Taken[i] = pos;
 			respawned++;
-			Print("[BikeSpawns] respawned an empty " + type + " from " + was + " to " + pos + ", fuel now " + again.GetFluidFraction(MotorbikeFluid.FUEL));
+			Print("[BikeSpawns] respawned a " + type + " that " + why + " from " + was + " to " + pos);
 		}
 		if (respawned > 0)
-			Print("[BikeSpawns] respawned " + respawned + " empty bikes");
+		{
+			Print("[BikeSpawns] respawned " + respawned + " bikes");
+			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TopUp, 3000, false);
+		}
 	}
 
 	// Parks a spot's bikes side by side on the nearest road, on the building's side of
@@ -277,9 +296,9 @@ class CustomMission: MissionServer
 			}
 			vector p = bike.GetPosition();
 			float above = p[1] - GetGame().SurfaceY(p[0], p[2]);
-			if (above < -1 || above > 12)
+			if (above < -3 || above > 12)
 				lost++;
-			bool odd = above < -1 || above > 12 || bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99 || Math.AbsFloat(ori[2]) > 15;
+			bool odd = above < -3 || above > 12 || bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99 || Math.AbsFloat(ori[2]) > 15;
 			if (odd)
 				Print("[BikeSpawns] odd: " + bike.GetType() + " fuel " + bike.GetFluidFraction(MotorbikeFluid.FUEL) + " pos " + p + " above terrain " + above + " pitch " + ori[1] + " roll " + ori[2] + " spawned at " + m_Taken[i]);
 		}

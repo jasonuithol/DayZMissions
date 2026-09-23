@@ -84,9 +84,9 @@ exists and every container actually takes what it is given.
 
 ### bikespawns.chernarusplus
 Vanilla Chernarus with about 160 ready-to-ride motorbikes, one per spot: mopeds (`Motorbike_01`)
-outside schools, police stations, shops, hospitals and petrol stations in the built-up towns, dirt
-bikes (`Motorbike_02`) at rail warehouses, big garages, trail-head shelters, the summer camps and
-feed shacks. Each bike gets a
+outside schools, police stations, shops, hospitals, petrol stations and some apartment blocks in
+the built-up towns, dirt bikes (`Motorbike_02`) at rail warehouses, big garages, trail-head
+shelters and one per summer camp. Each bike gets a
 clear patch of ground near its building - the kerb of the nearest road if there is one, otherwise
 open ground, and failing that a roof, platform or floor (never clipped into walls).
 

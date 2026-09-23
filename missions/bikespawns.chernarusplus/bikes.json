@@ -21,6 +21,19 @@
 			"max": 60
 		},
 		{
+			"name": "mopeds in apartment blocks",
+			"buildings": [
+				"Land_Tenement_Small",
+				"Land_Tenement_Big"
+			],
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"min_neighbours": 120,
+			"neighbour_radius": 400,
+			"min_spacing": 60,
+			"max": 20
+		},
+		{
 			"name": "dirt bikes at warehouses",
 			"buildings": [
 				"Land_Rail_Warehouse_Small"
@@ -61,17 +74,7 @@
 			],
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
-			"min_spacing": 40,
-			"max": 15
-		},
-		{
-			"name": "dirt bikes at feed shacks",
-			"buildings": [
-				"Land_Misc_FeedShack"
-			],
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"min_spacing": 60,
+			"min_spacing": 400,
 			"max": 20
 		}
 	]

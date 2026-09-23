@@ -650,6 +650,226 @@
 			"heading": 60.35
 		},
 		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				3394.59,
+				212.82,
+				12696.07
+			],
+			"heading": 83.65
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				3455.1,
+				213.49,
+				12685.24
+			],
+			"heading": 173.74
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				5937.77,
+				82.28,
+				2676.38
+			],
+			"heading": 153.37
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				5959.17,
+				72.87,
+				2554.61
+			],
+			"heading": 127.04
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6165.03,
+				59.02,
+				3172.69
+			],
+			"heading": -178.71
+		},
+		{
+			"building": "Land_Tenement_Big",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6154.0,
+				75.26,
+				3242.83
+			],
+			"heading": -178.32
+		},
+		{
+			"building": "Land_Tenement_Big",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6158.4,
+				74.44,
+				3313.43
+			],
+			"heading": -177.88
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6219.06,
+				49.87,
+				3208.91
+			],
+			"heading": -0.69
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6249.67,
+				50.06,
+				3141.76
+			],
+			"heading": -0.69
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6395.7,
+				23.31,
+				2810.02
+			],
+			"heading": 140.51
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6436.57,
+				18.53,
+				2765.32
+			],
+			"heading": -38.85
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				6479.29,
+				18.67,
+				2815.1
+			],
+			"heading": -38.85
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				8425.29,
+				127.97,
+				12888.31
+			],
+			"heading": 120.06
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				9994.49,
+				17.31,
+				2106.59
+			],
+			"heading": -163.84
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				11323.32,
+				91.21,
+				14608.18
+			],
+			"heading": -93.98
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				11344.65,
+				103.18,
+				14704.5
+			],
+			"heading": -70.27
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				11410.75,
+				96.86,
+				14643.18
+			],
+			"heading": 136.7
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				12069.16,
+				23.13,
+				9756.74
+			],
+			"heading": 74.56
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				12144.5,
+				20.8,
+				9698.29
+			],
+			"heading": 75.96
+		},
+		{
+			"building": "Land_Tenement_Small",
+			"types": "Motorbike_01_Blue|Motorbike_01_Red|Motorbike_01_Yellow",
+			"count": 1,
+			"pos": [
+				12120.89,
+				25.85,
+				9828.72
+			],
+			"heading": 73.28
+		},
+		{
 			"building": "Land_Rail_Warehouse_Small",
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
@@ -1391,22 +1611,11 @@
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				1069.41,
-				155.0,
-				6689.17
+				1169.68,
+				311.16,
+				11451.82
 			],
-			"heading": 178.67
-		},
-		{
-			"building": "Land_Camp_House_brown",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				1183.65,
-				310.75,
-				11406.38
-			],
-			"heading": -152.58
+			"heading": -152.04
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1431,37 +1640,26 @@
 			"heading": 130.13
 		},
 		{
-			"building": "Land_Camp_House_white",
+			"building": "Land_Camp_House_red",
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				3700.33,
-				365.29,
-				14749.69
+				7061.21,
+				195.69,
+				4277.22
 			],
-			"heading": -0.93
-		},
-		{
-			"building": "Land_Camp_House_brown",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				7082.15,
-				195.01,
-				4316.75
-			],
-			"heading": 29.75
+			"heading": -176.13
 		},
 		{
 			"building": "Land_Camp_House_white",
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				7226.88,
-				256.75,
-				7050.37
+				7244.15,
+				255.06,
+				6985.06
 			],
-			"heading": 169.86
+			"heading": -14.45
 		},
 		{
 			"building": "Land_Camp_House_white",
@@ -1479,22 +1677,22 @@
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				8135.99,
-				251.2,
-				10990.22
+				8442.71,
+				207.13,
+				13962.41
 			],
-			"heading": -56.99
+			"heading": -58.34
 		},
 		{
 			"building": "Land_Camp_House_white",
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				8460.86,
-				206.43,
-				13905.38
+				9054.87,
+				127.99,
+				12726.73
 			],
-			"heading": 109.13
+			"heading": 70.94
 		},
 		{
 			"building": "Land_Camp_House_brown",
@@ -1523,231 +1721,22 @@
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				11515.05,
-				159.86,
-				10594.95
+				11433.26,
+				162.24,
+				10625.49
 			],
-			"heading": -131.38
+			"heading": 162.15
 		},
 		{
-			"building": "Land_Misc_FeedShack",
+			"building": "Land_Camp_House_brown",
 			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
 			"count": 1,
 			"pos": [
-				80.26,
-				113.79,
-				4422.18
+				14817.91,
+				74.77,
+				14573.61
 			],
-			"heading": 160.01
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				196.07,
-				541.65,
-				11741.01
-			],
-			"heading": -37.19
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				597.51,
-				276.18,
-				6747.64
-			],
-			"heading": -2.36
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				877.28,
-				167.44,
-				6184.39
-			],
-			"heading": 123.38
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				1667.44,
-				166.56,
-				4932.46
-			],
-			"heading": -148.95
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				2394.44,
-				437.12,
-				14753.77
-			],
-			"heading": -108.65
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				2974.18,
-				230.04,
-				13591.54
-			],
-			"heading": -74.29
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				4364.21,
-				368.04,
-				14671.93
-			],
-			"heading": -33.47
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				5097.82,
-				289.1,
-				6386.41
-			],
-			"heading": -133.01
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				6187.67,
-				190.76,
-				4090.86
-			],
-			"heading": 40.6
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				6860.8,
-				455.92,
-				15051.71
-			],
-			"heading": 89.75
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				7499.95,
-				301.42,
-				11747.96
-			],
-			"heading": 116.38
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				8414.38,
-				323.89,
-				10533.5
-			],
-			"heading": 90.57
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				9127.62,
-				155.42,
-				3101.76
-			],
-			"heading": -124.38
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				9656.14,
-				294.77,
-				9187.8
-			],
-			"heading": 148.51
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				10561.75,
-				280.32,
-				12798.21
-			],
-			"heading": 177.54
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				10967.72,
-				267.48,
-				8591.67
-			],
-			"heading": 110.06
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				11733.57,
-				168.37,
-				7100.32
-			],
-			"heading": -4.55
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				12378.51,
-				105.37,
-				7740.57
-			],
-			"heading": -89.23
-		},
-		{
-			"building": "Land_Misc_FeedShack",
-			"types": "Motorbike_02_Blue|Motorbike_02_Green|Motorbike_02_Red|Motorbike_02_Yellow",
-			"count": 1,
-			"pos": [
-				13381.27,
-				88.06,
-				12246.18
-			],
-			"heading": 116.84
+			"heading": 129.3
 		}
 	]
 }
