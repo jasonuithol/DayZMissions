@@ -80,7 +80,8 @@ And 150 ready-to-drive cars and trucks, every part fitted and every fluid full, 
 vehicle spawn points (spread evenly over the ~380 the map defines). And a DayZ Expansion MH-6
 Little Bird, fuelled and ready, on the helipad of the military camp east of Chernogorsk (the
 packed-dirt square between the two fortified nests, ~7237/3065) - which is why this mission
-loads CF, Dabs Framework and the three Expansion mods (`mods.txt`).
+loads CF, Dabs Framework and the three Expansion mods (`mods.txt`). Players spawn 10 m from the
+helicopter rather than on the coast.
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one

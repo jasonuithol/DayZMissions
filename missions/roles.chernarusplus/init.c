@@ -92,6 +92,7 @@ class CustomMission: MissionServer
 	static const vector HELIPAD = "7237 0 3065";
 	static const float HELIPAD_HEADING = 163; // same way the tents face
 	static const string HELI_TYPE = "ExpansionMh6";
+	static const vector PLAYER_SPAWN = "7247 0 3061"; // 10 m east of the pad, on the grass
 	protected CarScript m_Heli;
 
 	protected string m_Path; // mission folder, e.g. "./mpmissions/roles.chernarusplus"
@@ -161,6 +162,21 @@ class CustomMission: MissionServer
 		m_Heli = Spawner.Vehicle(HELI_TYPE, pos, HELIPAD_HEADING, kit);
 		if (m_Heli)
 			Print("[Heli] " + HELI_TYPE + " on the helipad at " + m_Heli.GetPosition());
+	}
+
+	// everyone spawns beside the helicopter instead of on the coast
+	override PlayerBase CreateCharacter(PlayerIdentity identity, vector pos, ParamsReadContext ctx, string characterName)
+	{
+		pos = PLAYER_SPAWN;
+		pos[1] = GetGame().SurfaceY(pos[0], pos[2]);
+
+		Entity playerEnt;
+		playerEnt = GetGame().CreatePlayer(identity, characterName, pos, 0, "NONE");
+		Class.CastTo(m_player, playerEnt);
+
+		GetGame().SelectPlayer(identity, m_player);
+
+		return m_player;
 	}
 
 	// -missiontest: check every role's class names and attachments and the cars, then quit
