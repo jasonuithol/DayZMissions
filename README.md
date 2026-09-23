@@ -88,7 +88,9 @@ outside schools, police stations, shops, hospitals, petrol stations and some apa
 the built-up towns, dirt bikes (`Motorbike_02`) at rail warehouses, big garages, trail-head
 shelters and one per summer camp. Each bike gets a
 clear patch of ground near its building - the kerb of the nearest road if there is one, otherwise
-open ground, and failing that a roof, platform or floor (never clipped into walls).
+open ground, and failing that a roof, platform or floor (never clipped into walls). A bike that
+drops through an interior floor is respawned on open ground, and if that keeps swallowing it, on
+the building's roof - the occasional rooftop bike is a feature.
 
 `bikes.json` holds the rules (building classes, bike types, bikes per building, how built-up the
 area must be, spacing, a cap per rule); `tools/bike_spots.py bikespawns` turns them into

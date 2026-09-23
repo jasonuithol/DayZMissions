@@ -60,6 +60,41 @@ class Placement
 		return false;
 	}
 
+	// A spot on top of a building near anchor: at least minHeight above the terrain and
+	// clear. Roofs are found by sampling around the anchor from the middle outwards, so
+	// the building the anchor belongs to is tried first.
+	static bool FindRoof(vector anchor, float maxRadius, float minHeight, vector size, array<vector> taken, float keepAway, out vector pos, out float heading)
+	{
+		for (float r = 0; r <= maxRadius; r += 2.0)
+		{
+			for (int step = 0; step < 12; step++)
+			{
+				float dirHeading = step * 30;
+				vector candidate = anchor + HeadingToDir(dirHeading) * r;
+				float terrain = GetGame().SurfaceY(candidate[0], candidate[2]);
+				candidate[1] = GetGame().SurfaceRoadY(candidate[0], candidate[2]);
+				if (candidate[1] - terrain < minHeight)
+					continue;
+				if (!IsClear(candidate, dirHeading, size, true))
+					continue;
+				if (TooClose(candidate, taken, keepAway))
+					continue;
+
+				pos = candidate;
+				heading = dirHeading;
+				return true;
+				if (r == 0)
+					break;
+			}
+		}
+		return false;
+	}
+
+	static vector HeadingToDir(float heading)
+	{
+		return RoadFinder.HeadingToDir(heading);
+	}
+
 	static bool TooClose(vector pos, array<vector> taken, float keepAway)
 	{
 		for (int i = 0; i < taken.Count(); i++)

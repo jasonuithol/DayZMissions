@@ -78,6 +78,7 @@ class CustomMission: MissionServer
 	protected int m_Limit;
 	protected ref array<MotorbikeScript> m_Bikes = new array<MotorbikeScript>();
 	protected ref array<vector> m_Taken = new array<vector>();
+	protected ref array<vector> m_Anchors = new array<vector>(); // the building each bike belongs to
 	protected int m_OnRoad;
 	protected int m_NoSpace;
 	protected int m_Raised;
@@ -143,8 +144,9 @@ class CustomMission: MissionServer
 
 	// Once everything has settled: the odd bike comes up empty and stays that way
 	// whatever you do to it, and a bike put on an interior floor can drop through it.
-	// Either way it is deleted and spawned again nearby, on open ground, which works.
-	// A second pass a few seconds later removes anything that still fell through.
+	// Either way it is deleted and spawned again nearby: on open ground first, then on
+	// the roof of the building if the ground keeps swallowing it, and removed if even
+	// the roof doesn't hold.
 	void TopUp()
 	{
 		m_TopUpRound++;
@@ -171,10 +173,20 @@ class CustomMission: MissionServer
 
 			vector pos;
 			float heading;
-			if (m_TopUpRound > 1 || !Placement.FindClear(was, facing, 3, 30, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading))
+			bool found = false;
+			if (m_TopUpRound == 1)
+				found = Placement.FindClear(was, facing, 3, 30, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading);
+			else if (m_TopUpRound == 2)
+			{
+				found = Placement.FindRoof(m_Anchors[i], 20, 2.5, BIKE_SIZE, m_Taken, KEEP_AWAY, pos, heading);
+				if (found)
+					m_Raised++;
+			}
+			if (!found)
 			{
 				m_Bikes.Remove(i);
 				m_Taken.Remove(i);
+				m_Anchors.Remove(i);
 				i--;
 				Print("[BikeSpawns] removed a " + type + " that " + why + " at " + was);
 				continue;
@@ -185,7 +197,10 @@ class CustomMission: MissionServer
 			m_Bikes[i] = again;
 			m_Taken[i] = pos;
 			respawned++;
-			Print("[BikeSpawns] respawned a " + type + " that " + why + " from " + was + " to " + pos);
+			string where = "on open ground";
+			if (m_TopUpRound == 2)
+				where = "on a roof";
+			Print("[BikeSpawns] respawned a " + type + " that " + why + " from " + was + " to " + pos + " " + where);
 		}
 		if (respawned > 0)
 		{
@@ -254,6 +269,7 @@ class CustomMission: MissionServer
 			{
 				m_Bikes.Insert(bike);
 				m_Taken.Insert(pos);
+				m_Anchors.Insert(anchor);
 			}
 			else
 				m_Failed++;
@@ -296,9 +312,9 @@ class CustomMission: MissionServer
 			}
 			vector p = bike.GetPosition();
 			float above = p[1] - GetGame().SurfaceY(p[0], p[2]);
-			if (above < -3 || above > 12)
+			if (above < -3)
 				lost++;
-			bool odd = above < -3 || above > 12 || bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99 || Math.AbsFloat(ori[2]) > 15;
+			bool odd = above < -3 || above > 3 || bike.GetFluidFraction(MotorbikeFluid.FUEL) < 0.99 || Math.AbsFloat(ori[2]) > 15;
 			if (odd)
 				Print("[BikeSpawns] odd: " + bike.GetType() + " fuel " + bike.GetFluidFraction(MotorbikeFluid.FUEL) + " pos " + p + " above terrain " + above + " pitch " + ori[1] + " roll " + ori[2] + " spawned at " + m_Taken[i]);
 		}
