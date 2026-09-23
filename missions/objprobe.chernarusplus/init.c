@@ -59,8 +59,42 @@ class CustomMission: MissionServer
 		GetGame().RequestExit(0);
 	}
 
+	// -ray=x,z: what a ray from the sky hits at that point
+	void Ray()
+	{
+		string spec;
+		if (!GetGame().CommandlineGetParam("ray", spec))
+			return;
+		array<string> parts = new array<string>();
+		spec.Split(",", parts);
+		float x = parts[0].ToFloat();
+		float z = parts[1].ToFloat();
+		float terrain = GetGame().SurfaceY(x, z);
+
+		vector hitPos;
+		vector hitNormal;
+		int component;
+		Object hitObject;
+		bool hit = DayZPhysics.RaycastRV(Vector(x, terrain + 50, z), Vector(x, terrain - 5, z), hitPos, hitNormal, component, null, null, null, false, false, ObjIntersectView);
+		string type;
+		GetGame().SurfaceGetType3D(x, terrain + 30, z, type);
+		Print("[Ray] at " + x + "," + z + " terrain " + terrain + " road-surface " + GetGame().SurfaceRoadY(x, z) + " surface type " + type);
+		if (hit)
+		{
+			set<Object> objects = new set<Object>();
+			DayZPhysics.RaycastRV(Vector(x, terrain + 50, z), Vector(x, terrain - 5, z), hitPos, hitNormal, component, objects, null, null, false, false, ObjIntersectView);
+			for (int i = 0; i < objects.Count(); i++)
+				Print("[Ray] hit " + objects[i].GetType() + " model " + objects[i].GetModelName() + " at " + objects[i].GetPosition() + " ori " + objects[i].GetOrientation());
+			Print("[Ray] first hit at " + hitPos + " normal " + hitNormal + " component " + component);
+		}
+		else
+			Print("[Ray] nothing hit");
+		GetGame().RequestExit(0);
+	}
+
 	void Probe()
 	{
+		Ray();
 		SurfaceMap();
 		string spec = "6500,2900,1500,heli";
 		GetGame().CommandlineGetParam("probe", spec);
