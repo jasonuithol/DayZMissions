@@ -144,6 +144,11 @@ the Chernogorsk helipad was found: it is not an object, just a square of `dirt_e
 
 ## Open items
 
+- **Helipads** - the only one placed so far is the camp east of Chernogorsk (~7237/3065). The
+  pad is a decal (a triangle with an H), not an object: `GetObjectsAtPosition` and raycasts
+  see nothing, and scanning surface types for it map-wide gave 5000+ false positives. Find the
+  decal's class/model name some other way (DayZ Tools / world data), or add pads by hand.
+
 - **helihunt bike handling** - the CRF450R still slides; the current tuning (grip 1.9, 38 deg lock,
   faster steering, open centre diff) is in `mods/HeliHuntCompat/config.cpp` and hasn't been judged
   in game yet. Next experiment: put the centre differential back to `DIFFERENTIAL_LOCKED`.

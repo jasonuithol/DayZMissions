@@ -92,8 +92,67 @@ class CustomMission: MissionServer
 		GetGame().RequestExit(0);
 	}
 
+	// -scan=type,step,maxRaise: every ground-level point on the map whose surface type is
+	// `type` (e.g. dirt_ext), clustered; prints cluster centre and size
+	void Scan()
+	{
+		string spec;
+		if (!GetGame().CommandlineGetParam("scan", spec))
+			return;
+		array<string> parts = new array<string>();
+		spec.Split(",", parts);
+		string wanted = parts[0];
+		float step = parts[1].ToFloat();
+		float maxRaise = parts[2].ToFloat();
+		float size = 15360;
+
+		array<vector> centres = new array<vector>();
+		array<int> counts = new array<int>();
+		int hits = 0;
+		for (float z = step; z < size; z += step)
+		{
+			for (float x = step; x < size; x += step)
+			{
+				float y = GetGame().SurfaceY(x, z);
+				if (y < 0.5)
+					continue; // sea
+				string type;
+				GetGame().SurfaceGetType3D(x, y + 30, z, type);
+				if (type != wanted)
+					continue;
+				if (GetGame().SurfaceRoadY(x, z) - y > maxRaise)
+					continue;
+				hits++;
+				vector p = Vector(x, y, z);
+				int found = -1;
+				for (int c = 0; c < centres.Count() && found < 0; c++)
+				{
+					if (vector.Distance(centres[c], p) < 40)
+						found = c;
+				}
+				if (found < 0)
+				{
+					centres.Insert(p);
+					counts.Insert(1);
+				}
+				else
+				{
+					// running average keeps the centre in the middle of the patch
+					float n = counts[found];
+					centres[found] = (centres[found] * n + p) * (1.0 / (n + 1));
+					counts[found] = counts[found] + 1;
+				}
+			}
+		}
+		for (int k = 0; k < centres.Count(); k++)
+			Print("[Scan] " + wanted + " patch at " + centres[k] + " samples " + counts[k] + " (~" + (counts[k] * step * step) + " m2)");
+		Print("[Scan] " + hits + " hits, " + centres.Count() + " patches, step " + step);
+		GetGame().RequestExit(0);
+	}
+
 	void Probe()
 	{
+		Scan();
 		Ray();
 		SurfaceMap();
 		string spec = "6500,2900,1500,heli";
