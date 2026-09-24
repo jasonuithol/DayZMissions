@@ -77,7 +77,12 @@ NBC specialist, medieval re-enactor - in the matching outfit with a few things t
 (the doctor's first-aid kit is stocked, the lumberjack holds an axe, the police officer has
 handcuffs and a radio...). No guns. Vanilla freshie basics (bandage, chemlight, fruit) on top.
 And 150 ready-to-drive cars and trucks, every part fitted and every fluid full, at the vanilla
-vehicle spawn points (spread evenly over the ~380 the map defines). And a DayZ Expansion helicopter
+vehicle spawn points (spread evenly over the ~380 the map defines). Plus Expansion vehicles where
+they belong: buses at bus stations, schools, the ferris wheels, town squares (three or more kiosks
+together in a big town) and the big summer camps; tractors at the big metal sheds, long barns and
+cowsheds; Vodniks at military sites with water within 150 m (checked in game); and an LHD
+assault ship anchored 300-650 m off every port (the pier-crane clusters: Chernogorsk, Elektro,
+Berezino, Svetlojarsk). And a DayZ Expansion helicopter
 on each of the five helipads on the map - Huey, Little Bird, Merlin and Gyrocopter, each once,
 plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framework and the
 three Expansion mods (`mods.txt`). Passengers can shoot from every vehicle (Vehicle Shooting +
@@ -107,7 +112,8 @@ drops through an interior floor is respawned on open ground, and if that keeps s
 the building's roof - the occasional rooftop bike is a feature.
 
 `vehicles.json` holds the rules (building classes or vanilla spawn events, vehicle types, count
-per spot, how built-up the area must be, spacing, a cap per rule); `tools/vehicle_spots.py
+per spot, how built-up the area must be, spacing, a cap per rule, `cluster` to use the centre of
+groups of buildings, `near_water` and `offshore` for the game to check); `tools/vehicle_spots.py
 bikespawns` turns them into `spots.json` using the vanilla `mapgrouppos.xml` /
 `cfgeventspawns.xml`, and `lib/VehicleSpots.c` does the placement in game (waits 20 s after
 start, spawns in batches, respawns anything that came up empty or fell through a floor).
@@ -140,6 +146,9 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
   even when it worked. Spawn vehicles from a `CallLater`, and check fuel a few seconds on.
 - `IsBoxCollidingGeometry` + `SurfaceY`/`SurfaceRoadY` (roads and roofs) is enough to find
   clear ground; see `lib/Placement.c`.
+- Expansion's LHD logs a "Virtual Machine Exception" on 1.29 from its own `DeferredInit`
+  (`CallLater(Update)` with the wrong signature) - the mod's bug, the ship still works.
+- There is no ski resort on Chernarus (no ski-lift or chalet classes in the map data).
 - `foreach` over an array that comes from a function call (`foreach (X x : Foo())`) or from a
   member of a loop variable is unreliable: it raised "Virtual Machine Exception" and made a
   weighted random pick return the first element every time. Index loops are safe.

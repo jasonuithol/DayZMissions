@@ -18,6 +18,8 @@ class VehicleSpot
 	ref array<float> pos = new array<float>();
 	float heading;
 	bool exact;      // pos/heading are a proper parking spot, try them first
+	float nearWater; // only use the spot if a pond, river or the sea is within this many metres
+	bool offshore;   // a ship: park it out at sea off this spot instead of on land
 }
 
 class VehicleSpotList
@@ -59,6 +61,8 @@ class VehicleSpots
 	protected int m_OnRoad;
 	protected int m_Raised;
 	protected int m_NoSpace;
+	protected int m_NoWater;
+	protected int m_Offshore;
 	protected int m_Failed;
 	protected bool m_Done;
 
@@ -104,7 +108,7 @@ class VehicleSpots
 			return;
 
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(SpawnBatch);
-		Print(m_Tag + m_Vehicles.Count() + " vehicles at " + m_NextSpot + " spots (" + m_Exact + " on their own spot, " + m_OnRoad + " at a kerb, " + m_Raised + " on roofs or floors, " + m_NoSpace + " skipped for lack of space, " + m_Failed + " failed)");
+		Print(m_Tag + m_Vehicles.Count() + " vehicles at " + m_NextSpot + " spots (" + m_Exact + " on their own spot, " + m_OnRoad + " at a kerb, " + m_Raised + " on roofs or floors, " + m_Offshore + " at sea, " + m_NoSpace + " skipped for lack of space, " + m_NoWater + " skipped for lack of water, " + m_Failed + " failed)");
 		if (m_Vehicles.Count() >= m_Limit && m_NextSpot < m_Spots.spots.Count())
 			Print(m_Tag + "hit the " + m_Limit + " vehicle limit - spots.json has more than that");
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TopUp, SETTLE_MS, false);
@@ -115,6 +119,33 @@ class VehicleSpots
 		vector anchor = Vector(spot.pos[0], spot.pos[1], spot.pos[2]);
 		string type = Choose(spot.types);
 		vector size = m_Factory.Size(type);
+
+		if (spot.nearWater > 0 && !Placement.WaterWithin(anchor, spot.nearWater))
+		{
+			m_NoWater++;
+			return;
+		}
+		if (spot.offshore)
+		{
+			vector sea;
+			if (!Placement.FindOpenSea(anchor, 250, 1500, size[2], sea))
+			{
+				m_NoWater++;
+				return;
+			}
+			EntityAI ship = m_Factory.Spawn(type, sea, vector.Direction(sea, anchor).VectorToAngles()[0]);
+			if (ship)
+			{
+				m_Vehicles.Insert(ship);
+				m_Taken.Insert(sea);
+				m_Anchors.Insert(anchor);
+				m_Offshore++;
+				Print(m_Tag + type + " at sea off " + anchor + " at " + sea + ", " + vector.Distance(anchor, sea) + " m out");
+			}
+			else
+				m_Failed++;
+			return;
+		}
 
 		vector roadPos, centre, along;
 		float roadHeading, width;
@@ -204,7 +235,7 @@ class VehicleSpots
 				if (m_Factory.FuelFraction(vehicle) < 0.99)
 					why = "came up empty";
 			}
-			if (m_Taken[i][1] - vehicle.GetPosition()[1] > 2)
+			if (m_Taken[i][1] - vehicle.GetPosition()[1] > 2 && !GetGame().SurfaceIsSea(m_Taken[i][0], m_Taken[i][2]))
 				why = "fell through the floor";
 			if (why == "")
 				continue;
@@ -266,6 +297,8 @@ class VehicleSpots
 			vector ori = vehicle.GetOrientation();
 			vector p = vehicle.GetPosition();
 			float above = p[1] - GetGame().SurfaceY(p[0], p[2]);
+			if (GetGame().SurfaceIsSea(p[0], p[2]))
+				above = 0;
 			if (Math.AbsFloat(ori[1]) < 15 && Math.AbsFloat(ori[2]) < 15)
 				upright++;
 			if (m_Factory.FuelFraction(vehicle) > 0.99)

@@ -10,7 +10,9 @@
 				9129.99
 			],
 			"heading": 317.95,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -22,7 +24,9 @@
 				9051.29
 			],
 			"heading": 60.4,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -34,7 +38,9 @@
 				9714.4
 			],
 			"heading": 12.74,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -46,7 +52,9 @@
 				10115.75
 			],
 			"heading": 109.84,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -58,7 +66,9 @@
 				12635.33
 			],
 			"heading": 13.16,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -70,7 +80,9 @@
 				12925.99
 			],
 			"heading": 238.24,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -82,7 +94,9 @@
 				11523.15
 			],
 			"heading": 334.25,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -94,7 +108,9 @@
 				5291.24
 			],
 			"heading": 195.85,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -106,7 +122,9 @@
 				12648.15
 			],
 			"heading": 140.25,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -118,7 +136,9 @@
 				12430.11
 			],
 			"heading": 320.9,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -130,7 +150,9 @@
 				13475.75
 			],
 			"heading": 51.57,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -142,7 +164,9 @@
 				12683.22
 			],
 			"heading": 358.01,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -154,7 +178,9 @@
 				5309.27
 			],
 			"heading": 178.94,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -166,7 +192,9 @@
 				10216.16
 			],
 			"heading": 296.38,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -178,7 +206,9 @@
 				9860.66
 			],
 			"heading": 267.62,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -190,7 +220,9 @@
 				4077.48
 			],
 			"heading": 53.96,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -202,7 +234,9 @@
 				6292.04
 			],
 			"heading": 85.94,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -214,7 +248,9 @@
 				13818.47
 			],
 			"heading": 265.16,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -226,7 +262,9 @@
 				10804.45
 			],
 			"heading": 146.82,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -238,7 +276,9 @@
 				14276.59
 			],
 			"heading": 43.14,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -250,7 +290,9 @@
 				13731.84
 			],
 			"heading": 89.65,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -262,7 +304,9 @@
 				15060.85
 			],
 			"heading": 299.53,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -274,7 +318,9 @@
 				8846.74
 			],
 			"heading": 157.85,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -286,7 +332,9 @@
 				3433.97
 			],
 			"heading": 181.27,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -298,7 +346,9 @@
 				1833.07
 			],
 			"heading": 229.41,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -310,7 +360,9 @@
 				11638.07
 			],
 			"heading": 349.39,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -322,7 +374,9 @@
 				2688.37
 			],
 			"heading": 0.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -334,7 +388,9 @@
 				2372.28
 			],
 			"heading": 159.83,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -346,7 +402,9 @@
 				4957.52
 			],
 			"heading": 315.28,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -358,7 +416,9 @@
 				2902.66
 			],
 			"heading": 0.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleCivilianSedan",
@@ -370,7 +430,9 @@
 				5041.12
 			],
 			"heading": 56.15,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -382,7 +444,9 @@
 				2231.89
 			],
 			"heading": 233.04,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -394,7 +458,9 @@
 				9480.82
 			],
 			"heading": 268.1,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -406,7 +472,9 @@
 				2110.52
 			],
 			"heading": 80.67,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -418,7 +486,9 @@
 				8822.01
 			],
 			"heading": 98.37,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -430,7 +500,9 @@
 				3983.42
 			],
 			"heading": 312.89,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -442,7 +514,9 @@
 				9699.46
 			],
 			"heading": 243.38,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -454,7 +528,9 @@
 				2417.55
 			],
 			"heading": 55.13,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -466,7 +542,9 @@
 				14763.92
 			],
 			"heading": 59.44,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -478,7 +556,9 @@
 				14897.1
 			],
 			"heading": 306.93,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -490,7 +570,9 @@
 				14660.34
 			],
 			"heading": 148.4,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -502,7 +584,9 @@
 				14096.24
 			],
 			"heading": 339.18,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -514,7 +598,9 @@
 				14350.54
 			],
 			"heading": 188.94,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -526,7 +612,9 @@
 				7284.12
 			],
 			"heading": 190.65,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -538,7 +626,9 @@
 				9904.46
 			],
 			"heading": 117.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -550,7 +640,9 @@
 				2677.35
 			],
 			"heading": 311.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -562,7 +654,9 @@
 				12417.64
 			],
 			"heading": 279.13,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -574,7 +668,9 @@
 				12596.46
 			],
 			"heading": 258.44,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -586,7 +682,9 @@
 				12687.49
 			],
 			"heading": 264.2,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -598,7 +696,9 @@
 				6736.75
 			],
 			"heading": 169.29,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -610,7 +710,9 @@
 				3646.82
 			],
 			"heading": 341.92,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -622,7 +724,9 @@
 				2308.13
 			],
 			"heading": 314.12,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -634,7 +738,9 @@
 				3837.22
 			],
 			"heading": 252.21,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -646,7 +752,9 @@
 				12897.41
 			],
 			"heading": 317.47,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -658,7 +766,9 @@
 				5436.48
 			],
 			"heading": 54.58,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -670,7 +780,9 @@
 				2559.28
 			],
 			"heading": 237.76,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -682,7 +794,9 @@
 				12239.94
 			],
 			"heading": 77.04,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -694,7 +808,9 @@
 				12813.72
 			],
 			"heading": 164.97,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -706,7 +822,9 @@
 				3542.26
 			],
 			"heading": 93.48,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -718,7 +836,9 @@
 				5313.07
 			],
 			"heading": 91.15,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -730,7 +850,9 @@
 				12586.81
 			],
 			"heading": 74.3,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -742,7 +864,9 @@
 				9440.33
 			],
 			"heading": 141.41,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -754,7 +878,9 @@
 				13050.48
 			],
 			"heading": 339.52,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleSedan02",
@@ -766,7 +892,9 @@
 				2388.38
 			],
 			"heading": 310.93,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -778,7 +906,9 @@
 				5494.31
 			],
 			"heading": 125.18,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -790,7 +920,9 @@
 				4453.04
 			],
 			"heading": 334.01,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -802,7 +934,9 @@
 				13396.0
 			],
 			"heading": 88.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -814,7 +948,9 @@
 				4219.18
 			],
 			"heading": 244.06,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -826,7 +962,9 @@
 				14758.74
 			],
 			"heading": 300.42,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -838,7 +976,9 @@
 				5497.96
 			],
 			"heading": 296.11,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -850,7 +990,9 @@
 				10340.83
 			],
 			"heading": 89.85,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -862,7 +1004,9 @@
 				5654.93
 			],
 			"heading": 35.88,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -874,7 +1018,9 @@
 				4882.8
 			],
 			"heading": 91.83,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -886,7 +1032,9 @@
 				13125.55
 			],
 			"heading": 119.77,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -898,7 +1046,9 @@
 				11363.06
 			],
 			"heading": 315.97,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -910,7 +1060,9 @@
 				9701.25
 			],
 			"heading": 333.5,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -922,7 +1074,9 @@
 				4581.52
 			],
 			"heading": 306.04,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -934,7 +1088,9 @@
 				3773.64
 			],
 			"heading": 185.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -946,7 +1102,9 @@
 				6776.42
 			],
 			"heading": 232.9,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -958,7 +1116,9 @@
 				6677.02
 			],
 			"heading": 264.95,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -970,7 +1130,9 @@
 				2375.64
 			],
 			"heading": 107.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -982,7 +1144,9 @@
 				3932.85
 			],
 			"heading": 34.99,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -994,7 +1158,9 @@
 				14886.44
 			],
 			"heading": 127.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1006,7 +1172,9 @@
 				14966.82
 			],
 			"heading": 84.3,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1018,7 +1186,9 @@
 				13479.62
 			],
 			"heading": 58.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1030,7 +1200,9 @@
 				14339.3
 			],
 			"heading": 263.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1042,7 +1214,9 @@
 				14566.44
 			],
 			"heading": 180.24,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1054,7 +1228,9 @@
 				12014.67
 			],
 			"heading": 52.11,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1066,7 +1242,9 @@
 				13738.08
 			],
 			"heading": 279.74,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1078,7 +1256,9 @@
 				10408.9
 			],
 			"heading": 116.55,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1090,7 +1270,9 @@
 				14366.3
 			],
 			"heading": 320.42,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1102,7 +1284,9 @@
 				13565.44
 			],
 			"heading": 83.2,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1114,7 +1298,9 @@
 				6438.33
 			],
 			"heading": 112.79,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1126,7 +1312,9 @@
 				5180.11
 			],
 			"heading": 27.8,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1138,7 +1326,9 @@
 				10536.15
 			],
 			"heading": 286.32,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1150,7 +1340,9 @@
 				11571.21
 			],
 			"heading": 127.92,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1162,7 +1354,9 @@
 				11041.2
 			],
 			"heading": 38.55,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1174,7 +1368,9 @@
 				9867.98
 			],
 			"heading": 287.27,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1186,7 +1382,9 @@
 				8719.44
 			],
 			"heading": 8.29,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1198,7 +1396,9 @@
 				6697.1
 			],
 			"heading": 100.94,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1210,7 +1410,9 @@
 				8987.47
 			],
 			"heading": 262.35,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1222,7 +1424,9 @@
 				11511.6
 			],
 			"heading": 87.04,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1234,7 +1438,9 @@
 				11325.61
 			],
 			"heading": 312.2,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1246,7 +1452,9 @@
 				7310.69
 			],
 			"heading": 4.31,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1258,7 +1466,9 @@
 				7785.32
 			],
 			"heading": 304.05,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1270,7 +1480,9 @@
 				6823.16
 			],
 			"heading": 181.38,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1282,7 +1494,9 @@
 				6311.53
 			],
 			"heading": 80.94,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1294,7 +1508,9 @@
 				8255.38
 			],
 			"heading": 17.46,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroadHatchback",
@@ -1306,7 +1522,9 @@
 				6216.0
 			],
 			"heading": 181.06,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1318,7 +1536,9 @@
 				14051.66
 			],
 			"heading": 452.78,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1330,7 +1550,9 @@
 				13850.99
 			],
 			"heading": 445.31,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1342,7 +1564,9 @@
 				5143.5
 			],
 			"heading": 190.14,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1354,7 +1578,9 @@
 				9740.04
 			],
 			"heading": 40.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1366,7 +1592,9 @@
 				9785.62
 			],
 			"heading": 135.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1378,7 +1606,9 @@
 				10482.09
 			],
 			"heading": 190.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1390,7 +1620,9 @@
 				2595.62
 			],
 			"heading": 9.59,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1402,7 +1634,9 @@
 				7843.91
 			],
 			"heading": 305.01,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1414,7 +1648,9 @@
 				3066.31
 			],
 			"heading": 24.06,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1426,7 +1662,9 @@
 				11746.78
 			],
 			"heading": 240.07,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleOffroad02",
@@ -1438,7 +1676,9 @@
 				5837.93
 			],
 			"heading": 277.32,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1450,7 +1690,9 @@
 				9736.08
 			],
 			"heading": 320.97,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1462,7 +1704,9 @@
 				14531.38
 			],
 			"heading": 339.11,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1474,7 +1718,9 @@
 				10236.03
 			],
 			"heading": 0.75,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1486,7 +1732,9 @@
 				12682.48
 			],
 			"heading": 0.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1498,7 +1746,9 @@
 				10077.94
 			],
 			"heading": 87.72,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1510,7 +1760,9 @@
 				15255.47
 			],
 			"heading": 55.47,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1522,7 +1774,9 @@
 				13568.41
 			],
 			"heading": 153.81,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1534,7 +1788,9 @@
 				6990.22
 			],
 			"heading": 0.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1546,7 +1802,9 @@
 				3692.72
 			],
 			"heading": 219.0,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1558,7 +1816,9 @@
 				5410.16
 			],
 			"heading": 279.67,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1570,7 +1830,9 @@
 				7693.54
 			],
 			"heading": 331.44,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1582,7 +1844,9 @@
 				3372.27
 			],
 			"heading": 96.01,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1594,7 +1858,9 @@
 				3309.2
 			],
 			"heading": 254.27,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1606,7 +1872,9 @@
 				7419.51
 			],
 			"heading": 302.41,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1618,7 +1886,9 @@
 				2970.32
 			],
 			"heading": 97.55,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1630,7 +1900,9 @@
 				14331.6
 			],
 			"heading": 333.29,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1642,7 +1914,9 @@
 				14281.96
 			],
 			"heading": 135.73,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1654,7 +1928,9 @@
 				6694.11
 			],
 			"heading": 81.01,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1666,7 +1942,9 @@
 				2621.93
 			],
 			"heading": 232.22,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1678,7 +1956,9 @@
 				14176.59
 			],
 			"heading": 140.38,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1690,7 +1970,9 @@
 				5511.83
 			],
 			"heading": 192.22,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1702,7 +1984,9 @@
 				11620.32
 			],
 			"heading": 204.55,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1714,7 +1998,9 @@
 				9789.59
 			],
 			"heading": 86.63,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1726,7 +2012,9 @@
 				6591.82
 			],
 			"heading": 109.05,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1738,7 +2026,9 @@
 				8118.22
 			],
 			"heading": 11.5,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1750,7 +2040,9 @@
 				9484.83
 			],
 			"heading": 180.99,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1762,7 +2054,9 @@
 				15065.68
 			],
 			"heading": 28.62,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1774,7 +2068,9 @@
 				7523.01
 			],
 			"heading": 182.02,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1786,7 +2082,9 @@
 				13067.44
 			],
 			"heading": 298.09,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
 		},
 		{
 			"building": "VehicleTruck01",
@@ -1798,7 +2096,1647 @@
 				13386.34
 			],
 			"heading": 20.27,
-			"exact": true
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStation_building",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				2508.55,
+				190.81,
+				5263.75
+			],
+			"heading": 177.54,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Lunapark_Ferris_wheel",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				3267.4,
+				209.95,
+				12810.19
+			],
+			"heading": 130.66,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_School",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				3246.13,
+				208.73,
+				13045.78
+			],
+			"heading": -156.69,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStation_wall_bench",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				3418.09,
+				198.71,
+				12849.8
+			],
+			"heading": 103.2,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_School",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				5695.7,
+				76.73,
+				2562.76
+			],
+			"heading": 89.68,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Lunapark_Ferris_wheel",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				6451.26,
+				13.69,
+				2210.62
+			],
+			"heading": -54.61,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStation_building",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				6521.74,
+				61.61,
+				3527.97
+			],
+			"heading": -89.37,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_School",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				8658.12,
+				110.48,
+				12803.67
+			],
+			"heading": -66.33,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_School",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				10223.17,
+				29.15,
+				2573.98
+			],
+			"heading": 5.83,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStation_wall_bench",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				11332.24,
+				40.73,
+				14317.57
+			],
+			"heading": -179.91,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStation_wall_bench",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				11396.23,
+				40.39,
+				14316.87
+			],
+			"heading": -179.91,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_School",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				12168.37,
+				17.1,
+				9756.96
+			],
+			"heading": -14.4,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_Stand_Grocery x4",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				3414.86,
+				194.67,
+				13047.61
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_Stand_News1 x3",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				11602.41,
+				59.86,
+				14120.01
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_Stand_News1 x4",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				11682.42,
+				36.42,
+				14326.21
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_Stand_News1 x3",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				12894.42,
+				7.76,
+				10100.55
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_City_Stand_News1 x3",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				13968.32,
+				5.0,
+				13503.04
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Camp_House_red x14",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				1081.71,
+				153.38,
+				6636.17
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Camp_House_white x8",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				1185.14,
+				308.43,
+				11446.51
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Camp_House_white x9",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				8457.03,
+				207.12,
+				13947.69
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Camp_House_white x9",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				11474.5,
+				162.09,
+				10634.51
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				555.2,
+				152.87,
+				5393.12
+			],
+			"heading": 49.16,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				1495.93,
+				247.64,
+				10660.05
+			],
+			"heading": -47.07,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				1808.76,
+				293.06,
+				9146.09
+			],
+			"heading": 71.06,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				2400.86,
+				438.39,
+				14724.52
+			],
+			"heading": -19.91,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Metal_Big",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				2860.8,
+				277.13,
+				9745.86
+			],
+			"heading": 127.48,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_CowshedA",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				3113.83,
+				284.22,
+				9229.58
+			],
+			"heading": 145.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				3704.43,
+				307.67,
+				8260.33
+			],
+			"heading": 70.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				4481.8,
+				183.77,
+				13205.36
+			],
+			"heading": -162.58,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				4851.0,
+				476.73,
+				15220.71
+			],
+			"heading": 77.17,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				5315.17,
+				337.23,
+				8642.29
+			],
+			"heading": 143.16,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_CowshedB",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				6230.85,
+				304.23,
+				7725.81
+			],
+			"heading": 53.62,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				6832.85,
+				12.06,
+				3169.89
+			],
+			"heading": 17.61,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_CowshedA",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				7658.26,
+				217.32,
+				5169.94
+			],
+			"heading": -118.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_CowshedA",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				8051.15,
+				10.18,
+				3388.99
+			],
+			"heading": -106.15,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_CowshedB",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				8864.03,
+				224.56,
+				11669.34
+			],
+			"heading": 78.5,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				9444.22,
+				214.19,
+				14404.54
+			],
+			"heading": 38.95,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				9751.85,
+				289.46,
+				8727.01
+			],
+			"heading": -0.52,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				10250.42,
+				173.02,
+				9501.25
+			],
+			"heading": -93.9,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				11345.37,
+				172.36,
+				12535.16
+			],
+			"heading": 140.71,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				12273.79,
+				37.16,
+				9179.7
+			],
+			"heading": -62.8,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				12942.09,
+				13.62,
+				8130.7
+			],
+			"heading": -7.72,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Barn_Wood1",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				13457.75,
+				82.73,
+				13058.35
+			],
+			"heading": 153.22,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Pier_Crane_B x20",
+			"types": "ExpansionLHD",
+			"count": 1,
+			"pos": [
+				7506.95,
+				17.94,
+				2807.13
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": true
+		},
+		{
+			"building": "Land_Pier_Crane_B x10",
+			"types": "ExpansionLHD",
+			"count": 1,
+			"pos": [
+				10148.72,
+				18.23,
+				1719.28
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": true
+		},
+		{
+			"building": "Land_Pier_Crane_B x2",
+			"types": "ExpansionLHD",
+			"count": 1,
+			"pos": [
+				10963.98,
+				18.17,
+				2705.33
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": true
+		},
+		{
+			"building": "Land_Pier_Crane_B x6",
+			"types": "ExpansionLHD",
+			"count": 1,
+			"pos": [
+				13112.52,
+				18.26,
+				10088.39
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": true
+		},
+		{
+			"building": "Land_Pier_Crane_B x8",
+			"types": "ExpansionLHD",
+			"count": 1,
+			"pos": [
+				14189.67,
+				15.53,
+				13237.5
+			],
+			"heading": 0.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": true
+		},
+		{
+			"building": "Land_Mil_GuardTower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				703.59,
+				449.57,
+				14585.12
+			],
+			"heading": 58.55,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				738.19,
+				8.15,
+				1856.44
+			],
+			"heading": 127.14,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1131.7,
+				187.41,
+				7242.7
+			],
+			"heading": 91.99,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_GuardTower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1238.28,
+				468.74,
+				14006.12
+			],
+			"heading": 24.27,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks_Round",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1377.91,
+				454.53,
+				13791.57
+			],
+			"heading": 135.48,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks_Round",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1495.29,
+				461.66,
+				14434.1
+			],
+			"heading": -44.53,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1547.34,
+				440.18,
+				13599.02
+			],
+			"heading": 109.48,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1685.02,
+				449.76,
+				13934.44
+			],
+			"heading": 62.89,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_GuardTower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1730.36,
+				458.01,
+				14264.81
+			],
+			"heading": -157.78,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				1856.17,
+				131.08,
+				3435.84
+			],
+			"heading": -6.39,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2076.73,
+				94.53,
+				3285.07
+			],
+			"heading": -6.94,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_GuardTower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2045.63,
+				431.3,
+				13806.55
+			],
+			"heading": 174.05,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2306.83,
+				133.96,
+				3687.42
+			],
+			"heading": 41.15,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks_Round",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2447.4,
+				192.26,
+				5174.03
+			],
+			"heading": -168.99,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2561.31,
+				23.26,
+				1293.61
+			],
+			"heading": 166.99,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big1_1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2696.34,
+				363.69,
+				6762.09
+			],
+			"heading": 99.21,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3613.32,
+				317.5,
+				11176.25
+			],
+			"heading": 173.13,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3656.57,
+				361.48,
+				14937.96
+			],
+			"heading": -43.9,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks5",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3686.42,
+				407.67,
+				5982.15
+			],
+			"heading": 20.01,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3781.77,
+				190.06,
+				13088.52
+			],
+			"heading": -24.86,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4017.93,
+				377.78,
+				11805.98
+			],
+			"heading": -179.83,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4060.19,
+				326.59,
+				8956.31
+			],
+			"heading": 177.76,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4109.53,
+				341.2,
+				10459.62
+			],
+			"heading": 128.0,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4135.6,
+				340.46,
+				11058.54
+			],
+			"heading": 107.59,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4481.3,
+				316.63,
+				8293.98
+			],
+			"heading": -52.03,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks6",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4498.59,
+				339.0,
+				9550.15
+			],
+			"heading": -60.0,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4664.14,
+				340.22,
+				10376.73
+			],
+			"heading": 120.04,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4758.82,
+				341.0,
+				10624.08
+			],
+			"heading": 135.12,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4855.42,
+				11.91,
+				2598.45
+			],
+			"heading": 36.58,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks_Round",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4930.2,
+				340.23,
+				10060.47
+			],
+			"heading": -177.5,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4956.88,
+				171.99,
+				12965.64
+			],
+			"heading": -90.16,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				5075.59,
+				10.56,
+				2270.04
+			],
+			"heading": -49.99,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				5049.38,
+				340.37,
+				9807.55
+			],
+			"heading": 179.9,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				5293.95,
+				341.39,
+				9363.55
+			],
+			"heading": -63.13,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				5300.71,
+				339.16,
+				9774.95
+			],
+			"heading": -179.45,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big2_1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				5791.92,
+				95.75,
+				3080.74
+			],
+			"heading": -48.68,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6006.21,
+				60.16,
+				2557.2
+			],
+			"heading": 149.57,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big1_1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6317.02,
+				305.01,
+				7803.11
+			],
+			"heading": 55.53,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6548.85,
+				11.45,
+				2757.84
+			],
+			"heading": 140.26,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6980.56,
+				8.42,
+				2786.65
+			],
+			"heading": -179.78,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				7091.23,
+				351.59,
+				14532.16
+			],
+			"heading": -86.6,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				7221.05,
+				31.76,
+				3018.83
+			],
+			"heading": 166.01,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				7472.26,
+				8.22,
+				3181.16
+			],
+			"heading": -92.44,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				7731.41,
+				119.93,
+				12677.77
+			],
+			"heading": -90.36,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				7795.57,
+				357.88,
+				14763.28
+			],
+			"heading": 127.02,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				8075.84,
+				456.73,
+				9369.66
+			],
+			"heading": 138.99,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				8505.57,
+				205.3,
+				13975.79
+			],
+			"heading": 98.42,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				8690.51,
+				107.11,
+				12851.25
+			],
+			"heading": 24.25,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				9514.79,
+				8.23,
+				1977.0
+			],
+			"heading": 88.91,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big1_1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				9567.61,
+				242.44,
+				11793.28
+			],
+			"heading": -124.47,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10052.56,
+				8.22,
+				1965.61
+			],
+			"heading": -75.28,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10412.89,
+				8.22,
+				2433.0
+			],
+			"heading": 35.39,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10451.66,
+				285.01,
+				5986.1
+			],
+			"heading": -30.04,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big1_1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10468.21,
+				178.62,
+				9143.93
+			],
+			"heading": -88.42,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10664.74,
+				57.03,
+				14334.3
+			],
+			"heading": 15.61,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10856.17,
+				8.21,
+				2770.62
+			],
+			"heading": 157.81,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10919.77,
+				221.56,
+				13381.71
+			],
+			"heading": 160.89,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11196.49,
+				45.56,
+				14424.26
+			],
+			"heading": -77.47,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11479.26,
+				223.04,
+				7549.51
+			],
+			"heading": 52.02,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11703.35,
+				30.59,
+				14281.81
+			],
+			"heading": -84.87,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11987.02,
+				56.21,
+				9158.95
+			],
+			"heading": -54.89,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11979.83,
+				29.56,
+				14296.46
+			],
+			"heading": 117.58,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				12193.09,
+				13.51,
+				9724.96
+			],
+			"heading": 166.65,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				12362.35,
+				24.38,
+				14355.56
+			],
+			"heading": 68.98,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				12849.71,
+				8.22,
+				9745.31
+			],
+			"heading": 80.24,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				13014.02,
+				8.17,
+				10007.62
+			],
+			"heading": 168.3,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				13130.53,
+				8.2,
+				10344.87
+			],
+			"heading": 75.55,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				13317.13,
+				10.8,
+				6145.75
+			],
+			"heading": 9.76,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				14110.99,
+				5.5,
+				13278.35
+			],
+			"heading": -157.58,
+			"exact": false,
+			"nearWater": 150,
+			"offshore": false
 		}
 	]
 }

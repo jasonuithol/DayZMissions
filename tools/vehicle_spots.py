@@ -16,7 +16,11 @@ vehicles.json:
      "min_neighbours": 120,                    # only buildings in built-up areas: at least
      "neighbour_radius": 400,                  #   this many other buildings within this radius
      "min_spacing": 40,                        # one spot per cluster of places this close
-     "max": 30                                 # at most this many spots, spread evenly
+     "max": 30,                                # at most this many spots, spread evenly
+     "cluster": {"radius": 60, "min": 3},      # instead of each building: the centre of every
+                                               #   group of >= min buildings within radius
+     "near_water": 150,                        # (passed to the game) only if water is this close
+     "offshore": true                          # (passed to the game) park it out at sea instead
   }]
 
 The mission caps the total whatever this produces; a few hundred vehicles is a real
@@ -63,6 +67,31 @@ def load_event_spawns(vanilla):
     return spawns
 
 
+def clusters(buildings, radius, minimum):
+    """Greedy grouping: (name, x, y, z, heading) centroids of groups of >= minimum buildings."""
+    remaining = list(buildings)
+    out = []
+    while remaining:
+        seed = remaining.pop(0)
+        group = [seed]
+        changed = True
+        while changed:
+            changed = False
+            cx = sum(b[1] for b in group) / len(group)
+            cz = sum(b[3] for b in group) / len(group)
+            for b in list(remaining):
+                if math.hypot(b[1] - cx, b[3] - cz) <= radius:
+                    group.append(b)
+                    remaining.remove(b)
+                    changed = True
+        if len(group) >= minimum:
+            cx = sum(b[1] for b in group) / len(group)
+            cy = sum(b[2] for b in group) / len(group)
+            cz = sum(b[3] for b in group) / len(group)
+            out.append(('%s x%d' % (group[0][0], len(group)), cx, cy, cz, 0.0))
+    return out
+
+
 def main():
     mdir = mission_dir(sys.argv[1])
     terrain = os.path.basename(mdir).split('.')[-1]
@@ -95,9 +124,10 @@ def main():
         accepted = []
         candidates = []
         skipped = clustered = 0
-        for name, x, y, z, a in source:
-            if name not in wanted:
-                continue
+        matching = [b for b in source if b[0] in wanted]
+        if 'cluster' in rule:
+            matching = clusters(matching, rule['cluster']['radius'], rule['cluster']['min'])
+        for name, x, y, z, a in matching:
             if min_n and neighbours(x, z, radius) < min_n:
                 skipped += 1
                 continue
@@ -113,8 +143,10 @@ def main():
             candidates = [candidates[int(i * step)] for i in range(limit)]
         used = len(candidates)
         for name, x, y, z, a in candidates:
-            spots.append({'building': name, 'types': rule['types'], 'count': rule['count'],
-                          'pos': [round(x, 2), round(y, 2), round(z, 2)], 'heading': round(a, 2), 'exact': exact})
+            spot = {'building': name, 'types': rule['types'], 'count': rule['count'],
+                    'pos': [round(x, 2), round(y, 2), round(z, 2)], 'heading': round(a, 2), 'exact': exact,
+                    'nearWater': rule.get('near_water', 0), 'offshore': rule.get('offshore', False)}
+            spots.append(spot)
         print('%-40s %3d spots, %3d not built-up, %3d clustered, %3d vehicles' % (rule['name'], used, skipped, clustered, used * rule['count']))
 
     out = os.path.join(mdir, 'spots.json')

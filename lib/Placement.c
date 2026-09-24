@@ -95,6 +95,56 @@ class Placement
 		return RoadFinder.HeadingToDir(heading);
 	}
 
+	// Any pond, river or sea within `radius` of pos (rings of samples).
+	static bool WaterWithin(vector pos, float radius)
+	{
+		for (float r = 0; r <= radius; r += 15)
+		{
+			for (int step = 0; step < 16; step++)
+			{
+				vector p = pos + HeadingToDir(step * 22.5) * r;
+				if (GetGame().SurfaceIsSea(p[0], p[2]) || GetGame().SurfaceIsPond(p[0], p[2]))
+					return true;
+			}
+		}
+		return false;
+	}
+
+	// A patch of open sea near anchor big enough for a ship of `length`: the point and
+	// a ring of 0.8 x length around it are all sea, the seabed at least 12 m down in the
+	// middle and 6 m at the ring. Searches from minRadius to maxRadius away, in every
+	// direction, nearest first. pos is at sea level.
+	static bool FindOpenSea(vector anchor, float minRadius, float maxRadius, float length, out vector pos)
+	{
+		float seaLevel = GetGame().SurfaceGetSeaLevel();
+		for (float r = minRadius; r <= maxRadius; r += 50)
+		{
+			for (int step = 0; step < 16; step++)
+			{
+				vector p = anchor + HeadingToDir(step * 22.5) * r;
+				if (!OpenSeaAt(p, length * 0.8))
+					continue;
+				pos = Vector(p[0], seaLevel, p[2]);
+				return true;
+			}
+		}
+		return false;
+	}
+
+	static bool OpenSeaAt(vector p, float ring)
+	{
+		float seaLevel = GetGame().SurfaceGetSeaLevel();
+		if (!GetGame().SurfaceIsSea(p[0], p[2]) || GetGame().SurfaceY(p[0], p[2]) > seaLevel - 12)
+			return false;
+		for (int step = 0; step < 16; step++)
+		{
+			vector q = p + HeadingToDir(step * 22.5) * ring;
+			if (!GetGame().SurfaceIsSea(q[0], q[2]) || GetGame().SurfaceY(q[0], q[2]) > seaLevel - 6)
+				return false;
+		}
+		return true;
+	}
+
 	static bool TooClose(vector pos, array<vector> taken, float keepAway)
 	{
 		for (int i = 0; i < taken.Count(); i++)

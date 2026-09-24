@@ -2,7 +2,13 @@
 	"rules": [
 		{
 			"name": "cars at the vanilla car spawn points",
-			"events": ["VehicleCivilianSedan", "VehicleHatchback02", "VehicleOffroadHatchback", "VehicleSedan02", "VehicleOffroad02"],
+			"events": [
+				"VehicleCivilianSedan",
+				"VehicleHatchback02",
+				"VehicleOffroadHatchback",
+				"VehicleSedan02",
+				"VehicleOffroad02"
+			],
 			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
 			"count": 1,
 			"min_spacing": 30,
@@ -10,11 +16,114 @@
 		},
 		{
 			"name": "trucks at the vanilla truck spawn points",
-			"events": ["VehicleTruck01"],
+			"events": [
+				"VehicleTruck01"
+			],
 			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
 			"count": 1,
 			"min_spacing": 30,
 			"max": 30
+		},
+		{
+			"name": "buses at bus stations, schools and the ferris wheels",
+			"buildings": [
+				"Land_BusStation_building",
+				"Land_BusStation_wall_bench",
+				"Land_City_School",
+				"Land_Lunapark_Ferris_wheel"
+			],
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"min_spacing": 60,
+			"max": 16
+		},
+		{
+			"name": "buses on town squares (3+ kiosks together in a big town)",
+			"buildings": [
+				"Land_City_Stand_News1",
+				"Land_City_Stand_News2",
+				"Land_City_Stand_FastFood",
+				"Land_City_Stand_Grocery"
+			],
+			"cluster": {
+				"radius": 40,
+				"min": 3
+			},
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"min_neighbours": 120,
+			"neighbour_radius": 400,
+			"min_spacing": 150,
+			"max": 8
+		},
+		{
+			"name": "buses at the big summer camps (8+ cabins)",
+			"buildings": [
+				"Land_Camp_House_white",
+				"Land_Camp_House_red",
+				"Land_Camp_House_brown"
+			],
+			"cluster": {
+				"radius": 150,
+				"min": 8
+			},
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"max": 6
+		},
+		{
+			"name": "tractors at big sheds, long barns and cowsheds",
+			"buildings": [
+				"Land_Barn_Metal_Big",
+				"Land_Barn_Wood1",
+				"Land_Barn_Wood2",
+				"Land_Farm_CowshedA",
+				"Land_Farm_CowshedB",
+				"Land_Farm_CowshedC"
+			],
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"min_spacing": 80,
+			"max": 22
+		},
+		{
+			"name": "an LHD off every port (the pier cranes)",
+			"buildings": [
+				"Land_Pier_Crane_A",
+				"Land_Pier_Crane_B"
+			],
+			"cluster": {
+				"radius": 700,
+				"min": 2
+			},
+			"types": "ExpansionLHD",
+			"count": 1,
+			"offshore": true
+		},
+		{
+			"name": "Vodniks at military sites near water",
+			"buildings": [
+				"Land_Mil_Barracks1",
+				"Land_Mil_Barracks2",
+				"Land_Mil_Barracks3",
+				"Land_Mil_Barracks4",
+				"Land_Mil_Barracks5",
+				"Land_Mil_Barracks6",
+				"Land_Mil_Barracks_Round",
+				"Land_Mil_Guardhouse1",
+				"Land_Mil_Guardhouse2",
+				"Land_Mil_Guardhouse3",
+				"Land_Mil_Tent_Big1_1",
+				"Land_Mil_Tent_Big2_1",
+				"Land_Mil_Tent_Big3",
+				"Land_Mil_Tent_Big4",
+				"Land_Mil_Fortified_Nest_Watchtower",
+				"Land_Mil_GuardTower"
+			],
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"min_spacing": 250,
+			"near_water": 150
 		}
 	]
 }

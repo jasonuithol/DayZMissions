@@ -3,6 +3,7 @@
 // doctor, soldier, lumberjack... - wearing the matching outfit and carrying a few things
 // that fit the job. The roles live in roles.json next to this file. And there are ready
 // to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json),
+// Expansion buses, tractors and Vodniks where they belong and an LHD off every port,
 // and a DayZ Expansion helicopter on each of the five helipads on the map.
 #include "lib/JsonFile.c"
 #include "lib/RoadFinder.c"
@@ -16,8 +17,11 @@ class CarFactory: VehicleFactory
 {
 	override EntityAI Spawn(string type, vector pos, float heading)
 	{
+		int flags = ECE_PLACE_ON_SURFACE | ECE_SETUP;
+		if (GetGame().SurfaceIsSea(pos[0], pos[2]))
+			flags = ECE_CREATEPHYSICS | ECE_KEEPHEIGHT | ECE_NOSURFACEALIGN | ECE_SETUP; // ships: on the water, not the seabed
 		pos[1] = pos[1] + 0.3; // created a hair below the ground, a vehicle falls through the map
-		CarScript car = CarScript.Cast(GetGame().CreateObjectEx(type, pos, ECE_PLACE_ON_SURFACE | ECE_SETUP));
+		CarScript car = CarScript.Cast(GetGame().CreateObjectEx(type, pos, flags));
 		if (!car)
 		{
 			Print("[Cars] failed to create " + type);
@@ -46,8 +50,14 @@ class CarFactory: VehicleFactory
 
 	override vector Size(string type)
 	{
-		if (type.Contains("Truck"))
+		if (type.Contains("LHD"))
+			return "40 30 250";
+		if (type.Contains("Bus"))
+			return "2.6 3.2 12";
+		if (type.Contains("Truck") || type.Contains("Vodnik"))
 			return "2.6 3.0 7.5";
+		if (type.Contains("Tractor"))
+			return "2.4 3.0 5.5";
 		return "2.0 1.8 4.6";
 	}
 }
@@ -86,7 +96,7 @@ void main()
 
 class CustomMission: MissionServer
 {
-	static const int MAX_CARS = 150; // to keep the server load sane
+	static const int MAX_CARS = 240; // to keep the server load sane
 
 	// Chernarus has five helipads (decal_heli_army; tools: objprobe -findmodel=decal_heli):
 	// the camp east of Chernogorsk, two at Balota, two at the Vybor military base. Headings
