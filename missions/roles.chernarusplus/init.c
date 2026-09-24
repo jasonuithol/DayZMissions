@@ -102,7 +102,9 @@ class CustomMission: MissionServer
 	// the camp east of Chernogorsk, two at Balota, two at the Vybor military base. Headings
 	// line the aircraft up with the H.
 	static const vector CHERNO_PAD = "7236.25 0 3063.27";
-	static const vector PLAYER_SPAWN = "7247 0 3061"; // 10 m east of the Chernogorsk pad
+	// players spawn beside the bus at the Chernogorsk bus station (this is the station;
+	// the bus itself is found at spawn time, it parks somewhere within ~25 m of it)
+	static const vector PLAYER_SPAWN = "6522 0 3528";
 	protected ref array<CarScript> m_Helis = new array<CarScript>();
 
 	protected string m_Path; // mission folder, e.g. "./mpmissions/roles.chernarusplus"
@@ -210,10 +212,13 @@ class CustomMission: MissionServer
 		return kit;
 	}
 
-	// everyone spawns beside the helicopter instead of on the coast
+	// everyone spawns beside the Chernogorsk bus station's bus instead of on the coast
 	override PlayerBase CreateCharacter(PlayerIdentity identity, vector pos, ParamsReadContext ctx, string characterName)
 	{
 		pos = PLAYER_SPAWN;
+		EntityAI bus = NearestOfType("ExpansionBus", PLAYER_SPAWN, 60);
+		if (bus)
+			pos = bus.GetPosition() + RoadFinder.HeadingToDir(bus.GetOrientation()[0] + 90) * 5; // beside the doors
 		pos[1] = GetGame().SurfaceY(pos[0], pos[2]);
 
 		Entity playerEnt;
@@ -223,6 +228,26 @@ class CustomMission: MissionServer
 		GetGame().SelectPlayer(identity, m_player);
 
 		return m_player;
+	}
+
+	EntityAI NearestOfType(string typePrefix, vector near, float within)
+	{
+		EntityAI best;
+		float bestDistance = within;
+		array<EntityAI> vehicles = m_Cars.Vehicles();
+		for (int i = 0; i < vehicles.Count(); i++)
+		{
+			if (vehicles[i].GetType().IndexOf(typePrefix) != 0)
+				continue;
+			vector at = vehicles[i].GetPosition();
+			float d = vector.Distance(Vector(at[0], 0, at[2]), Vector(near[0], 0, near[2])); // ignore height
+			if (d < bestDistance)
+			{
+				bestDistance = d;
+				best = vehicles[i];
+			}
+		}
+		return best;
 	}
 
 	// -missiontest: check every role's class names and attachments and the cars, then quit
@@ -238,6 +263,11 @@ class CustomMission: MissionServer
 			Print("[Heli] test: " + heli.GetType() + " pos " + heli.GetPosition() + " ori " + heli.GetOrientation() + " fuel " + heli.GetFluidFraction(CarFluid.FUEL) + " hydraulic " + heli.GetFluidFraction(CarFluid.OIL) + " attachments " + heli.GetInventory().AttachmentCount() + " above terrain " + (heli.GetPosition()[1] - GetGame().SurfaceY(heli.GetPosition()[0], heli.GetPosition()[2])));
 		}
 		Print("[Heli] test: " + m_Helis.Count() + " helicopters");
+		EntityAI stationBus = NearestOfType("ExpansionBus", PLAYER_SPAWN, 60);
+		if (stationBus)
+			Print("[Spawn] test: bus at the Chernogorsk station: " + stationBus.GetType() + " at " + stationBus.GetPosition());
+		else
+			Print("[Spawn] test: NO bus within 60 m of the Chernogorsk bus station");
 
 		array<ref Role> roles = Roles.All();
 		for (int i = 0; i < roles.Count(); i++)

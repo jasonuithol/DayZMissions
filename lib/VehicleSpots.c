@@ -313,6 +313,8 @@ class VehicleSpots
 				if (d < closest)
 					closest = d;
 			}
+			if (vehicle.GetType().IndexOf("Expansion") == 0)
+				Print(m_Tag + "modded: " + vehicle.GetType() + " at " + p + " for building at " + m_Anchors[i] + " (" + vector.Distance(p, m_Anchors[i]) + " m away)");
 			if (above < -3 || above > 3 || m_Factory.FuelFraction(vehicle) < 0.99 || Math.AbsFloat(ori[2]) > 15)
 				Print(m_Tag + "odd: " + vehicle.GetType() + " fuel " + m_Factory.FuelFraction(vehicle) + " pos " + p + " above terrain " + above + " pitch " + ori[1] + " roll " + ori[2] + " spawned at " + m_Taken[i]);
 		}
