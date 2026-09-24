@@ -260,7 +260,7 @@ class VehicleSpots
 			string where = "on open ground";
 			bool found = false;
 			if (m_TopUpRound == 1)
-				found = Placement.FindClear(was, facing, 3, 30, m_Factory.Size(type), m_Taken, KEEP_AWAY, pos, heading);
+				found = Placement.FindClear(was, facing, 3, 60, m_Factory.Size(type), m_Taken, KEEP_AWAY, pos, heading);
 			else if (m_TopUpRound == 2)
 			{
 				found = Placement.FindRoof(m_Anchors[i], 20, 2.5, m_Factory.Size(type), m_Taken, KEEP_AWAY, pos, heading);
