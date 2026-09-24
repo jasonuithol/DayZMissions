@@ -46,7 +46,7 @@ class VehicleSpots
 	static const int BATCH = 5;              // spots per tick
 	static const int BATCH_MS = 250;
 	static const int SETTLE_MS = 3000;
-	static const float MAX_TILT = 12;        // degrees of pitch or roll after settling; more means it sits on something
+	static const float MAX_TILT = 10;        // degrees between the vehicle's up and the ground's normal after settling; more means it sits on something
 
 	protected string m_Tag;
 	protected ref VehicleFactory m_Factory;
@@ -239,9 +239,14 @@ class VehicleSpots
 			bool onLand = !GetGame().SurfaceIsSea(m_Taken[i][0], m_Taken[i][2]);
 			if (m_Taken[i][1] - vehicle.GetPosition()[1] > 2 && onLand)
 				why = "fell through the floor";
-			vector tilt = vehicle.GetOrientation();
-			if (onLand && (Math.AbsFloat(tilt[1]) > MAX_TILT || Math.AbsFloat(tilt[2]) > MAX_TILT))
-				why = "sits tilted (pitch " + tilt[1] + ", roll " + tilt[2] + ")";
+			if (onLand)
+			{
+				// tilt relative to the slope it stands on, so a hillside is fine but a wreck under one end is not
+				vector at = vehicle.GetPosition();
+				float offSlope = Math.Acos(Math.Clamp(vector.Dot(vehicle.GetDirectionUp(), GetGame().SurfaceGetNormal(at[0], at[2])), -1, 1)) * Math.RAD2DEG;
+				if (offSlope > MAX_TILT)
+					why = "sits " + offSlope + " deg off the ground slope";
+			}
 			if (why == "")
 				continue;
 
