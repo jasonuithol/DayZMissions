@@ -165,9 +165,11 @@ dry-tested, nothing has been run against the box yet.
    authorised on the VPS yet (Translink deploys used a password).
 2. Copy `tools/vps.conf.example` to `tools/vps.conf` (git-ignored): server name, join
    password (empty = public), admin password, ports.
-3. Check the box: RAM (a modded DayZ server wants 6 GB+, and it shares with the
-   Translink app), disk (5.2 GB to copy), and the VPS provider's control-panel firewall -
-   UDP 2302-2305 and 27016 must be open there too; that is a panel job, not a shell one.
+3. Check the box. Done 2026-09-24: Ubuntu 26.04, 2 vCPU, **3.8 GB RAM (2.3 GB free, no
+   swap)**, **20 GB disk with 3.2 GB free**, ufw inactive, ssh key now authorised. That is
+   too small: a modded DayZ server wants 6 GB+ of RAM and the copy alone is 5.2 GB.
+   Needs a resize in the the VPS provider panel (8 GB RAM / 40 GB+ disk) or a second VPS before
+   step 4. The panel firewall must also allow UDP 2302-2305 and 27016.
 4. `tools/vps_sync.sh` - rsyncs the stable server (3.8 GB), the mission's Workshop mods
    (1.4 GB for roles) and this project to `/opt/dayz`, laid out like a Steam library so
    the tools run unchanged with `STEAM=/opt/dayz`; then runs `tools/vps_install.sh` on
