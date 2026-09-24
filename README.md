@@ -149,6 +149,8 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
 - Expansion's LHD logs a "Virtual Machine Exception" on 1.29 from its own `DeferredInit`
   (`CallLater(Update)` with the wrong signature) - the mod's bug, the ship still works.
 - There is no ski resort on Chernarus (no ski-lift or chalet classes in the map data).
+- The server process names its main thread `enfMain`, so `pgrep DayZServer` finds nothing;
+  match on the command line (`ps -eo rss,args | grep '[D]ayZServer'`) to watch its memory.
 - `foreach` over an array that comes from a function call (`foreach (X x : Foo())`) or from a
   member of a loop variable is unreliable: it raised "Virtual Machine Exception" and made a
   weighted random pick return the first element every time. Index loops are safe.
@@ -167,9 +169,12 @@ dry-tested, nothing has been run against the box yet.
    password (empty = public), admin password, ports.
 3. Check the box. Done 2026-09-24: Ubuntu 26.04, 2 vCPU, **3.8 GB RAM (2.3 GB free, no
    swap)**, **20 GB disk with 3.2 GB free**, ufw inactive, ssh key now authorised. That is
-   too small: a modded DayZ server wants 6 GB+ of RAM and the copy alone is 5.2 GB.
-   Needs a resize in the the VPS provider panel (8 GB RAM / 40 GB+ disk) or a second VPS before
-   step 4. The panel firewall must also allow UDP 2302-2305 and 27016.
+   too small. Measured 2026-09-24: the `roles` server (Expansion, 215 vehicles, 5
+   helicopters) sits at **4.9-5.0 GB RSS** as soon as the world is loaded, before any
+   player joins. Removing the Translink and InventoryQuest apps from the box frees ~1 GB
+   RAM and ~11 GB disk, which is not enough. **Needs 8 GB RAM / 40 GB disk**: resize the
+   the VPS provider VPS or take a second one, then continue at step 4. The panel firewall must
+   also allow UDP 2302-2305 and 27016.
 4. `tools/vps_sync.sh` - rsyncs the stable server (3.8 GB), the mission's Workshop mods
    (1.4 GB for roles) and this project to `/opt/dayz`, laid out like a Steam library so
    the tools run unchanged with `STEAM=/opt/dayz`; then runs `tools/vps_install.sh` on
