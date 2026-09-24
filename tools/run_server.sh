@@ -13,14 +13,21 @@ setup_mods "$SERVER_DIR" 1
 
 cd "$SERVER_DIR"
 
-# VERIFY_SIGNATURES in mission.conf (needed for our own unsigned mods) gets the mission
-# its own copy of the server config; serverDZ.cfg itself is left alone.
+# VERIFY_SIGNATURES in mission.conf (needed for our own unsigned mods), or any of
+# SERVER_NAME / SERVER_PASSWORD / ADMIN_PASSWORD / QUERY_PORT in the environment (the
+# VPS), get the mission its own copy of the server config; serverDZ.cfg is left alone.
 CONFIG=serverDZ.cfg
-if [ -n "$VERIFY_SIGNATURES" ]; then
+if [ -n "$VERIFY_SIGNATURES$SERVER_NAME$SERVER_PASSWORD$ADMIN_PASSWORD$QUERY_PORT" ]; then
 	CONFIG="serverDZ.${MISSION%%.*}.cfg"
-	sed -E "s/^verifySignatures *= *[0-9]+;/verifySignatures = $VERIFY_SIGNATURES;/" serverDZ.cfg > "$CONFIG"
+	sed -E \
+		-e "s/^verifySignatures *= *[0-9]+;/verifySignatures = ${VERIFY_SIGNATURES:-2};/" \
+		${SERVER_NAME:+-e "s/^hostname *= *\"[^\"]*\";/hostname = \"$SERVER_NAME\";/"} \
+		${SERVER_PASSWORD+-e "s/^password *= *\"[^\"]*\";/password = \"$SERVER_PASSWORD\";/"} \
+		${ADMIN_PASSWORD:+-e "s/^passwordAdmin *= *\"[^\"]*\";/passwordAdmin = \"$ADMIN_PASSWORD\";/"} \
+		serverDZ.cfg > "$CONFIG"
+	grep -q "^steamQueryPort" "$CONFIG" || echo "steamQueryPort = ${QUERY_PORT:-27016};" >> "$CONFIG"
 fi
 
-exec ./DayZServer "-config=$CONFIG" -port=2302 -profiles=profiles \
+exec ./DayZServer "-config=$CONFIG" "-port=${GAME_PORT:-2302}" -profiles=profiles \
 	"-mission=./mpmissions/$MISSION" "${MOD_ARGS[@]}" \
 	-cpuCount=8 -limitFPS=200 -dologs -adminlog -freezecheck "$@"

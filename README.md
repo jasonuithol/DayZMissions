@@ -153,6 +153,37 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
   member of a loop variable is unreliable: it raised "Virtual Machine Exception" and made a
   weighted random pick return the first element every time. Index loops are safe.
 
+## Going public: the VPS plan (not started)
+
+The server has to live somewhere with open ports to appear in the in-game browser or
+DZSA (both list the address Steam's master server sees, so tunnels and VPNs don't help;
+there is no router access here). The VPS from the Translink project
+(`root@<vps host>`, the VPS provider) is the target. Tooling is written and
+dry-tested, nothing has been run against the box yet.
+
+1. `ssh-copy-id root@<vps host>` from this machine - the key here is not
+   authorised on the VPS yet (Translink deploys used a password).
+2. Copy `tools/vps.conf.example` to `tools/vps.conf` (git-ignored): server name, join
+   password (empty = public), admin password, ports.
+3. Check the box: RAM (a modded DayZ server wants 6 GB+, and it shares with the
+   Translink app), disk (5.2 GB to copy), and the VPS provider's control-panel firewall -
+   UDP 2302-2305 and 27016 must be open there too; that is a panel job, not a shell one.
+4. `tools/vps_sync.sh` - rsyncs the stable server (3.8 GB), the mission's Workshop mods
+   (1.4 GB for roles) and this project to `/opt/dayz`, laid out like a Steam library so
+   the tools run unchanged with `STEAM=/opt/dayz`; then runs `tools/vps_install.sh` on
+   the box: `dayz` user, `dayz.service` (auto-restart), nightly 05:00 restart timer
+   (every start redeploys = wipes persistence and resets the vehicles), ufw rules. No
+   Steam login on the VPS - SteamCMD can't fetch DayZ's server or Workshop mods
+   anonymously, so everything is shipped from here; re-run the sync to update.
+5. `run_server.sh` reads `SERVER_NAME`, `SERVER_PASSWORD`, `ADMIN_PASSWORD`, `QUERY_PORT`
+   from the environment (the service's `vps.env`) into the generated per-mission config.
+6. Decide about `VehicleShootingAnywhere`: it is unsigned, so the server runs with
+   `verifySignatures = 0` and launchers can't fetch it. Friends-only: send them the
+   `build/@VehicleShootingAnywhere` folder. Public: sign it and publish it to the
+   Workshop (DayZ Tools is installed; Windows tools, Proton) or drop it.
+7. Then: it should appear in the Community tab and DZSA within minutes; the launcher
+   installs the Workshop mods for players.
+
 ## Open items
 
 - **Helipads** - Chernarus has exactly five, all `decal_heli_army.p3d` (a nameless terrain

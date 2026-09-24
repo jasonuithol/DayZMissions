@@ -1,0 +1,8 @@
+# Copy to tools/vps.conf (git-ignored) and fill in. Read by tools/vps_*.sh.
+VPS=root@<vps host>     # ssh target with root (installs the service, opens the firewall)
+MISSION=roles                      # which mission the VPS runs
+SERVER_NAME="My Roles Server"        # shown in the server browser
+SERVER_PASSWORD=""                 # empty = public
+ADMIN_PASSWORD="change-me"
+GAME_PORT=2302
+QUERY_PORT=27016                   # Steam query port: this is what the browsers and DZSA talk to
