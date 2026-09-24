@@ -46,6 +46,7 @@ class VehicleSpots
 	static const int BATCH = 5;              // spots per tick
 	static const int BATCH_MS = 250;
 	static const int SETTLE_MS = 3000;
+	static const float MAX_TILT = 12;        // degrees of pitch or roll after settling; more means it sits on something
 
 	protected string m_Tag;
 	protected ref VehicleFactory m_Factory;
@@ -235,8 +236,12 @@ class VehicleSpots
 				if (m_Factory.FuelFraction(vehicle) < 0.99)
 					why = "came up empty";
 			}
-			if (m_Taken[i][1] - vehicle.GetPosition()[1] > 2 && !GetGame().SurfaceIsSea(m_Taken[i][0], m_Taken[i][2]))
+			bool onLand = !GetGame().SurfaceIsSea(m_Taken[i][0], m_Taken[i][2]);
+			if (m_Taken[i][1] - vehicle.GetPosition()[1] > 2 && onLand)
 				why = "fell through the floor";
+			vector tilt = vehicle.GetOrientation();
+			if (onLand && (Math.AbsFloat(tilt[1]) > MAX_TILT || Math.AbsFloat(tilt[2]) > MAX_TILT))
+				why = "sits tilted (pitch " + tilt[1] + ", roll " + tilt[2] + ")";
 			if (why == "")
 				continue;
 

@@ -48,16 +48,19 @@ class CarFactory: VehicleFactory
 		car.Fill(CarFluid.BRAKE, car.GetFluidCapacity(CarFluid.BRAKE));
 	}
 
+	// clearance boxes: width, height, length - from ClippingInfo of the spawned vehicles
 	override vector Size(string type)
 	{
 		if (type.Contains("LHD"))
-			return "40 30 250";
+			return "70 60 310";
 		if (type.Contains("Bus"))
-			return "2.6 3.2 12";
-		if (type.Contains("Truck") || type.Contains("Vodnik"))
+			return "3.2 3.5 16";
+		if (type.Contains("Vodnik"))
+			return "3.0 3.0 8";
+		if (type.Contains("Truck"))
 			return "2.6 3.0 7.5";
 		if (type.Contains("Tractor"))
-			return "2.4 3.0 5.5";
+			return "2.6 3.0 5.5";
 		return "2.0 1.8 4.6";
 	}
 }
