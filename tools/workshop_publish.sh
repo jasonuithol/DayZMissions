@@ -10,6 +10,9 @@
 # recognise the mod, so always run twice the first time. Later runs just update.
 # Dependencies ("required items") can't be set from here: add them on the item's Workshop
 # page afterwards (VehicleShootingAnywhere needs Vehicle Shooting + Survivor Animations).
+# The "Mod" tag is essential: the DayZ launcher ignores untagged items ("waiting" forever).
+# NOTE: logging in with SteamCMD knocks the desktop Steam client offline - don't publish
+# while playing, and click Steam > Go Online afterwards.
 set -e
 source "$(dirname "$0")/common.sh"
 NAME="$1"; LOGIN="$2"
@@ -37,6 +40,12 @@ cat > "$VDF" <<ITEM
 	"title"           "$NAME"
 	"description"     "$DESC"
 	"changenote"      "Uploaded with SteamCMD from $(git -C "$PROJECT_DIR" rev-parse --short HEAD 2>/dev/null)"
+	"tags"
+	{
+		"0" "Mod"
+		"1" "Vehicle"
+		"2" "Mechanics"
+	}
 }
 ITEM
 
