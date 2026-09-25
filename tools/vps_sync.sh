@@ -43,6 +43,7 @@ if [ -n "$SKIP_INSTALL" ]; then
 fi
 
 echo "==> installing the service"
-ssh "$VPS" MISSION="$MISSION" SERVER_NAME="$SERVER_NAME" SERVER_PASSWORD="$SERVER_PASSWORD" \
-	ADMIN_PASSWORD="$ADMIN_PASSWORD" GAME_PORT="$GAME_PORT" QUERY_PORT="$QUERY_PORT" \
-	'bash -s' < "$PROJECT_DIR/tools/vps_install.sh"
+# the remote shell re-parses the command line, so every value is shell-quoted
+ssh "$VPS" "MISSION=$(printf %q "$MISSION") SERVER_NAME=$(printf %q "$SERVER_NAME") \
+	SERVER_PASSWORD=$(printf %q "$SERVER_PASSWORD") ADMIN_PASSWORD=$(printf %q "$ADMIN_PASSWORD") \
+	GAME_PORT=$(printf %q "$GAME_PORT") QUERY_PORT=$(printf %q "$QUERY_PORT") bash -s" < "$PROJECT_DIR/tools/vps_install.sh"
