@@ -162,26 +162,24 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
 
 ## The public server (VPS)
 
-`roles` runs on the Translink VPS (`root@<vps host>`, <vps ip>, the VPS provider,
-resized 2026-09-25 to 4 vCPU / 7.8 GB / 59 GB) as `dayz.service`, alongside the transit app.
-Live since 2026-09-25: name **<server name>**, join password required
-(in `tools/vps.conf`, git-ignored, and `/opt/dayz/vps.env` on the box), game port 2302, Steam
-query port 27016 - which answers from the internet, so the panel firewall is not in the way.
-It runs at ~5.5 GB RSS with a 4 GB swapfile as headroom, and restarts nightly at 05:00 (each
-restart redeploys the mission: fresh vehicles, wiped persistence).
+`roles` runs on a rented Linux VPS (4 vCPU / 8 GB / 60 GB) as `dayz.service`. The host, server
+name, join and admin passwords and ports live in `tools/vps.conf` (git-ignored; see
+`vps.conf.example`) and, on the box, in `/opt/dayz/vps.env`. Live since 2026-09-25, game port
+2302 and Steam query port 27016 reachable from the internet. It runs at ~5.5 GB RSS with a 4 GB
+swapfile as headroom, and restarts nightly at 05:00 (each restart redeploys the mission: fresh
+vehicles, wiped persistence).
 
 - `tools/vps_sync.sh` ships the stable server, the mission's Workshop mods, this project and
   the signed builds of our mods to `/opt/dayz` (a Steam-library layout, `STEAM=/opt/dayz`) and
   (re)installs the service; re-run it after any change. `SKIP_INSTALL=1` only ships files.
   No SteamCMD on the VPS (it can't fetch DayZ's server or Workshop mods anonymously).
 - Logs: `journalctl -u dayz -f`; script log in `/opt/dayz/steamapps/common/DayZServer/profiles/`.
-- Connect: `tools/run_client.sh roles <vps ip> <password>`; friends use DZSA's direct
-  connect or the in-game browser once it is listed. They need the seven Workshop mods (the
-  launcher installs them) and VehicleShootingAnywhere, which is on the Workshop too
-  (id <workshop id>, published with `tools/workshop_publish.sh` via SteamCMD - first run from a
-  real terminal for the Steam Guard prompt, later runs use cached credentials). The server
-  loads our own signed build (`local` in `mods.txt`); its `meta.cpp` carries the Workshop id,
-  so launchers match it.
+- Connect: `tools/run_client.sh roles <host> <password>`; everyone else uses DZSA's direct
+  connect or the in-game browser. The eight mods, including our own VehicleShootingAnywhere
+  (on the Workshop; published with `tools/workshop_publish.sh` via SteamCMD - first run from a
+  real terminal for the Steam Guard prompt, later runs use cached credentials), are installed
+  by the launcher. The server loads our own signed build (`local` in `mods.txt`); its `meta.cpp`
+  carries the Workshop id, so launchers match it.
 
 ## Open items
 
