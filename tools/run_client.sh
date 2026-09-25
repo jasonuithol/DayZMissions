@@ -35,7 +35,7 @@ for f in "$CLIENT_DIR/DayZ_BE.exe" "$PROTON_BIN"; do
 	fi
 done
 
-setup_mods "$CLIENT_DIR" 0
+setup_mods "$CLIENT_DIR" 0 dayzmissions-mods
 
 export STEAM_COMPAT_CLIENT_INSTALL_PATH="$STEAM"
 export STEAM_COMPAT_DATA_PATH="$STEAM/steamapps/compatdata/$CLIENT_APPID"

@@ -54,9 +54,14 @@ WORKSHOP_DIR="${WORKSHOP_DIR:-$STEAM/steamapps/workshop/content/221100}"
 # @Name is a real folder of symlinks with lower-cased names, because some mods ship
 # "Addons"/"Keys" and the Linux server only looks for "addons".
 # With install_keys=1 the mods' .bikey files are copied into game_dir/keys (server only).
+# With subdir set, the links go into game_dir/<subdir>/ instead of the game root: the
+# DayZ launcher scans the client's root for @* folders and treats them as local mods, which
+# breaks its Workshop matching ("unrecognised" mods), so the client uses a subfolder.
 # NOMODS=1 skips everything, for running a mission vanilla.
 setup_mods() {
-	local game_dir="$1" install_keys="$2"
+	local game_dir="$1" install_keys="$2" subdir="$3"
+	local link_dir="$game_dir${subdir:+/$subdir}"
+	mkdir -p "$link_dir"
 	local list="$PROJECT_DIR/missions/$MISSION/mods.txt"
 	local mods="" id name entry
 	MOD_ARGS=()
@@ -74,15 +79,15 @@ setup_mods() {
 			echo "mod $name ($id) is not downloaded - subscribe to it in Steam" >&2
 			exit 1
 		fi
-		[ -L "$game_dir/$name" ] && rm "$game_dir/$name"
-		mkdir -p "$game_dir/$name"
+		[ -L "$link_dir/$name" ] && rm "$link_dir/$name"
+		mkdir -p "$link_dir/$name"
 		for entry in "$src"/*; do
-			ln -sfn "$entry" "$game_dir/$name/$(basename "$entry" | tr '[:upper:]' '[:lower:]')"
+			ln -sfn "$entry" "$link_dir/$name/$(basename "$entry" | tr '[:upper:]' '[:lower:]')"
 		done
 		if [ "$install_keys" = 1 ]; then
 			find "$src/" -iname '*.bikey' -exec cp -u {} "$game_dir/keys/" ';'
 		fi
-		mods="$mods${mods:+;}$name"
+		mods="$mods${mods:+;}${subdir:+$subdir/}$name"
 	done < "$list"
 
 	[ -n "$mods" ] && MOD_ARGS=("-mod=$mods")
