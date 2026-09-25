@@ -11,6 +11,8 @@ def build(src, dst_root):
     files = []
     for root, _, names in os.walk(src):
         for n in sorted(names):
+            if root == src and (n.startswith('workshop.') or n == 'preview.png'):
+                continue  # Workshop metadata, not mod content
             full = os.path.join(root, n)
             files.append((os.path.relpath(full, src).replace('/', '\\'), open(full, 'rb').read()))
     files.sort()
