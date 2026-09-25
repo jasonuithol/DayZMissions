@@ -44,8 +44,10 @@ echo "==> uploading build/@$NAME as Workshop item $ID (0 = new) - SteamCMD will 
 steamcmd +login "$LOGIN" +workshop_build_item "$VDF" +quit
 
 NEW="$(grep -o '"publishedfileid" *"[0-9]*"' "$VDF" | grep -o '[0-9]*$')"
-if [ "$NEW" != "0" ] && [ "$NEW" != "$ID" ]; then
+if [ -n "$NEW" ] && [ "$NEW" != "0" ] && [ "$NEW" != "$ID" ]; then
 	echo "$NEW" > "$PROJECT_DIR/mods/$NAME/workshop.id"
 	echo "==> created https://steamcommunity.com/sharedfiles/filedetails/?id=$NEW"
 	echo "    now run this again so the upload includes meta.cpp with that id"
+else
+	echo "==> updated https://steamcommunity.com/sharedfiles/filedetails/?id=$ID"
 fi
