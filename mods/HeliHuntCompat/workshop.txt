@@ -1,1 +1,1 @@
-Handling tune for the MBM Honda CRF450R: more steering lock, quicker steering, open centre differential and grippier tyres, so it stops understeering and sliding. Requires MBM_HondaCRF450R. Source: https://github.com/jasonuithol/DayZMissions
+Handling tune for the MBM Honda CRF450R: more steering lock, quicker steering, open centre differential and grippier tyres, so it stops understeering and sliding. Requires MBM_HondaCRF450R.

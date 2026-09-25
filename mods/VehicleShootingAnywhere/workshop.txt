@@ -3,5 +3,3 @@ Companion to Hunterz' Vehicle Shooting: lets passengers shoot from ANY seat of A
 Requires: Vehicle Shooting (Hunterz & Dave) and Survivor Animations (TheDaveCZE & Hunterz). Load after Vehicle Shooting. Server and client.
 
 Credits: Hunterz and Dave for Vehicle Shooting, which does all the real work; TheDaveCZE for Survivor Animations; Helicopter Shooting Red Falcon for showing the same trick for RedFalcon helis.
-
-Source (DayZ Public License): https://github.com/jasonuithol/DayZMissions
