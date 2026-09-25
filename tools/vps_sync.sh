@@ -33,8 +33,9 @@ if [ -f "$PROJECT_DIR/missions/$MISSION/mods.txt" ]; then
 	done < "$PROJECT_DIR/missions/$MISSION/mods.txt"
 fi
 
-echo "==> project"
-$RSYNC --exclude 'build/' --exclude '.git/' "$PROJECT_DIR/" "$VPS:$REMOTE/DayZMissions/"
+echo "==> project (with the signed builds of our own mods)"
+for m in "$PROJECT_DIR"/mods/*/; do "$PROJECT_DIR/tools/build_mod.py" "$m" "$PROJECT_DIR/build" >/dev/null; done
+$RSYNC --exclude '.git/' --exclude 'tools/vps.conf' "$PROJECT_DIR/" "$VPS:$REMOTE/DayZMissions/"
 
 if [ -n "$SKIP_INSTALL" ]; then
 	echo "==> files shipped; SKIP_INSTALL set, not installing the service"

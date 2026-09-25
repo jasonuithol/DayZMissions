@@ -67,7 +67,8 @@ setup_mods() {
 		case "$id" in ""|\#*) continue ;; esac
 		local src="$WORKSHOP_DIR/$id"
 		if [ "$id" = local ]; then
-			"$PROJECT_DIR/tools/build_mod.py" "$PROJECT_DIR/mods/${name#@}" "$PROJECT_DIR/build" >/dev/null || exit 1
+			# NO_BUILD (the VPS): use the signed build shipped from the dev machine as is
+			[ -n "$NO_BUILD" ] || "$PROJECT_DIR/tools/build_mod.py" "$PROJECT_DIR/mods/${name#@}" "$PROJECT_DIR/build" >/dev/null || exit 1
 			src="$PROJECT_DIR/build/$name"
 		elif [ ! -d "$src" ]; then
 			echo "mod $name ($id) is not downloaded - subscribe to it in Steam" >&2
