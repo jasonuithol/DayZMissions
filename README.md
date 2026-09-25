@@ -156,6 +156,11 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
 - There is no ski resort on Chernarus (no ski-lift or chalet classes in the map data).
 - The server process names its main thread `enfMain`, so `pgrep DayZServer` finds nothing;
   match on the command line (`ps -eo rss,args | grep '[D]ayZServer'`) to watch its memory.
+- The DayZ launcher under Proton: browsing, Workshop matching and mod downloads work, the
+  join-password dialog crashes it (Windows-only .NET API), and it scans the game root for `@*`
+  folders and treats them as local mods (breaks Workshop matching - keep links elsewhere).
+  Workshop items need the `Mod` tag (SteamCMD can't set tags: `tools/workshop_tags.py`) and
+  should ship `meta.cpp` but no `mod.cpp`. A SteamCMD login logs the desktop client off.
 - `foreach` over an array that comes from a function call (`foreach (X x : Foo())`) or from a
   member of a loop variable is unreliable: it raised "Virtual Machine Exception" and made a
   weighted random pick return the first element every time. Index loops are safe.
@@ -163,8 +168,10 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
 ## The public server (VPS)
 
 `roles` runs on a rented Linux VPS (4 vCPU / 8 GB / 60 GB) as `dayz.service`. The host, server
-name, join and admin passwords and ports live in `tools/vps.conf` (git-ignored; see
-`vps.conf.example`) and, on the box, in `/opt/dayz/vps.env`. Live since 2026-09-25, game port
+name, admin password and ports live in `tools/vps.conf` (git-ignored; see `vps.conf.example`)
+and, on the box, in `/opt/dayz/vps.env`. No join password: the DayZ launcher's password
+dialog crashes under Proton (`PlatformNotSupportedException`), so a passworded server can't
+be joined through the launcher on Linux at all; use the whitelist if it ever needs closing. Live since 2026-09-25, game port
 2302 and Steam query port 27016 reachable from the internet. It runs at ~5.5 GB RSS with a 4 GB
 swapfile as headroom, and restarts nightly at 05:00 (each restart redeploys the mission: fresh
 vehicles, wiped persistence).
