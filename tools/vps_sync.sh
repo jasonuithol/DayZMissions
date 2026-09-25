@@ -17,7 +17,9 @@ resolve_mission "$MISSION"
 [ "$GAME" = stable ] || { echo "the VPS runs the stable server; $MISSION is GAME=$GAME" >&2; exit 1; }
 
 REMOTE=/opt/dayz
-RSYNC="rsync -az --info=progress2 --delete"
+# everything on the box belongs to the dayz user; without --chown rsync (as root) would
+# recreate the files under this machine's uid and the server could no longer deploy
+RSYNC="rsync -az --info=progress2 --delete --chown=dayz:dayz"
 
 echo "==> server ($SERVER_DIR)"
 ssh "$VPS" "mkdir -p $REMOTE/steamapps/common $REMOTE/steamapps/workshop/content/221100"
@@ -37,8 +39,10 @@ echo "==> project (with the signed builds of our own mods)"
 for m in "$PROJECT_DIR"/mods/*/; do "$PROJECT_DIR/tools/build_mod.py" "$m" "$PROJECT_DIR/build" >/dev/null; done
 $RSYNC --exclude '.git/' --exclude 'tools/vps.conf' "$PROJECT_DIR/" "$VPS:$REMOTE/DayZMissions/"
 
+ssh "$VPS" "chown -R dayz:dayz $REMOTE"
+
 if [ -n "$SKIP_INSTALL" ]; then
-	echo "==> files shipped; SKIP_INSTALL set, not installing the service"
+	echo "==> files shipped; SKIP_INSTALL set, not installing the service (restart it to pick up changes)"
 	exit 0
 fi
 
