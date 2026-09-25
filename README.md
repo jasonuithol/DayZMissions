@@ -160,41 +160,25 @@ raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,
   member of a loop variable is unreliable: it raised "Virtual Machine Exception" and made a
   weighted random pick return the first element every time. Index loops are safe.
 
-## Going public: the VPS plan (not started)
+## The public server (VPS)
 
-The server has to live somewhere with open ports to appear in the in-game browser or
-DZSA (both list the address Steam's master server sees, so tunnels and VPNs don't help;
-there is no router access here). The VPS from the Translink project
-(`root@<vps host>`, the VPS provider) is the target. Tooling is written and
-dry-tested, nothing has been run against the box yet.
+`roles` runs on the Translink VPS (`root@<vps host>`, <vps ip>, the VPS provider,
+resized 2026-09-25 to 4 vCPU / 7.8 GB / 59 GB) as `dayz.service`, alongside the transit app.
+Live since 2026-09-25: name **<server name>**, join password required
+(in `tools/vps.conf`, git-ignored, and `/opt/dayz/vps.env` on the box), game port 2302, Steam
+query port 27016 - which answers from the internet, so the panel firewall is not in the way.
+It runs at ~5.5 GB RSS with a 4 GB swapfile as headroom, and restarts nightly at 05:00 (each
+restart redeploys the mission: fresh vehicles, wiped persistence).
 
-1. `ssh-copy-id root@<vps host>` from this machine - the key here is not
-   authorised on the VPS yet (Translink deploys used a password).
-2. Copy `tools/vps.conf.example` to `tools/vps.conf` (git-ignored): server name, join
-   password (empty = public), admin password, ports.
-3. Check the box. Done 2026-09-24: Ubuntu 26.04, 2 vCPU, **3.8 GB RAM (2.3 GB free, no
-   swap)**, **20 GB disk with 3.2 GB free**, ufw inactive, ssh key now authorised. That is
-   too small. Measured 2026-09-24: the `roles` server (Expansion, 215 vehicles, 5
-   helicopters) sits at **4.9-5.0 GB RSS** as soon as the world is loaded, before any
-   player joins. Removing the Translink and InventoryQuest apps from the box frees ~1 GB
-   RAM and ~11 GB disk, which is not enough. **Needs 8 GB RAM / 40 GB disk**: resize the
-   the VPS provider VPS or take a second one, then continue at step 4. The panel firewall must
-   also allow UDP 2302-2305 and 27016.
-4. `tools/vps_sync.sh` - rsyncs the stable server (3.8 GB), the mission's Workshop mods
-   (1.4 GB for roles) and this project to `/opt/dayz`, laid out like a Steam library so
-   the tools run unchanged with `STEAM=/opt/dayz`; then runs `tools/vps_install.sh` on
-   the box: `dayz` user, `dayz.service` (auto-restart), nightly 05:00 restart timer
-   (every start redeploys = wipes persistence and resets the vehicles), ufw rules. No
-   Steam login on the VPS - SteamCMD can't fetch DayZ's server or Workshop mods
-   anonymously, so everything is shipped from here; re-run the sync to update.
-5. `run_server.sh` reads `SERVER_NAME`, `SERVER_PASSWORD`, `ADMIN_PASSWORD`, `QUERY_PORT`
-   from the environment (the service's `vps.env`) into the generated per-mission config.
-6. `VehicleShootingAnywhere` is signed now (2026-09-25), so signature checks stay on. It is
-   still not on the Workshop, so launchers can't fetch it: friends-only means sending them
-   the `build/@VehicleShootingAnywhere` folder; public means publishing it (the Workshop
-   publisher is a Windows GUI - the Windows 11 VM on this machine) or dropping it.
-7. Then: it should appear in the Community tab and DZSA within minutes; the launcher
-   installs the Workshop mods for players.
+- `tools/vps_sync.sh` ships the stable server, the mission's Workshop mods, this project and
+  the signed builds of our mods to `/opt/dayz` (a Steam-library layout, `STEAM=/opt/dayz`) and
+  (re)installs the service; re-run it after any change. `SKIP_INSTALL=1` only ships files.
+  No SteamCMD on the VPS (it can't fetch DayZ's server or Workshop mods anonymously).
+- Logs: `journalctl -u dayz -f`; script log in `/opt/dayz/steamapps/common/DayZServer/profiles/`.
+- Connect: `tools/run_client.sh roles <vps ip> <password>`; friends use DZSA's direct
+  connect or the in-game browser once it is listed. They need the seven Workshop mods (the
+  launcher installs them) plus a copy of `build/@VehicleShootingAnywhere`, which is signed but
+  not on the Workshop yet (publishing it needs the Windows Workshop publisher: the Win 11 VM).
 
 ## Open items
 
