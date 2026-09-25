@@ -29,8 +29,7 @@ def build(src, dst_root):
     os.makedirs(addons, exist_ok=True)
     with open(os.path.join(addons, name.lower() + '.pbo'), 'wb') as f:
         f.write(out)
-    with open(os.path.join(dst_root, '@' + name, 'mod.cpp'), 'w') as f:
-        f.write('name = "%s";\n' % name)
+    # No mod.cpp: Workshop mods ship only meta.cpp (the launcher crashed on ours).
     # meta.cpp is what the DayZ launcher / DZSA read to tie the folder to its Workshop item
     id_file = os.path.join(src, 'workshop.id')
     if os.path.exists(id_file):
