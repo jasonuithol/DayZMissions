@@ -5,6 +5,13 @@ set -e
 REMOTE=/opt/dayz
 : "${MISSION:?}" "${SERVER_NAME:?}" "${GAME_PORT:=2302}" "${QUERY_PORT:=27016}"
 
+# a swapfile as headroom: the modded server sits at ~5 GB and shares the box
+if [ ! -f /swapfile ]; then
+	fallocate -l 4G /swapfile && chmod 600 /swapfile && mkswap /swapfile >/dev/null && swapon /swapfile
+	grep -q "^/swapfile" /etc/fstab || echo "/swapfile none swap sw 0 0" >> /etc/fstab
+	echo "swap: 4 GB swapfile added"
+fi
+
 id -u dayz >/dev/null 2>&1 || useradd --system --home-dir $REMOTE --shell /usr/sbin/nologin dayz
 chown -R dayz:dayz $REMOTE
 chmod +x $REMOTE/DayZMissions/tools/*.sh $REMOTE/DayZMissions/tools/*.py $REMOTE/steamapps/common/DayZServer/DayZServer

@@ -2,6 +2,7 @@
 # Ship the DayZ server, the mission's Workshop mods and this project to the VPS and
 # (re)install the systemd service there. Re-run after any change; rsync only sends
 # what differs. Needs tools/vps.conf (see vps.conf.example) and key-based ssh.
+# SKIP_INSTALL=1 only ships the files.
 #
 # VPS layout mirrors a Steam library so the tools work unchanged with STEAM=/opt/dayz:
 #   /opt/dayz/steamapps/common/DayZServer            the stable server (from this machine)
@@ -34,6 +35,11 @@ fi
 
 echo "==> project"
 $RSYNC --exclude 'build/' --exclude '.git/' "$PROJECT_DIR/" "$VPS:$REMOTE/DayZMissions/"
+
+if [ -n "$SKIP_INSTALL" ]; then
+	echo "==> files shipped; SKIP_INSTALL set, not installing the service"
+	exit 0
+fi
 
 echo "==> installing the service"
 ssh "$VPS" MISSION="$MISSION" SERVER_NAME="$SERVER_NAME" SERVER_PASSWORD="$SERVER_PASSWORD" \

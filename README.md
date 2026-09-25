@@ -18,7 +18,11 @@ clients are expected in the Steam library under `~/.steam/debian-installation` (
 
 - `missions/<name>.<terrain>/` - one folder per mission. Only the files that differ from
   vanilla go here (normally just `init.c`).
-- `mods/` - our own small mods, packed into `build/` on demand.
+- `mods/` - our own small mods, packed into `build/` on demand and signed: `tools/build_mod.py`
+  packs the PBO and `tools/sign_pbo.sh` signs it with DayZ Tools' `DSSignFile` run under
+  Proton's Wine (no Windows needed). The private key is `~/.dayz-keys/tarbaby.biprivatekey`
+  (never in the repo; `tools/sign_pbo.sh --create <name>` makes a new pair), the public
+  `tarbaby.bikey` ships in each built mod's `keys/` and lands in the server's `keys/`.
 - `lib/` - script shared between missions. Pull it into a mission's `init.c` with
   `#include "lib/Foo.c"`; `deploy.sh` inlines the file, because the engine can't resolve
   includes relative to the mission folder.
@@ -62,8 +66,8 @@ MBM_HondaCRF450R, Survivor Animations and Vehicle Shooting (ids in `mods.txt`).
   in the mod (`scope 0`), hence the Honda.
 - Vehicle Shooting only allows pistols, in vehicles with vanilla seat animations. Our own
   `mods/VehicleShootingAnywhere` (built into `build/` by `tools/build_mod.py`, listed as `local`
-  in `mods.txt`) opens it up to every passenger seat and every firearm. It is unsigned, so the
-  mission sets `VERIFY_SIGNATURES=0` and other players need a copy of `build/@VehicleShootingAnywhere`.
+  in `mods.txt`) opens it up to every passenger seat and every firearm. Other players need a
+  copy of `build/@VehicleShootingAnywhere` (it is not on the Workshop yet).
 - `mods/HeliHuntCompat` retunes the Honda's steering and tyres (more lock, faster response, open
   centre differential, more grip) - the values are in `mods/HeliHuntCompat/config.cpp`.
 - The bikes are the handlebar variants, which need Survivor Animations for the riding pose;
@@ -87,7 +91,8 @@ on each of the five helipads on the map - Huey, Little Bird, Merlin and Gyrocopt
 plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framework and the
 three Expansion mods (`mods.txt`). Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
-`VERIFY_SIGNATURES=0`). Players spawn beside the bus at the Chernogorsk bus station.
+`build/@VehicleShootingAnywhere` for other players). Players spawn beside the bus at the
+Chernogorsk bus station.
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
@@ -184,10 +189,10 @@ dry-tested, nothing has been run against the box yet.
    anonymously, so everything is shipped from here; re-run the sync to update.
 5. `run_server.sh` reads `SERVER_NAME`, `SERVER_PASSWORD`, `ADMIN_PASSWORD`, `QUERY_PORT`
    from the environment (the service's `vps.env`) into the generated per-mission config.
-6. Decide about `VehicleShootingAnywhere`: it is unsigned, so the server runs with
-   `verifySignatures = 0` and launchers can't fetch it. Friends-only: send them the
-   `build/@VehicleShootingAnywhere` folder. Public: sign it and publish it to the
-   Workshop (DayZ Tools is installed; Windows tools, Proton) or drop it.
+6. `VehicleShootingAnywhere` is signed now (2026-09-25), so signature checks stay on. It is
+   still not on the Workshop, so launchers can't fetch it: friends-only means sending them
+   the `build/@VehicleShootingAnywhere` folder; public means publishing it (the Workshop
+   publisher is a Windows GUI - the Windows 11 VM on this machine) or dropping it.
 7. Then: it should appear in the Community tab and DZSA within minutes; the launcher
    installs the Workshop mods for players.
 
