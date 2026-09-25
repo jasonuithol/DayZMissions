@@ -25,7 +25,7 @@ if [ -n "$VERIFY_SIGNATURES$SERVER_NAME$SERVER_PASSWORD$ADMIN_PASSWORD$QUERY_POR
 		${SERVER_PASSWORD+-e "s/^password *= *\"[^\"]*\";/password = \"$SERVER_PASSWORD\";/"} \
 		${ADMIN_PASSWORD:+-e "s/^passwordAdmin *= *\"[^\"]*\";/passwordAdmin = \"$ADMIN_PASSWORD\";/"} \
 		serverDZ.cfg > "$CONFIG"
-	grep -q "^steamQueryPort" "$CONFIG" || echo "steamQueryPort = ${QUERY_PORT:-27016};" >> "$CONFIG"
+	grep -q "^steamQueryPort" "$CONFIG" || printf '\nsteamQueryPort = %s;\n' "${QUERY_PORT:-27016}" >> "$CONFIG"
 fi
 
 exec ./DayZServer "-config=$CONFIG" "-port=${GAME_PORT:-2302}" -profiles=profiles \

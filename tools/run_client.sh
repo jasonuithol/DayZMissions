@@ -5,11 +5,14 @@
 #   tools/run_client.sh coastbikes                 -> local server
 #   tools/run_client.sh coastbikes 192.168.1.20    -> another machine, default ports
 #   tools/run_client.sh coastbikes 192.168.1.20:2302:27016
+#   tools/run_client.sh roles <vps ip> titty  -> with the server's join password
 #   PROTON=GE-Proton10-32 tools/run_client.sh ...  -> pick a specific Proton build
 source "$(dirname "$0")/common.sh"
 resolve_mission "$1"
 
 SERVER="${2:-127.0.0.1}"
+PASSWORD_ARGS=()
+[ -n "$3" ] && PASSWORD_ARGS=("-password=$3")
 case "$SERVER" in
 	*:*) ;;
 	*) SERVER="$SERVER:2302:27016" ;;   # ip:gameport:queryport
@@ -45,4 +48,4 @@ echo "connecting to $SERVER with $PROTON ($GAME client) ${MOD_ARGS[*]}"
 cd "$CLIENT_DIR" || exit 1
 # Run Proton on the host: the sniper container (bwrap) is blocked by AppArmor outside of Steam.
 exec "$PROTON_BIN" waitforexitandrun \
-	"$CLIENT_DIR/DayZ_BE.exe" 0 1 1 -exe DayZ_x64.exe "-connect=$SERVER" "${MOD_ARGS[@]}"
+	"$CLIENT_DIR/DayZ_BE.exe" 0 1 1 -exe DayZ_x64.exe "-connect=$SERVER" "${PASSWORD_ARGS[@]}" "${MOD_ARGS[@]}"
