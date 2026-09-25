@@ -29,6 +29,11 @@ def build(src, dst_root):
         f.write(out)
     with open(os.path.join(dst_root, '@' + name, 'mod.cpp'), 'w') as f:
         f.write('name = "%s";\n' % name)
+    # meta.cpp is what the DayZ launcher / DZSA read to tie the folder to its Workshop item
+    id_file = os.path.join(src, 'workshop.id')
+    if os.path.exists(id_file):
+        with open(os.path.join(dst_root, '@' + name, 'meta.cpp'), 'w') as f:
+            f.write('protocol = 1;\npublishedid = %s;\nname = "%s";\n' % (open(id_file).read().strip(), name))
 
     keys = os.path.expanduser('~/.dayz-keys')
     signed = ''

@@ -1,0 +1,1 @@
+Companion to Hunterz' Vehicle Shooting: lets passengers shoot from ANY seat of ANY vehicle (helicopters included) with ANY firearm, not just pistols in vanilla cars. Requires Vehicle Shooting and Survivor Animations. Server and client. Source: https://github.com/jasonuithol/DayZMissions
