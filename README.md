@@ -93,8 +93,14 @@ Expansion mods (`mods.txt`): Licensed, Core, AI, Navigation (map on M, compass, 
 (parties with markers), Vehicles, Missions (airdrops with map markers: first 5 min after start,
 then hourly, `MissionSettings.json` / `AirdropSettings.json` in the server's
 `profiles/ExpansionMod/Settings/`) and Quests (framework only until quests are written into
-`profiles/ExpansionMod/Quests/`; quest NPCs need Expansion AI, which is loaded but has no
-patrols configured). Passengers can shoot from every vehicle (Vehicle Shooting +
+`profiles/ExpansionMod/Quests/`; quest NPCs need Expansion AI). AI patrols are configured in
+`expansion/settings/AIPatrolSettings.json` **inside the mission folder** (Expansion generates a
+default one there; ours in `missions/roles.chernarusplus/expansion/settings/` replaces it on
+every deploy): sentries and squads spawn at police stations, military towers, barracks, tents,
+heli crashes and contaminated zones when a player comes within 1 km, roaming survivors
+(random friendly/hostile) along the coast, and our own squads - NWAF, Balota, Tisy,
+Zelenogorsk base, the Chernogorsk camp - plus three roaming Raider bands (coast road,
+north-east, the summer camps). Faction loadouts live in `profiles/ExpansionMod/Loadouts/`. Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
 `build/@VehicleShootingAnywhere` for other players). Players spawn at the vanilla coastal spawn points.
 
