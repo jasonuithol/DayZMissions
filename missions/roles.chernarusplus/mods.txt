@@ -5,9 +5,12 @@
 2545327648 @DabsFramework
 2116157322 @DayZ-Expansion-Licensed
 2291785308 @DayZ-Expansion-Core
-2291785437 @DayZ-Expansion-Vehicles
+2792982069 @DayZ-Expansion-AI
 2792984722 @DayZ-Expansion-Navigation
 2792983364 @DayZ-Expansion-Groups
+2291785437 @DayZ-Expansion-Vehicles
+2792984177 @DayZ-Expansion-Missions
+2828486817 @DayZ-Expansion-Quests
 2918418331 @SurvivorAnimations
 3436144357 @VehicleShooting
 local @VehicleShootingAnywhere
