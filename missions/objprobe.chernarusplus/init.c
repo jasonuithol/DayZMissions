@@ -150,6 +150,29 @@ class CustomMission: MissionServer
 		GetGame().RequestExit(0);
 	}
 
+	// -names=1: every named place on the map (CfgWorlds <world> Names: towns, hills, camps...)
+	void Names()
+	{
+		string flag;
+		if (!GetGame().CommandlineGetParam("names", flag))
+			return;
+		string path = "CfgWorlds " + GetGame().GetWorldName() + " Names";
+		int count = GetGame().ConfigGetChildrenCount(path);
+		for (int i = 0; i < count; i++)
+		{
+			string cls, type, name;
+			GetGame().ConfigGetChildName(path, i, cls);
+			GetGame().ConfigGetText(path + " " + cls + " type", type);
+			GetGame().ConfigGetText(path + " " + cls + " name", name);
+			TFloatArray pos = new TFloatArray();
+			GetGame().ConfigGetFloatArray(path + " " + cls + " position", pos);
+			if (pos.Count() == 2)
+				Print("[Names] " + type + "|" + name + "|" + pos[0] + "|" + pos[1]);
+		}
+		Print("[Names] " + count + " named places");
+		GetGame().RequestExit(0);
+	}
+
 	// -findmodel=substring: every object on the map whose debug name (type or .p3d model,
 	// nameless terrain objects included) contains the text
 	void FindModel()
@@ -192,6 +215,7 @@ class CustomMission: MissionServer
 		Ray();
 		SurfaceMap();
 		string spec = "6500,2900,1500,heli";
+		Names();
 		GetGame().CommandlineGetParam("probe", spec);
 		array<string> parts = new array<string>();
 		spec.Split(",", parts);

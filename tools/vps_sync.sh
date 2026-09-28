@@ -52,4 +52,5 @@ echo "==> installing the service"
 ssh "$VPS" "MISSION=$(printf %q "$MISSION") SERVER_NAME=$(printf %q "$SERVER_NAME") \
 	SERVER_PASSWORD=$(printf %q "$SERVER_PASSWORD") ADMIN_PASSWORD=$(printf %q "$ADMIN_PASSWORD") \
 	GAME_PORT=$(printf %q "$GAME_PORT") QUERY_PORT=$(printf %q "$QUERY_PORT") \
-	MOTD=$(printf %q "$MOTD") TIMEZONE=$(printf %q "$TIMEZONE") bash -s" < "$PROJECT_DIR/tools/vps_install.sh"
+	MOTD=$(printf %q "$MOTD") TIMEZONE=$(printf %q "$TIMEZONE") \
+	RCON_PASSWORD=$(printf %q "$RCON_PASSWORD") RCON_PORT=$(printf %q "$RCON_PORT") bash -s" < "$PROJECT_DIR/tools/vps_install.sh"

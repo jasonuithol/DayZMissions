@@ -33,6 +33,14 @@ if [ -n "$VERIFY_SIGNATURES$SERVER_NAME$SERVER_PASSWORD$ADMIN_PASSWORD$QUERY_POR
 	fi
 fi
 
+# RCON_PASSWORD (the VPS) enables BattlEye RCon on RCON_PORT, which is how the restart and
+# wipe warnings reach players (tools/rcon.py). BattlEye renames the file to *_active_*.cfg
+# when it reads it, so it is written fresh at every start.
+if [ -n "$RCON_PASSWORD" ]; then
+	rm -f battleye/beserver_x64_active_*.cfg
+	printf 'RConPassword %s\nRConPort %s\n' "$RCON_PASSWORD" "${RCON_PORT:-2306}" > battleye/beserver_x64.cfg
+fi
+
 exec ./DayZServer "-config=$CONFIG" "-port=${GAME_PORT:-2302}" -profiles=profiles \
 	"-mission=./mpmissions/$MISSION" "${MOD_ARGS[@]}" \
 	-cpuCount=8 -limitFPS=200 -dologs -adminlog -freezecheck "$@"

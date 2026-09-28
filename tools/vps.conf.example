@@ -8,3 +8,6 @@ GAME_PORT=2302
 QUERY_PORT=27016                   # Steam query port: this is what the browsers and DZSA talk to
 TIMEZONE=Australia/Brisbane        # the server clock: nightly 05:00 restart and Friday 17:00 wipe are in this zone
 MOTD="Server restarts daily at 5am Brisbane time (AEST, UTC+10)|Full wipe every Friday at 5pm Brisbane time (AEST, UTC+10)"
+
+RCON_PASSWORD="change-me-too"   # BattlEye RCon, used from the VPS itself for the restart/wipe warnings (tools/rcon.py)
+RCON_PORT=2306

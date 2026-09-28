@@ -31,8 +31,8 @@ clients are expected in the Steam library under `~/.steam/debian-installation` (
 `deploy.sh` builds `mpmissions/<name>.<terrain>` in the server folder: vanilla
 `dayzOffline.<terrain>` files are symlinked and the mission's files copied over them.
 The mission's persistence (`storage_1`) survives a redeploy, so a restart keeps bases, stashes
-and characters; `WIPE=1 tools/deploy.sh <mission>` starts fresh (`tools/test.sh` always does,
-unless `KEEP=1`).
+and characters; `tools/wipe.sh <mission>` deletes it (server stopped; asks first, `-y` doesn't),
+as does `WIPE=1 tools/deploy.sh <mission>`, and `tools/test.sh` always does unless `KEEP=1`.
 Missions whose spawner can see what already exists (`VehicleFactory.Existing()`, see roles)
 only put back what is missing; the others simply spawn again on top of whatever persisted, so
 wipe those before restarting.
@@ -105,7 +105,11 @@ every deploy): sentries and squads spawn at police stations, military towers, ba
 heli crashes and contaminated zones when a player comes within 1 km, roaming survivors
 (random friendly/hostile) along the coast, and our own squads - NWAF, Balota, Tisy,
 Zelenogorsk base, the Chernogorsk camp - plus three roaming Raider bands (coast road,
-north-east, the summer camps). Faction loadouts live in `profiles/ExpansionMod/Loadouts/`. Passengers can shoot from every vehicle (Vehicle Shooting +
+north-east, the summer camps). Faction loadouts live in `profiles/ExpansionMod/Loadouts/`.
+The map (`expansion/settings/MapSettings.json`, same place) carries 15 server markers, one per
+standalone military tent site - the roadside checkpoints the map image doesn't show - named
+after the nearest town (from `objprobe -names=1`) and left off the known bases; the tent
+positions come from `mapgrouppos.xml`. Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
 `build/@VehicleShootingAnywhere` for other players). Players spawn at the vanilla coastal spawn points.
 
@@ -155,7 +159,8 @@ Dev tools. `roadprobe` scans north-south columns and logs the surface types (1.3
 `objprobe` (stable) lists map objects around a point (`TEST_ARGS=-probe=x,z,radius,filter`;
 within 20 m it also shows nameless terrain objects - decals, rocks, sandbags - with their
 model and size), finds every object on the map by model name (`-findmodel=decal_heli`),
-raycasts a point (`-ray=x,z`) or prints an ASCII map of surface types (`-surf=x,z,radius,step`).
+raycasts a point (`-ray=x,z`), prints an ASCII map of surface types (`-surf=x,z,radius,step`)
+or every named place on the map with type and position (`-names=1`; the names are Russian).
 
 ## Writing missions - things learned
 
@@ -203,8 +208,15 @@ be joined through the launcher on Linux at all; use the whitelist if it ever nee
 `vps.conf` (Australia/Brisbane). It is persistent: `dayz-restart.timer` restarts it nightly
 at 05:00 (the redeploy keeps `storage_1`; cars and helicopters are only added where they are
 missing) and `dayz-wipe.timer` wipes it every Friday at 17:00 (stop, delete `storage_*`,
-start). `MOTD` in `vps.conf` (lines separated by `|`) tells players both times; it lands in
-the generated `serverDZ.roles.cfg` as `motd[]` every 5 minutes.
+start). Both timers fire 30 minutes early and run `tools/server_cycle.sh` on the box, which
+warns everyone in game at 30, 10, 5 and 1 minutes through BattlEye RCon (`tools/rcon.py`;
+`RCON_PASSWORD`/`RCON_PORT` in `vps.conf`, written to `battleye/beserver_x64.cfg` by
+`run_server.sh` at each start; the host firewall keeps that port closed to the internet -
+only ssh, the game ports and the query port are open) and then does the deed - anyone still on is kicked when the
+server stops. `tools/vps_restart.sh` and `tools/vps_wipe.sh` start the same countdown by
+hand (`-n` skips the warnings, `-c` cancels a running countdown); `tools/vps_players.sh`
+shows who is on. `MOTD` in `vps.conf` (lines separated by `|`) tells players both times; it
+lands in the generated `serverDZ.roles.cfg` as `motd[]` every 5 minutes.
 
 - `tools/vps_sync.sh` ships the stable server, the mission's Workshop mods, this project and
   the signed builds of our mods to `/opt/dayz` (a Steam-library layout, `STEAM=/opt/dayz`) and

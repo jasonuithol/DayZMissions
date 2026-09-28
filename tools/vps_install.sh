@@ -28,6 +28,9 @@ ADMIN_PASSWORD="$ADMIN_PASSWORD"
 GAME_PORT=$GAME_PORT
 QUERY_PORT=$QUERY_PORT
 MOTD="$MOTD"
+RCON_PASSWORD="$RCON_PASSWORD"
+RCON_PORT=${RCON_PORT:-2306}
+MISSION=$MISSION
 ENV
 chmod 600 $REMOTE/vps.env
 
@@ -50,48 +53,41 @@ LimitNOFILE=100000
 WantedBy=multi-user.target
 UNIT
 
-# nightly restart at 05:00 server time: every start redeploys the mission but keeps
-# the persistence; the spawners only put back the vehicles that are missing
-cat > /etc/systemd/system/dayz-restart.service <<UNIT
+# nightly restart at 05:00 server time and weekly wipe Friday 17:00: the timers fire 30
+# minutes early and tools/server_cycle.sh warns players in game (via RCon) at 30, 10, 5
+# and 1 minutes before stopping the server. A restart keeps the persistence (the spawners
+# only put back the vehicles that are missing); the wipe deletes it.
+for what in restart wipe; do
+	if [ $what = restart ]; then desc="Nightly DayZ restart (05:00)"; when="*-*-* 04:30:00"
+	else desc="Weekly DayZ wipe (Friday 17:00)"; when="Fri *-*-* 16:30:00"; fi
+	cat > /etc/systemd/system/dayz-$what.service <<UNIT
 [Unit]
-Description=Nightly DayZ restart
+Description=$desc
 [Service]
 Type=oneshot
-ExecStart=/bin/systemctl restart dayz.service
+EnvironmentFile=$REMOTE/vps.env
+ExecStart=$REMOTE/DayZMissions/tools/server_cycle.sh $what
 UNIT
-cat > /etc/systemd/system/dayz-restart.timer <<UNIT
+	cat > /etc/systemd/system/dayz-$what.timer <<UNIT
 [Unit]
-Description=Nightly DayZ restart
+Description=$desc
 [Timer]
-OnCalendar=*-*-* 05:00:00
+OnCalendar=$when
 Persistent=false
 [Install]
 WantedBy=timers.target
 UNIT
+done
 
-# weekly wipe, Friday 17:00 server time: stop (so the server writes nothing after),
-# delete the persistence, start fresh
-cat > /etc/systemd/system/dayz-wipe.service <<UNIT
-[Unit]
-Description=Weekly DayZ wipe
-[Service]
-Type=oneshot
-ExecStart=/bin/bash -c 'systemctl stop dayz.service; rm -rf $REMOTE/steamapps/common/DayZServer/mpmissions/$MISSION.*/storage_* $REMOTE/steamapps/common/DayZServer/mpmissions/$MISSION/storage_*; systemctl start dayz.service'
-UNIT
-cat > /etc/systemd/system/dayz-wipe.timer <<UNIT
-[Unit]
-Description=Weekly DayZ wipe
-[Timer]
-OnCalendar=Fri *-*-* 17:00:00
-Persistent=false
-[Install]
-WantedBy=timers.target
-UNIT
-
-if command -v ufw >/dev/null && ufw status | grep -q "Status: active"; then
+# host firewall: ssh, the game ports and the query port are all the internet needs; RCon
+# (RCON_PORT) is only ever used from the box itself and stays closed
+if command -v ufw >/dev/null; then
+	ufw allow OpenSSH >/dev/null
 	ufw allow "$GAME_PORT:$((GAME_PORT + 3))/udp" comment 'DayZ game + BattlEye' >/dev/null
 	ufw allow "$QUERY_PORT/udp" comment 'DayZ Steam query' >/dev/null
-	echo "ufw: opened UDP $GAME_PORT-$((GAME_PORT + 3)) and $QUERY_PORT"
+	ufw default deny incoming >/dev/null
+	ufw --force enable >/dev/null
+	echo "ufw: active - ssh, UDP $GAME_PORT-$((GAME_PORT + 3)) and $QUERY_PORT open, everything else closed"
 fi
 
 systemctl daemon-reload
