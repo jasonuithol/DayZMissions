@@ -91,8 +91,7 @@ on each of the five helipads on the map - Huey, Little Bird, Merlin and Gyrocopt
 plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framework and the
 three Expansion mods (`mods.txt`). Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
-`build/@VehicleShootingAnywhere` for other players). Players spawn beside the bus at the
-Chernogorsk bus station.
+`build/@VehicleShootingAnywhere` for other players). Players spawn at the vanilla coastal spawn points.
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
