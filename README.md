@@ -92,8 +92,9 @@ plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framewo
 Expansion mods (`mods.txt`): Licensed, Core, AI, Navigation (map on M, compass, GPS), Groups
 (parties with markers), Vehicles, Missions (airdrops with map markers: first 5 min after start,
 then hourly, `MissionSettings.json` / `AirdropSettings.json` in the server's
-`profiles/ExpansionMod/Settings/`) and Quests (framework only until quests are written into
-`profiles/ExpansionMod/Quests/`; quest NPCs need Expansion AI). AI patrols are configured in
+`profiles/ExpansionMod/Settings/`). Expansion Quests was tried and dropped (2026-09-28); its
+seeded example quests are still under `profiles/ExpansionMod/Quests/` on the box, unused.
+AI patrols are configured in
 `expansion/settings/AIPatrolSettings.json` **inside the mission folder** (Expansion generates a
 default one there; ours in `missions/roles.chernarusplus/expansion/settings/` replaces it on
 every deploy): sentries and squads spawn at police stations, military towers, barracks, tents,
