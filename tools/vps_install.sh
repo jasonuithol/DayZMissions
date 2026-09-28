@@ -3,7 +3,10 @@
 # environment and the systemd unit, opens the firewall, (re)starts the server.
 set -e
 REMOTE=/opt/dayz
-: "${MISSION:?}" "${SERVER_NAME:?}" "${GAME_PORT:=2302}" "${QUERY_PORT:=27016}"
+: "${MISSION:?}" "${SERVER_NAME:?}" "${GAME_PORT:=2302}" "${QUERY_PORT:=27016}" "${TIMEZONE:=Australia/Brisbane}"
+
+# the restart and wipe timers, and the MOTD, are in this zone
+[ "$(timedatectl show -p Timezone --value)" = "$TIMEZONE" ] || timedatectl set-timezone "$TIMEZONE"
 
 # a swapfile as headroom: the modded server sits at ~5 GB and shares the box
 if [ ! -f /swapfile ]; then
@@ -24,6 +27,7 @@ SERVER_PASSWORD="$SERVER_PASSWORD"
 ADMIN_PASSWORD="$ADMIN_PASSWORD"
 GAME_PORT=$GAME_PORT
 QUERY_PORT=$QUERY_PORT
+MOTD="$MOTD"
 ENV
 chmod 600 $REMOTE/vps.env
 
@@ -46,8 +50,8 @@ LimitNOFILE=100000
 WantedBy=multi-user.target
 UNIT
 
-# nightly restart at 05:00 server time: every start redeploys the mission, which wipes
-# the persistence and puts every vehicle back where it belongs
+# nightly restart at 05:00 server time: every start redeploys the mission but keeps
+# the persistence; the spawners only put back the vehicles that are missing
 cat > /etc/systemd/system/dayz-restart.service <<UNIT
 [Unit]
 Description=Nightly DayZ restart
@@ -65,6 +69,25 @@ Persistent=false
 WantedBy=timers.target
 UNIT
 
+# weekly wipe, Friday 17:00 server time: stop (so the server writes nothing after),
+# delete the persistence, start fresh
+cat > /etc/systemd/system/dayz-wipe.service <<UNIT
+[Unit]
+Description=Weekly DayZ wipe
+[Service]
+Type=oneshot
+ExecStart=/bin/bash -c 'systemctl stop dayz.service; rm -rf $REMOTE/steamapps/common/DayZServer/mpmissions/$MISSION.*/storage_* $REMOTE/steamapps/common/DayZServer/mpmissions/$MISSION/storage_*; systemctl start dayz.service'
+UNIT
+cat > /etc/systemd/system/dayz-wipe.timer <<UNIT
+[Unit]
+Description=Weekly DayZ wipe
+[Timer]
+OnCalendar=Fri *-*-* 17:00:00
+Persistent=false
+[Install]
+WantedBy=timers.target
+UNIT
+
 if command -v ufw >/dev/null && ufw status | grep -q "Status: active"; then
 	ufw allow "$GAME_PORT:$((GAME_PORT + 3))/udp" comment 'DayZ game + BattlEye' >/dev/null
 	ufw allow "$QUERY_PORT/udp" comment 'DayZ Steam query' >/dev/null
@@ -73,8 +96,10 @@ fi
 
 systemctl daemon-reload
 systemctl enable --now dayz-restart.timer >/dev/null
+systemctl enable --now dayz-wipe.timer >/dev/null
 systemctl enable dayz.service >/dev/null
 systemctl restart dayz.service
 sleep 3
 systemctl --no-pager --lines=5 status dayz.service || true
+echo "timers ($TIMEZONE): $(systemctl list-timers dayz-restart.timer dayz-wipe.timer --no-pager --no-legend | awk '{print $1, $2, $3, $(NF-1)}' | tr '\n' ';')"
 echo "server logs: journalctl -u dayz -f ; script log: $REMOTE/steamapps/common/DayZServer/profiles/script_*.log"

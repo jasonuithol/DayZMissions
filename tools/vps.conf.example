@@ -6,3 +6,5 @@ SERVER_PASSWORD=""                 # empty = public
 ADMIN_PASSWORD="change-me"
 GAME_PORT=2302
 QUERY_PORT=27016                   # Steam query port: this is what the browsers and DZSA talk to
+TIMEZONE=Australia/Brisbane        # the server clock: nightly 05:00 restart and Friday 17:00 wipe are in this zone
+MOTD="Server restarts daily at 5am Brisbane time (AEST, UTC+10)|Full wipe every Friday at 5pm Brisbane time (AEST, UTC+10)"

@@ -4,7 +4,8 @@
 // that fit the job. The roles live in roles.json next to this file. And there are ready
 // to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json),
 // Expansion buses, tractors and Vodniks where they belong and an LHD off every port,
-// and a DayZ Expansion helicopter on each of the five helipads on the map.
+// and a DayZ Expansion helicopter on each of the five helipads on the map. The server is
+// persistent: a restart only puts back what is missing (see lib/VehicleSpots.c).
 #include "lib/JsonFile.c"
 #include "lib/RoadFinder.c"
 #include "lib/Spawner.c"
@@ -46,6 +47,26 @@ class CarFactory: VehicleFactory
 		car.Fill(CarFluid.OIL, car.GetFluidCapacity(CarFluid.OIL));
 		car.Fill(CarFluid.COOLANT, car.GetFluidCapacity(CarFluid.COOLANT));
 		car.Fill(CarFluid.BRAKE, car.GetFluidCapacity(CarFluid.BRAKE));
+	}
+
+	// Expansion keeps a linked list of every CarScript on the server (cars, helicopters
+	// and its boats alike), including the ones loaded from persistence
+	override array<EntityAI> Existing()
+	{
+		return AllVehicles();
+	}
+
+	static array<EntityAI> AllVehicles()
+	{
+		array<EntityAI> all = new array<EntityAI>();
+		auto node = CarScript.s_Expansion_AllVehicles.m_Head;
+		while (node)
+		{
+			if (node.m_Value)
+				all.Insert(node.m_Value);
+			node = node.m_Next;
+		}
+		return all;
 	}
 
 	// clearance boxes: width, height, length - from ClippingInfo of the spawned vehicles
@@ -133,6 +154,25 @@ class CustomMission: MissionServer
 		string value;
 		if (GetGame().CommandlineGetParam("missiontest", value))
 			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 5000, true);
+		else
+			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(Census, 600000, true);
+	}
+
+	// every 10 minutes: what is on the server, to see what persistence keeps and the economy culls
+	void Census()
+	{
+		array<EntityAI> all = CarFactory.AllVehicles();
+		int expansion = 0;
+		int helis = 0;
+		for (int i = 0; i < all.Count(); i++)
+		{
+			string type = all[i].GetType();
+			if (type.IndexOf("Expansion") == 0)
+				expansion++;
+			if (type == "ExpansionUh1h" || type == "ExpansionMh6" || type == "ExpansionMerlin" || type == "ExpansionGyrocopter")
+				helis++;
+		}
+		Print("[Census] " + all.Count() + " vehicles: " + (all.Count() - expansion) + " vanilla, " + (expansion - helis) + " Expansion ground/sea, " + helis + " helicopters; " + GetGame().GetTime() / 60000 + " min up");
 	}
 
 	// Instead of the vanilla random clothes, dress the new character as a random role.
@@ -164,28 +204,49 @@ class CustomMission: MissionServer
 	}
 
 	// One helicopter per pad: each type once, the fifth pad gets a random one, shuffled.
+	// With persistence, helicopters survive a restart wherever they were left, so only as
+	// many are added as are missing from the server, on the pads that are free, and the
+	// types nobody has first.
 	void SpawnHelis()
 	{
 		array<vector> pads = {CHERNO_PAD, "5030.24 0 2355.83", "5054.59 0 2333.00", "4155.93 0 11027.65", "4169.05 0 10990.72"};
 		array<float> headings = {153, 73, 170, 117, -76};
-
 		array<string> types = {"ExpansionUh1h", "ExpansionMh6", "ExpansionMerlin", "ExpansionGyrocopter"};
+
+		array<EntityAI> all = CarFactory.AllVehicles();
+		int existing = 0;
 		array<string> order = new array<string>();
 		for (int t = 0; t < types.Count(); t++)
-			order.Insert(types[t]);
-		order.Insert(types.GetRandomElement());
+		{
+			int have = VehicleRegistry.CountOfType(all, types[t]);
+			existing += have;
+			if (have == 0)
+				order.Insert(types[t]);
+		}
+		while (existing + order.Count() < pads.Count())
+			order.Insert(types.GetRandomElement());
+		while (existing + order.Count() > pads.Count())
+			order.Remove(order.Count() - 1);
 		for (int shuffle = order.Count() - 1; shuffle > 0; shuffle--)
 			order.SwapItems(shuffle, Math.RandomInt(0, shuffle + 1));
+		Print("[Heli] " + existing + " helicopters on the server already, adding " + order.Count());
 
-		for (int i = 0; i < pads.Count(); i++)
+		int next = 0;
+		for (int i = 0; i < pads.Count() && next < order.Count(); i++)
 		{
 			vector pos = pads[i];
+			if (VehicleRegistry.Near(all, "ExpansionUh1h|ExpansionMh6|ExpansionMerlin|ExpansionGyrocopter", pos, 15).Count() > 0)
+			{
+				Print("[Heli] the helipad at " + pos + " is still taken");
+				continue;
+			}
 			pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
-			CarScript heli = Spawner.Vehicle(order[i], pos, headings[i], HeliKit(order[i]));
+			CarScript heli = Spawner.Vehicle(order[next], pos, headings[i], HeliKit(order[next]));
+			next++;
 			if (heli)
 			{
 				m_Helis.Insert(heli);
-				Print("[Heli] " + order[i] + " on the helipad at " + heli.GetPosition());
+				Print("[Heli] " + heli.GetType() + " on the helipad at " + heli.GetPosition());
 			}
 		}
 	}
@@ -245,7 +306,8 @@ class CustomMission: MissionServer
 			CarScript heli = m_Helis[h];
 			Print("[Heli] test: " + heli.GetType() + " pos " + heli.GetPosition() + " ori " + heli.GetOrientation() + " fuel " + heli.GetFluidFraction(CarFluid.FUEL) + " hydraulic " + heli.GetFluidFraction(CarFluid.OIL) + " attachments " + heli.GetInventory().AttachmentCount() + " above terrain " + (heli.GetPosition()[1] - GetGame().SurfaceY(heli.GetPosition()[0], heli.GetPosition()[2])));
 		}
-		Print("[Heli] test: " + m_Helis.Count() + " helicopters");
+		array<EntityAI> now = CarFactory.AllVehicles();
+		Print("[Heli] test: " + m_Helis.Count() + " helicopters spawned, " + (VehicleRegistry.CountOfType(now, "ExpansionUh1h") + VehicleRegistry.CountOfType(now, "ExpansionMh6") + VehicleRegistry.CountOfType(now, "ExpansionMerlin") + VehicleRegistry.CountOfType(now, "ExpansionGyrocopter")) + " on the server, " + now.Count() + " vehicles in all");
 		EntityAI stationBus = NearestOfType("ExpansionBus", CHERNO_BUS_STATION, 60);
 		if (stationBus)
 			Print("[Spawn] test: bus at the Chernogorsk station: " + stationBus.GetType() + " at " + stationBus.GetPosition());

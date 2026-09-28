@@ -30,8 +30,12 @@ clients are expected in the Steam library under `~/.steam/debian-installation` (
 
 `deploy.sh` builds `mpmissions/<name>.<terrain>` in the server folder: vanilla
 `dayzOffline.<terrain>` files are symlinked and the mission's files copied over them.
-There is no `storage_1`, so **every deploy is a wipe** - script-spawned vehicles would
-otherwise be duplicated on each restart, and players get a fresh spawn at the mission start.
+The mission's persistence (`storage_1`) survives a redeploy, so a restart keeps bases, stashes
+and characters; `WIPE=1 tools/deploy.sh <mission>` starts fresh (`tools/test.sh` always does,
+unless `KEEP=1`).
+Missions whose spawner can see what already exists (`VehicleFactory.Existing()`, see roles)
+only put back what is missing; the others simply spawn again on top of whatever persisted, so
+wipe those before restarting.
 
 ## Mods
 
@@ -132,7 +136,17 @@ per spot, how built-up the area must be, spacing, a cap per rule, `cluster` to u
 groups of buildings, `near_water` and `offshore` for the game to check); `tools/vehicle_spots.py
 bikespawns` turns them into `spots.json` using the vanilla `mapgrouppos.xml` /
 `cfgeventspawns.xml`, and `lib/VehicleSpots.c` does the placement in game (waits 20 s after
-start, spawns in batches, respawns anything that came up empty or fell through a floor).
+start, spawns in batches, respawns anything that came up empty or fell through a floor). With
+persistence, a spot that still has one of its vehicle types parked at it (within 10 m of a
+vanilla spawn point, 150 m of a building, 1.6 km off a port) is left alone - the mission's
+factory supplies the list of existing vehicles via `Existing()`; roles reads Expansion's
+`CarScript.s_Expansion_AllVehicles`, and the vanilla-only missions have no such list, so they
+respawn everything and want a wipe on restart. One more thing persistence needs: the central
+economy culls vehicles of an event's types down to that event's `max`, so roles carries a
+`db/events.xml` (vanilla, with the six car/truck events' `max` raised to 100 - `nominal` is
+untouched) or the ~150 cars at the vanilla spawn points quietly vanish between restarts.
+`deploy.sh` merges such a folder over the vanilla one file by file. `[Census]` in the script
+log every 10 minutes counts what is on the server.
 Re-run the tool after editing the rules. `tools/test.sh bikespawns` reports upright / fuelled /
 fallen-through counts; `TEST_ARGS=-bikelimit=N` caps a test run.
 
@@ -183,9 +197,14 @@ name, admin password and ports live in `tools/vps.conf` (git-ignored; see `vps.c
 and, on the box, in `/opt/dayz/vps.env`. No join password: the DayZ launcher's password
 dialog crashes under Proton (`PlatformNotSupportedException`), so a passworded server can't
 be joined through the launcher on Linux at all; use the whitelist if it ever needs closing. Live since 2026-09-25, game port
-2302 and Steam query port 27016 reachable from the internet. It runs at ~5.5 GB RSS with a 4 GB
-swapfile as headroom, and restarts nightly at 05:00 (each restart redeploys the mission: fresh
-vehicles, wiped persistence).
+2302 and Steam query port 27016 reachable from the internet. It runs at ~5 GB RSS fresh and
+~6.4 GB after an evening, with a 4 GB swapfile as headroom; the box is DayZ-only since
+2026-09-29 (the old web apps and caddy were removed). The server clock is `TIMEZONE` from
+`vps.conf` (Australia/Brisbane). It is persistent: `dayz-restart.timer` restarts it nightly
+at 05:00 (the redeploy keeps `storage_1`; cars and helicopters are only added where they are
+missing) and `dayz-wipe.timer` wipes it every Friday at 17:00 (stop, delete `storage_*`,
+start). `MOTD` in `vps.conf` (lines separated by `|`) tells players both times; it lands in
+the generated `serverDZ.roles.cfg` as `motd[]` every 5 minutes.
 
 - `tools/vps_sync.sh` ships the stable server, the mission's Workshop mods, this project and
   the signed builds of our mods to `/opt/dayz` (a Steam-library layout, `STEAM=/opt/dayz`) and

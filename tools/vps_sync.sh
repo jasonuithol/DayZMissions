@@ -23,7 +23,8 @@ RSYNC="rsync -az --info=progress2 --delete --chown=dayz:dayz"
 
 echo "==> server ($SERVER_DIR)"
 ssh "$VPS" "mkdir -p $REMOTE/steamapps/common $REMOTE/steamapps/workshop/content/221100"
-$RSYNC --exclude 'profiles/' --exclude 'mpmissions/*/storage_*' --exclude 'mpmissions/[!d]*' \
+# (the generated serverDZ.<mission>.cfg is the VPS's own, made by run_server.sh at each start)
+$RSYNC --exclude 'profiles/' --exclude 'mpmissions/*/storage_*' --exclude 'mpmissions/[!d]*' --exclude 'serverDZ.*.cfg' \
 	"$SERVER_DIR/" "$VPS:$REMOTE/steamapps/common/DayZServer/"
 
 echo "==> mods for $MISSION"
@@ -50,4 +51,5 @@ echo "==> installing the service"
 # the remote shell re-parses the command line, so every value is shell-quoted
 ssh "$VPS" "MISSION=$(printf %q "$MISSION") SERVER_NAME=$(printf %q "$SERVER_NAME") \
 	SERVER_PASSWORD=$(printf %q "$SERVER_PASSWORD") ADMIN_PASSWORD=$(printf %q "$ADMIN_PASSWORD") \
-	GAME_PORT=$(printf %q "$GAME_PORT") QUERY_PORT=$(printf %q "$QUERY_PORT") bash -s" < "$PROJECT_DIR/tools/vps_install.sh"
+	GAME_PORT=$(printf %q "$GAME_PORT") QUERY_PORT=$(printf %q "$QUERY_PORT") \
+	MOTD=$(printf %q "$MOTD") TIMEZONE=$(printf %q "$TIMEZONE") bash -s" < "$PROJECT_DIR/tools/vps_install.sh"

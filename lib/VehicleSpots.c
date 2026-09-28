@@ -9,6 +9,8 @@
 //    side, or on clear ground near the building, or on a roof / platform / floor
 //  - a few seconds later, vehicles that came up empty or dropped through a floor
 //    are respawned on open ground, then on the building's roof, then removed
+//  - persistence: a spot that still has one of its vehicle types parked at it (loaded
+//    from storage) is left alone, so a restart only fills the spots that were emptied
 
 class VehicleSpot
 {
@@ -35,6 +37,41 @@ class VehicleFactory
 	void Refill(EntityAI vehicle) {}
 	// clearance box: width, height, length
 	vector Size(string type) { return "2.0 1.8 4.6"; }
+	// every vehicle already on the server when spawning starts (loaded from persistence);
+	// a mission can't enumerate entities on its own, so this comes from the mods it runs
+	// with (Expansion keeps a list). Empty means nothing is kept and every spot is filled.
+	array<EntityAI> Existing() { return new array<EntityAI>(); }
+}
+
+// Helpers over the list of vehicles the factory says already exist (see Existing()).
+class VehicleRegistry
+{
+	static int CountOfType(array<EntityAI> all, string type)
+	{
+		int n = 0;
+		for (int i = 0; i < all.Count(); i++)
+			if (all[i] && all[i].GetType() == type)
+				n++;
+		return n;
+	}
+
+	// vehicles whose type is one of "A|B|C" within radius of pos (height ignored)
+	static array<EntityAI> Near(array<EntityAI> all, string types, vector pos, float radius)
+	{
+		array<EntityAI> found = new array<EntityAI>();
+		array<string> options = new array<string>();
+		types.Split("|", options);
+		for (int i = 0; i < all.Count(); i++)
+		{
+			EntityAI vehicle = all[i];
+			if (!vehicle || options.Find(vehicle.GetType()) < 0)
+				continue;
+			vector at = vehicle.GetPosition();
+			if (vector.Distance(Vector(at[0], 0, at[2]), Vector(pos[0], 0, pos[2])) <= radius)
+				found.Insert(vehicle);
+		}
+		return found;
+	}
 }
 
 class VehicleSpots
@@ -47,6 +84,9 @@ class VehicleSpots
 	static const int BATCH_MS = 250;
 	static const int SETTLE_MS = 3000;
 	static const float MAX_TILT = 10;        // degrees between the vehicle's up and the ground's normal after settling; more means it sits on something
+	static const float KEPT_EXACT = 10;      // a vehicle this close to its own spawn point still counts as parked there
+	static const float KEPT_NEAR = 150;      // ... or this close to the building it was placed at (a kerb spot can be well down the road)
+	static const float KEPT_OFFSHORE = 1600; // ... or this far out to sea off the port
 
 	protected string m_Tag;
 	protected ref VehicleFactory m_Factory;
@@ -56,8 +96,11 @@ class VehicleSpots
 	protected int m_TopUpRound;
 
 	protected ref array<EntityAI> m_Vehicles = new array<EntityAI>();
-	protected ref array<vector> m_Taken = new array<vector>();    // where each vehicle was put
-	protected ref array<vector> m_Anchors = new array<vector>();  // the building it belongs to
+	protected ref array<EntityAI> m_Kept = new array<EntityAI>();     // loaded from persistence, left as they are
+	protected ref array<EntityAI> m_Existing = new array<EntityAI>(); // everything on the server before spawning
+	protected ref array<vector> m_Taken = new array<vector>();    // where every vehicle (spawned or kept) stands, for spacing
+	protected ref array<vector> m_Placed = new array<vector>();   // where each spawned vehicle was put
+	protected ref array<vector> m_Anchors = new array<vector>();  // the building each spawned vehicle belongs to
 	protected int m_Exact;
 	protected int m_OnRoad;
 	protected int m_Raised;
@@ -73,7 +116,17 @@ class VehicleSpots
 		m_Factory = factory;
 	}
 
-	array<EntityAI> Vehicles() { return m_Vehicles; }
+	// the ones spawned this boot and the ones kept from persistence
+	array<EntityAI> Vehicles()
+	{
+		array<EntityAI> all = new array<EntityAI>();
+		for (int i = 0; i < m_Vehicles.Count(); i++)
+			all.Insert(m_Vehicles[i]);
+		for (int k = 0; k < m_Kept.Count(); k++)
+			all.Insert(m_Kept[k]);
+		return all;
+	}
+	int Total() { return m_Vehicles.Count() + m_Kept.Count(); }
 	bool IsDone() { return m_Done; }
 
 	// Loads path and starts spawning up to `limit` vehicles.
@@ -94,23 +147,25 @@ class VehicleSpots
 
 	void BeginBatches()
 	{
+		m_Existing = m_Factory.Existing();
+		Print(m_Tag + m_Existing.Count() + " vehicles on the server before spawning");
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(SpawnBatch, BATCH_MS, true);
 	}
 
 	void SpawnBatch()
 	{
-		for (int n = 0; n < BATCH && m_NextSpot < m_Spots.spots.Count() && m_Vehicles.Count() < m_Limit; n++)
+		for (int n = 0; n < BATCH && m_NextSpot < m_Spots.spots.Count() && Total() < m_Limit; n++)
 		{
 			SpawnAt(m_Spots.spots[m_NextSpot]);
 			m_NextSpot++;
 		}
 
-		if (m_NextSpot < m_Spots.spots.Count() && m_Vehicles.Count() < m_Limit)
+		if (m_NextSpot < m_Spots.spots.Count() && Total() < m_Limit)
 			return;
 
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(SpawnBatch);
-		Print(m_Tag + m_Vehicles.Count() + " vehicles at " + m_NextSpot + " spots (" + m_Exact + " on their own spot, " + m_OnRoad + " at a kerb, " + m_Raised + " on roofs or floors, " + m_Offshore + " at sea, " + m_NoSpace + " skipped for lack of space, " + m_NoWater + " skipped for lack of water, " + m_Failed + " failed)");
-		if (m_Vehicles.Count() >= m_Limit && m_NextSpot < m_Spots.spots.Count())
+		Print(m_Tag + m_Vehicles.Count() + " vehicles spawned at " + m_NextSpot + " spots, " + m_Kept.Count() + " kept from persistence (" + m_Exact + " on their own spot, " + m_OnRoad + " at a kerb, " + m_Raised + " on roofs or floors, " + m_Offshore + " at sea, " + m_NoSpace + " skipped for lack of space, " + m_NoWater + " skipped for lack of water, " + m_Failed + " failed)");
+		if (Total() >= m_Limit && m_NextSpot < m_Spots.spots.Count())
 			Print(m_Tag + "hit the " + m_Limit + " vehicle limit - spots.json has more than that");
 		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TopUp, SETTLE_MS, false);
 	}
@@ -120,6 +175,25 @@ class VehicleSpots
 		vector anchor = Vector(spot.pos[0], spot.pos[1], spot.pos[2]);
 		string type = Choose(spot.types);
 		vector size = m_Factory.Size(type);
+
+		// still occupied from before the restart: keep what is there
+		float keptRadius = KEPT_NEAR;
+		if (spot.exact)
+			keptRadius = KEPT_EXACT;
+		if (spot.offshore)
+			keptRadius = KEPT_OFFSHORE;
+		array<EntityAI> parked = VehicleRegistry.Near(m_Existing, spot.types, anchor, keptRadius);
+		int wanted = spot.count;
+		for (int p = 0; p < parked.Count() && wanted > 0; p++)
+		{
+			if (m_Kept.Find(parked[p]) >= 0)
+				continue;
+			m_Kept.Insert(parked[p]);
+			m_Taken.Insert(parked[p].GetPosition());
+			wanted--;
+		}
+		if (wanted <= 0)
+			return;
 
 		if (spot.nearWater > 0 && !Placement.WaterWithin(anchor, spot.nearWater))
 		{
@@ -139,6 +213,7 @@ class VehicleSpots
 			{
 				m_Vehicles.Insert(ship);
 				m_Taken.Insert(sea);
+				m_Placed.Insert(sea);
 				m_Anchors.Insert(anchor);
 				m_Offshore++;
 				Print(m_Tag + type + " at sea off " + anchor + " at " + sea + ", " + vector.Distance(anchor, sea) + " m out");
@@ -165,7 +240,7 @@ class VehicleSpots
 			}
 		}
 
-		for (int i = 0; i < spot.count; i++)
+		for (int i = 0; i < wanted; i++)
 		{
 			vector pos;
 			float heading;
@@ -186,7 +261,7 @@ class VehicleSpots
 				float spacing = size[2] + KEEP_AWAY;
 				for (int slide = 0; slide < 6 && !placed; slide++)
 				{
-					float offset = (i - (spot.count - 1) * 0.5 + slide) * spacing;
+					float offset = (i - (wanted - 1) * 0.5 + slide) * spacing;
 					pos = centre + along * offset;
 					pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
 					heading = roadHeading;
@@ -215,6 +290,7 @@ class VehicleSpots
 			{
 				m_Vehicles.Insert(vehicle);
 				m_Taken.Insert(pos);
+				m_Placed.Insert(pos);
 				m_Anchors.Insert(anchor);
 			}
 			else
@@ -236,8 +312,8 @@ class VehicleSpots
 				if (m_Factory.FuelFraction(vehicle) < 0.99)
 					why = "came up empty";
 			}
-			bool onLand = !GetGame().SurfaceIsSea(m_Taken[i][0], m_Taken[i][2]);
-			if (m_Taken[i][1] - vehicle.GetPosition()[1] > 2 && onLand)
+			bool onLand = !GetGame().SurfaceIsSea(m_Placed[i][0], m_Placed[i][2]);
+			if (m_Placed[i][1] - vehicle.GetPosition()[1] > 2 && onLand)
 				why = "fell through the floor";
 			if (onLand)
 			{
@@ -251,9 +327,10 @@ class VehicleSpots
 				continue;
 
 			string type = vehicle.GetType();
-			vector was = m_Taken[i];
+			vector was = m_Placed[i];
 			float facing = vehicle.GetOrientation()[0];
 			GetGame().ObjectDelete(vehicle);
+			m_Taken.RemoveItem(was);
 
 			vector pos;
 			float heading;
@@ -271,7 +348,7 @@ class VehicleSpots
 			if (!found)
 			{
 				m_Vehicles.Remove(i);
-				m_Taken.Remove(i);
+				m_Placed.Remove(i);
 				m_Anchors.Remove(i);
 				i--;
 				Print(m_Tag + "removed a " + type + " that " + why + " at " + was);
@@ -281,7 +358,8 @@ class VehicleSpots
 			if (!again)
 				continue;
 			m_Vehicles[i] = again;
-			m_Taken[i] = pos;
+			m_Placed[i] = pos;
+			m_Taken.Insert(pos);
 			respawned++;
 			Print(m_Tag + "respawned a " + type + " that " + why + " from " + was + " to " + pos + " " + where);
 		}
@@ -326,8 +404,9 @@ class VehicleSpots
 			if (vehicle.GetType().IndexOf("Expansion") == 0)
 				Print(m_Tag + "modded: " + vehicle.GetType() + " at " + p + " for building at " + m_Anchors[i] + " (" + vector.Distance(p, m_Anchors[i]) + " m away)");
 			if (above < -3 || above > 3 || m_Factory.FuelFraction(vehicle) < 0.99 || Math.AbsFloat(ori[2]) > 15)
-				Print(m_Tag + "odd: " + vehicle.GetType() + " fuel " + m_Factory.FuelFraction(vehicle) + " pos " + p + " above terrain " + above + " pitch " + ori[1] + " roll " + ori[2] + " spawned at " + m_Taken[i]);
+				Print(m_Tag + "odd: " + vehicle.GetType() + " fuel " + m_Factory.FuelFraction(vehicle) + " pos " + p + " above terrain " + above + " pitch " + ori[1] + " roll " + ori[2] + " spawned at " + m_Placed[i]);
 		}
+		Print(m_Tag + "test: " + m_Kept.Count() + " vehicles kept from persistence, " + m_Existing.Count() + " were on the server before spawning");
 		Print(m_Tag + "test: " + m_Vehicles.Count() + " vehicles, " + upright + " upright, " + fuelled + " fuelled, " + damaged + " damaged, " + lost + " fallen through the map, closest pair " + closest + " m");
 	}
 

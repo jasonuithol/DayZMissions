@@ -2,7 +2,8 @@
 # Build missions/<mission> into the server's mpmissions folder.
 # The vanilla dayzOffline.<terrain> economy files are symlinked, then the
 # mission's own files (init.c etc.) are copied over the top.
-# Storage is wiped on every deploy so scripted spawns don't pile up.
+# The mission's persistence (storage_*) survives a redeploy, so a restart keeps bases,
+# stashes and characters; WIPE=1 deletes it for a fresh start.
 set -e
 source "$(dirname "$0")/common.sh"
 resolve_mission "$1"
@@ -19,8 +20,20 @@ if [ "$MISSION" = "dayzOffline.$TERRAIN" ]; then
 	exit 1
 fi
 
+KEEP=""
+if [ -z "$WIPE" ] && ls -d "$TARGET"/storage_* >/dev/null 2>&1; then
+	KEEP="$(mktemp -d "$SERVER_DIR/mpmissions/.keep.XXXXXX")"
+	mv "$TARGET"/storage_* "$KEEP/"
+fi
 rm -rf "$TARGET"
 mkdir -p "$TARGET"
+if [ -n "$KEEP" ]; then
+	mv "$KEEP"/storage_* "$TARGET/"
+	rmdir "$KEEP"
+	echo "kept persistence: $(for d in "$TARGET"/storage_*; do basename "$d"; done | tr '\n' ' ')"
+elif [ -n "$WIPE" ]; then
+	echo "wiped persistence"
+fi
 
 for f in "$VANILLA"/*; do
 	case "$(basename "$f")" in
@@ -29,11 +42,20 @@ for f in "$VANILLA"/*; do
 	esac
 done
 
-# overlay: mission files replace the vanilla symlinks
+# overlay: mission files replace the vanilla symlinks. A mission folder that vanilla also
+# has (db/, env/...) is merged: the vanilla files are symlinked and the mission's copied
+# over them, so a mission can override one economy file without carrying the whole set.
 for f in "$PROJECT_DIR/missions/$MISSION"/*; do
-	case "$(basename "$f")" in mods.txt|mission.conf) continue ;; esac
-	rm -rf "$TARGET/$(basename "$f")"
-	cp -r "$f" "$TARGET/"
+	name="$(basename "$f")"
+	case "$name" in mods.txt|mission.conf) continue ;; esac
+	rm -rf "$TARGET/$name"
+	if [ -d "$f" ] && [ -d "$VANILLA/$name" ]; then
+		mkdir "$TARGET/$name"
+		for v in "$VANILLA/$name"/*; do ln -s "$v" "$TARGET/$name/"; done
+		for m in "$f"/*; do rm -f "$TARGET/$name/$(basename "$m")"; cp -r "$m" "$TARGET/$name/"; done
+	else
+		cp -r "$f" "$TARGET/"
+	fi
 done
 
 # The engine can't #include relative to the mission folder, so lines of the form

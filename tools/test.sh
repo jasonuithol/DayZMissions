@@ -2,9 +2,12 @@
 # Headless smoke test: deploy a mission, boot the server with -missiontest and a
 # throwaway profile dir, and show the mission's log lines plus any script errors.
 # Missions that support it log their state and shut the server down by themselves.
+# The persistence is wiped first so runs are repeatable; KEEP=1 boots on what the last
+# run left behind (to test a persistent restart).
 source "$(dirname "$0")/common.sh"
 resolve_mission "$1"
 
+[ -n "$KEEP" ] || export WIPE=1
 "$PROJECT_DIR/tools/deploy.sh" "$MISSION" || exit 1
 
 setup_mods "$SERVER_DIR" 1

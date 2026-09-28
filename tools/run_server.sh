@@ -14,10 +14,11 @@ setup_mods "$SERVER_DIR" 1
 cd "$SERVER_DIR"
 
 # VERIFY_SIGNATURES in mission.conf (needed for our own unsigned mods), or any of
-# SERVER_NAME / SERVER_PASSWORD / ADMIN_PASSWORD / QUERY_PORT in the environment (the
-# VPS), get the mission its own copy of the server config; serverDZ.cfg is left alone.
+# SERVER_NAME / SERVER_PASSWORD / ADMIN_PASSWORD / QUERY_PORT / MOTD in the environment
+# (the VPS), get the mission its own copy of the server config; serverDZ.cfg is left
+# alone. MOTD is one or more lines separated by "|", shown in turn every 5 minutes.
 CONFIG=serverDZ.cfg
-if [ -n "$VERIFY_SIGNATURES$SERVER_NAME$SERVER_PASSWORD$ADMIN_PASSWORD$QUERY_PORT" ]; then
+if [ -n "$VERIFY_SIGNATURES$SERVER_NAME$SERVER_PASSWORD$ADMIN_PASSWORD$QUERY_PORT$MOTD" ]; then
 	CONFIG="serverDZ.${MISSION%%.*}.cfg"
 	sed -E \
 		-e "s/^verifySignatures *= *[0-9]+;/verifySignatures = ${VERIFY_SIGNATURES:-2};/" \
@@ -26,6 +27,10 @@ if [ -n "$VERIFY_SIGNATURES$SERVER_NAME$SERVER_PASSWORD$ADMIN_PASSWORD$QUERY_POR
 		${ADMIN_PASSWORD:+-e "s/^passwordAdmin *= *\"[^\"]*\";/passwordAdmin = \"$ADMIN_PASSWORD\";/"} \
 		serverDZ.cfg > "$CONFIG"
 	grep -q "^steamQueryPort" "$CONFIG" || printf '\nsteamQueryPort = %s;\n' "${QUERY_PORT:-27016}" >> "$CONFIG"
+	if [ -n "$MOTD" ]; then
+		sed -i -E '/^motd(Interval)? *=|^motd\[\]/d' "$CONFIG"
+		printf '\nmotd[] = { "%s" };\nmotdInterval = 300;\n' "$(echo "$MOTD" | sed 's/"/\\"/g; s/|/", "/g')" >> "$CONFIG"
+	fi
 fi
 
 exec ./DayZServer "-config=$CONFIG" "-port=${GAME_PORT:-2302}" -profiles=profiles \
