@@ -89,7 +89,12 @@ assault ship anchored 300-650 m off every port (the pier-crane clusters: Chernog
 Berezino, Svetlojarsk). And a DayZ Expansion helicopter
 on each of the five helipads on the map - Huey, Little Bird, Merlin and Gyrocopter, each once,
 plus a random fifth, shuffled - which is why this mission loads CF, Dabs Framework and the
-three Expansion mods (`mods.txt`). Passengers can shoot from every vehicle (Vehicle Shooting +
+Expansion mods (`mods.txt`): Licensed, Core, AI, Navigation (map on M, compass, GPS), Groups
+(parties with markers), Vehicles, Missions (airdrops with map markers: first 5 min after start,
+then hourly, `MissionSettings.json` / `AirdropSettings.json` in the server's
+`profiles/ExpansionMod/Settings/`) and Quests (framework only until quests are written into
+`profiles/ExpansionMod/Quests/`; quest NPCs need Expansion AI, which is loaded but has no
+patrols configured). Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
 `build/@VehicleShootingAnywhere` for other players). Players spawn at the vanilla coastal spawn points.
 
