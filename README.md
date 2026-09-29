@@ -106,10 +106,10 @@ heli crashes and contaminated zones when a player comes within 1 km, roaming sur
 (random friendly/hostile) along the coast, and our own squads - NWAF, Balota, Tisy,
 Zelenogorsk base, the Chernogorsk camp - plus three roaming Raider bands (coast road,
 north-east, the summer camps). Faction loadouts live in `profiles/ExpansionMod/Loadouts/`.
-The map (`expansion/settings/MapSettings.json`, same place) carries 15 server markers, one per
-standalone military tent site - the roadside checkpoints the map image doesn't show - named
-after the nearest town (from `objprobe -names=1`) and left off the known bases; the tent
-positions come from `mapgrouppos.xml`. Passengers can shoot from every vehicle (Vehicle Shooting +
+The map settings (`expansion/settings/MapSettings.json`, same place) are Expansion's defaults;
+server markers were tried for the roadside military tent sites and dropped - Expansion draws its
+own markers at every zoom, unlike the map's built-in landmark layers, and matching them needed a
+client mod that wasn't worth it. Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
 `build/@VehicleShootingAnywhere` for other players). Players spawn at the vanilla coastal spawn points.
 

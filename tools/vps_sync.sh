@@ -16,6 +16,13 @@ source "$CONF"
 resolve_mission "$MISSION"
 [ "$GAME" = stable ] || { echo "the VPS runs the stable server; $MISSION is GAME=$GAME" >&2; exit 1; }
 
+# a "local" mod that isn't on the Workshop yet would make the public server unjoinable
+# through the launcher (it can't fetch the mod), so refuse to ship such a mods.txt
+while read -r id name; do
+	[ "$id" = local ] || continue
+	[ -s "$PROJECT_DIR/mods/${name#@}/workshop.id" ] || { echo "$name is in $MISSION/mods.txt but has no mods/${name#@}/workshop.id - publish it first (tools/workshop_publish.sh), or take it out of mods.txt" >&2; exit 1; }
+done < "$PROJECT_DIR/missions/$MISSION/mods.txt"
+
 REMOTE=/opt/dayz
 # everything on the box belongs to the dayz user; without --chown rsync (as root) would
 # recreate the files under this machine's uid and the server could no longer deploy
