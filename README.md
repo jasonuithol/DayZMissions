@@ -154,15 +154,6 @@ log every 10 minutes counts what is on the server.
 Re-run the tool after editing the rules. `tools/test.sh bikespawns` reports upright / fuelled /
 fallen-through counts; `TEST_ARGS=-bikelimit=N` caps a test run.
 
-### portals.chernarusplus (1.30, modded)
-Test bed for our [DayzPortals](https://github.com/jasonuithol/DayzPortals) mod.
-`mods/DayzPortals` is a relative symlink to `../../DayzPortals/DayzPortals`, so clone that repo
-next to this one. The mission has an assembled pair of Pereval gates on 412.0 MHz, one at Balota airfield where players spawn
-and one at the NW airfield, plus two crated gates with the parts and hammer to assemble them, and
-an AKM with a loaded magazine to try the ammo interlock. Its `cfgeconomycore.xml` registers
-`dzp/types.xml`, without which the gates don't persist. `tools/test.sh portals` builds, assembles,
-checks the interlock and jumps a script-spawned survivor between the gates.
-
 ### roadprobe.chernarusplus / objprobe.chernarusplus
 Dev tools. `roadprobe` scans north-south columns and logs the surface types (1.30).
 `objprobe` (stable) lists map objects around a point (`TEST_ARGS=-probe=x,z,radius,filter`;
