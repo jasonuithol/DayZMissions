@@ -58,7 +58,8 @@ ITEM
 echo "==> uploading build/@$NAME as Workshop item $ID (0 = new) - SteamCMD will ask for your password / Steam Guard code"
 steamcmd +login "$LOGIN" +workshop_build_item "$VDF" +quit
 
-NEW="$(grep -o '"publishedfileid" *"[0-9]*"' "$VDF" | grep -o '[0-9]*$')"
+# SteamCMD rewrites the VDF with the new id, tab-separated
+NEW="$(grep -o '"publishedfileid"[[:space:]]*"[0-9]*"' "$VDF" | grep -o '[0-9]*' | tail -n1)"
 if [ -n "$NEW" ] && [ "$NEW" != "0" ] && [ "$NEW" != "$ID" ]; then
 	echo "$NEW" > "$PROJECT_DIR/mods/$NAME/workshop.id"
 	echo "==> created https://steamcommunity.com/sharedfiles/filedetails/?id=$NEW"
