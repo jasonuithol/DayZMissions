@@ -11,6 +11,9 @@
 # Dependencies ("required items") can't be set from here: add them on the item's Workshop
 # page afterwards (VehicleShootingAnywhere needs Vehicle Shooting + Survivor Animations).
 # The "Mod" tag is essential: the DayZ launcher ignores untagged items ("waiting" forever).
+# Optional files in mods/<ModName>/: workshop.txt (description), workshop.title (title,
+# default the mod's name), workshop.tags (tags on one line, default Mod Vehicle Mechanics)
+# and preview.png (under 1 MB).
 # NOTE: logging in with SteamCMD knocks the desktop Steam client offline - don't publish
 # while playing, and click Steam > Go Online afterwards.
 set -e
@@ -25,6 +28,12 @@ NAME="$1"; LOGIN="$2"
 ID=0
 [ -f "$PROJECT_DIR/mods/$NAME/workshop.id" ] && ID="$(cat "$PROJECT_DIR/mods/$NAME/workshop.id")"
 DESC="$(cat "$PROJECT_DIR/mods/$NAME/workshop.txt" 2>/dev/null || echo "$NAME")"
+TITLE="$(cat "$PROJECT_DIR/mods/$NAME/workshop.title" 2>/dev/null || echo "$NAME")"
+TAGS=($(cat "$PROJECT_DIR/mods/$NAME/workshop.tags" 2>/dev/null || echo Mod Vehicle Mechanics))
+TAG_LINES=""
+for i in "${!TAGS[@]}"; do
+	TAG_LINES+="		\"$i\" \"${TAGS[$i]}\""$'\n'
+done
 PREVIEW="$PROJECT_DIR/mods/$NAME/preview.png"
 [ -f "$PREVIEW" ] || PREVIEW=""
 
@@ -37,15 +46,12 @@ cat > "$VDF" <<ITEM
 	"contentfolder"   "$PROJECT_DIR/build/@$NAME"
 	"previewfile"     "$PREVIEW"
 	"visibility"      "0"
-	"title"           "$NAME"
+	"title"           "$TITLE"
 	"description"     "$DESC"
 	"changenote"      "Uploaded with SteamCMD from $(git -C "$PROJECT_DIR" rev-parse --short HEAD 2>/dev/null)"
 	"tags"
 	{
-		"0" "Mod"
-		"1" "Vehicle"
-		"2" "Mechanics"
-	}
+$TAG_LINES	}
 }
 ITEM
 
