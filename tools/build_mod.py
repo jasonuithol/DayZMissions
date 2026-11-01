@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """Pack mods/<Name>/ into build/@<Name>/addons/<name>.pbo (uncompressed) and, if the
 signing key ~/.dayz-keys/<SIGN_KEY>.biprivatekey exists (default key: tarbaby), sign it
-with tools/sign_pbo.sh and put the public <key>.bikey into build/@<Name>/keys/."""
+with tools/sign_pbo.sh and put the public <key>.bikey into build/@<Name>/keys/. An extras/
+folder (files for server admins, like types.xml entries) is copied to build/@<Name>/extras/
+as is, not packed."""
 import hashlib, os, shutil, struct, subprocess, sys
 
 SIGN_KEY = os.environ.get('SIGN_KEY', 'tarbaby')
@@ -9,7 +11,10 @@ SIGN_KEY = os.environ.get('SIGN_KEY', 'tarbaby')
 def build(src, dst_root):
     name = os.path.basename(os.path.normpath(src))
     files = []
-    for root, _, names in os.walk(src):
+    extras = os.path.join(src, 'extras')
+    for root, dirs, names in os.walk(src):
+        if root == src and 'extras' in dirs:
+            dirs.remove('extras')  # shipped beside addons/, not packed
         for n in sorted(names):
             if root == src and (n.startswith('workshop.') or n == 'preview.png'):
                 continue  # Workshop metadata, not mod content
@@ -29,6 +34,11 @@ def build(src, dst_root):
     os.makedirs(addons, exist_ok=True)
     with open(os.path.join(addons, name.lower() + '.pbo'), 'wb') as f:
         f.write(out)
+    extras_dst = os.path.join(dst_root, '@' + name, 'extras')
+    if os.path.isdir(extras_dst):
+        shutil.rmtree(extras_dst)
+    if os.path.isdir(extras):
+        shutil.copytree(extras, extras_dst)
     # No mod.cpp: Workshop mods ship only meta.cpp (the launcher crashed on ours).
     # meta.cpp is what the DayZ launcher / DZSA read to tie the folder to its Workshop item
     id_file = os.path.join(src, 'workshop.id')
