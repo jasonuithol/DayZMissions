@@ -1,8 +1,10 @@
 #!/bin/bash
 # Publish (or update) one of our mods on the Steam Workshop with SteamCMD.
 #   tools/workshop_publish.sh <ModName> <steam login> [version]
-# The version (e.g. v0.2), if given, leads the change note on the Workshop page's
-# Change Notes tab, followed by the mod's git commit. Steam keeps no version of its own.
+# The version (e.g. v0.2) goes at the end of the description and leads the change note
+# (the Workshop page's Change Notes tab), followed by the mod's git commit; Steam keeps no
+# version of its own. Default: git describe --tags in the mod's repo, i.e. the tag itself
+# on a tagged commit and v0.2-3-gabc1234 three commits after one; none in an untagged repo.
 # Interactive: SteamCMD asks for the Steam password and a Steam Guard code, so run it
 # yourself (in Claude Code: prefix the command with "!").
 #
@@ -36,8 +38,11 @@ TAG_LINES=""
 for i in "${!TAGS[@]}"; do
 	TAG_LINES+="		\"$i\" \"${TAGS[$i]}\""$'\n'
 done
-# The commit of the repo the mod lives in (mods/<ModName> may link into another project)
+# The commit and version of the repo the mod lives in (mods/<ModName> may link into
+# another project)
 COMMIT="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --short HEAD 2>/dev/null || true)"
+[ -n "$VERSION" ] || VERSION="$(git -C "$PROJECT_DIR/mods/$NAME/" describe --tags 2>/dev/null || true)"
+[ -n "$VERSION" ] && DESC+=$'\n\n'"Version: $VERSION"
 CHANGENOTE="Uploaded with SteamCMD${COMMIT:+ from $COMMIT}"
 [ -n "$VERSION" ] && CHANGENOTE="$VERSION: $CHANGENOTE"
 PREVIEW="$PROJECT_DIR/mods/$NAME/preview.png"
