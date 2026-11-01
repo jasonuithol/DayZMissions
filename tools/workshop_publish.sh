@@ -1,6 +1,8 @@
 #!/bin/bash
 # Publish (or update) one of our mods on the Steam Workshop with SteamCMD.
-#   tools/workshop_publish.sh <ModName> <steam login>
+#   tools/workshop_publish.sh <ModName> <steam login> [version]
+# The version (e.g. v0.2), if given, leads the change note on the Workshop page's
+# Change Notes tab, followed by the mod's git commit. Steam keeps no version of its own.
 # Interactive: SteamCMD asks for the Steam password and a Steam Guard code, so run it
 # yourself (in Claude Code: prefix the command with "!").
 #
@@ -18,8 +20,8 @@
 # while playing, and click Steam > Go Online afterwards.
 set -e
 source "$(dirname "$0")/common.sh"
-NAME="$1"; LOGIN="$2"
-[ -n "$NAME" ] && [ -n "$LOGIN" ] || { echo "usage: $0 <ModName> <steam login>" >&2; exit 1; }
+NAME="$1"; LOGIN="$2"; VERSION="${3//\"/}"   # no double quotes inside a VDF string
+[ -n "$NAME" ] && [ -n "$LOGIN" ] || { echo "usage: $0 <ModName> <steam login> [version]" >&2; exit 1; }
 [ -d "$PROJECT_DIR/mods/$NAME" ] || { echo "no such mod: mods/$NAME" >&2; exit 1; }
 
 "$PROJECT_DIR/tools/build_mod.py" "$PROJECT_DIR/mods/$NAME" "$PROJECT_DIR/build"
@@ -34,6 +36,10 @@ TAG_LINES=""
 for i in "${!TAGS[@]}"; do
 	TAG_LINES+="		\"$i\" \"${TAGS[$i]}\""$'\n'
 done
+# The commit of the repo the mod lives in (mods/<ModName> may link into another project)
+COMMIT="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --short HEAD 2>/dev/null || true)"
+CHANGENOTE="Uploaded with SteamCMD${COMMIT:+ from $COMMIT}"
+[ -n "$VERSION" ] && CHANGENOTE="$VERSION: $CHANGENOTE"
 PREVIEW="$PROJECT_DIR/mods/$NAME/preview.png"
 [ -f "$PREVIEW" ] || PREVIEW=""
 
@@ -48,14 +54,15 @@ cat > "$VDF" <<ITEM
 	"visibility"      "0"
 	"title"           "$TITLE"
 	"description"     "$DESC"
-	"changenote"      "Uploaded with SteamCMD from $(git -C "$PROJECT_DIR" rev-parse --short HEAD 2>/dev/null)"
+	"changenote"      "$CHANGENOTE"
 	"tags"
 	{
 $TAG_LINES	}
 }
 ITEM
 
-echo "==> uploading build/@$NAME as Workshop item $ID (0 = new) - SteamCMD will ask for your password / Steam Guard code"
+echo "==> uploading build/@$NAME as Workshop item $ID (0 = new), change note: $CHANGENOTE"
+echo "    SteamCMD will ask for your password / Steam Guard code"
 steamcmd +login "$LOGIN" +workshop_build_item "$VDF" +quit
 
 # SteamCMD rewrites the VDF with the new id, tab-separated
