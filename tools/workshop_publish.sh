@@ -45,9 +45,20 @@ COMMIT="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --short HEAD 2>/dev/null |
 [ -n "$VERSION" ] && DESC+=$'\n\n'"Version: $VERSION"
 CHANGENOTE="Uploaded with SteamCMD${COMMIT:+ from $COMMIT}"
 [ -n "$VERSION" ] && CHANGENOTE="$VERSION: $CHANGENOTE"
+# With a "## <version> - <date>" entry in the CHANGELOG.md of the mod's repo, that entry is
+# the change note instead
+REPO="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --show-toplevel 2>/dev/null || true)"
+if [ -n "$VERSION" ] && [ -f "$REPO/CHANGELOG.md" ]; then
+	NOTES="$(awk -v v="${VERSION#v}" '/^## /{ on = ($2 == v); next } on' "$REPO/CHANGELOG.md" | sed '/./,$!d')"
+	[ -n "$NOTES" ] && CHANGENOTE="$VERSION"$'\n\n'"$NOTES"
+fi
 PREVIEW="$PROJECT_DIR/mods/$NAME/preview.png"
 [ -f "$PREVIEW" ] || PREVIEW=""
 
+# The VDF has no usable escape for a double quote: one inside the description ends the
+# string there and Steam keeps only what came before it. Turn them into single quotes.
+case "$DESC$TITLE" in *\"*) echo "note: double quotes in the title/description become single quotes" ;; esac
+DESC="${DESC//\"/\'}"; TITLE="${TITLE//\"/\'}"; CHANGENOTE="${CHANGENOTE//\"/\'}"
 VDF="$PROJECT_DIR/build/$NAME.workshop.vdf"
 cat > "$VDF" <<ITEM
 "workshopitem"
