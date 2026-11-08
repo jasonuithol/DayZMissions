@@ -19,7 +19,7 @@ say() {
 }
 
 if [ "$WHAT" = wipe ]; then
-	EVENT="WEEKLY WIPE: the server wipes and restarts"
+	EVENT="WIPE: the server wipes and restarts"
 	AFTER="Everything resets - bases, stashes, characters, vehicles."
 else
 	EVENT="Server restart"

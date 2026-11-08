@@ -29,7 +29,8 @@ REMOTE=/opt/dayz
 RSYNC="rsync -az --info=progress2 --delete --chown=dayz:dayz"
 
 echo "==> server ($SERVER_DIR)"
-ssh "$VPS" "mkdir -p $REMOTE/steamapps/common $REMOTE/steamapps/workshop/content/221100"
+# the dayz user has to exist before the first rsync --chown
+ssh "$VPS" "id -u dayz >/dev/null 2>&1 || useradd --system --home-dir $REMOTE --shell /usr/sbin/nologin dayz; mkdir -p $REMOTE/steamapps/common $REMOTE/steamapps/workshop/content/221100"
 # (the generated serverDZ.<mission>.cfg is the VPS's own, made by run_server.sh at each start)
 $RSYNC --exclude 'profiles/' --exclude 'mpmissions/*/storage_*' --exclude 'mpmissions/[!d]*' --exclude 'serverDZ.*.cfg' \
 	"$SERVER_DIR/" "$VPS:$REMOTE/steamapps/common/DayZServer/"
@@ -44,7 +45,8 @@ if [ -f "$PROJECT_DIR/missions/$MISSION/mods.txt" ]; then
 fi
 
 echo "==> project (with the signed builds of our own mods)"
-for m in "$PROJECT_DIR"/mods/*/; do "$PROJECT_DIR/tools/build_mod.py" "$m" "$PROJECT_DIR/build" >/dev/null; done
+# NO_BUILD=1 ships build/ as it is (rebuilding overwrites PBOs a running local server has open)
+[ -n "$NO_BUILD" ] || for m in "$PROJECT_DIR"/mods/*/; do "$PROJECT_DIR/tools/build_mod.py" "$m" "$PROJECT_DIR/build" >/dev/null; done
 $RSYNC --exclude '.git/' --exclude 'tools/vps.conf' "$PROJECT_DIR/" "$VPS:$REMOTE/DayZMissions/"
 
 ssh "$VPS" "chown -R dayz:dayz $REMOTE"

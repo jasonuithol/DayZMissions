@@ -53,10 +53,10 @@ LimitNOFILE=100000
 WantedBy=multi-user.target
 UNIT
 
-# nightly restart at 05:00 server time and weekly wipe Friday 17:00: the timers fire 30
-# minutes early and tools/server_cycle.sh warns players in game (via RCon) at 30, 10, 5
-# and 1 minutes before stopping the server. A restart keeps the persistence (the spawners
-# only put back the vehicles that are missing); the wipe deletes it.
+# nightly restart at 05:00 server time: the timer fires 30 minutes early and
+# tools/server_cycle.sh warns players in game (via RCon) at 30, 10, 5 and 1 minutes before
+# stopping the server. A restart keeps the persistence (the spawners only put back the
+# vehicles that are missing); a wipe, by hand with tools/vps_wipe.sh, deletes it.
 for what in restart wipe; do
 	if [ $what = restart ]; then desc="Nightly DayZ restart (05:00)"; when="*-*-* 04:30:00"
 	else desc="Weekly DayZ wipe (Friday 17:00)"; when="Fri *-*-* 16:30:00"; fi
@@ -92,7 +92,8 @@ fi
 
 systemctl daemon-reload
 systemctl enable --now dayz-restart.timer >/dev/null
-systemctl enable --now dayz-wipe.timer >/dev/null
+# no weekly wipe (since 2026-11-09): tools/vps_wipe.sh still wipes by hand via dayz-wipe.service
+systemctl disable --now dayz-wipe.timer >/dev/null 2>&1 || true
 systemctl enable dayz.service >/dev/null
 systemctl restart dayz.service
 sleep 3

@@ -1,13 +1,13 @@
 # Copy to tools/vps.conf (git-ignored) and fill in. Read by tools/vps_*.sh.
 VPS=root@<vps host>     # ssh target with root (installs the service, opens the firewall)
-MISSION=roles                      # which mission the VPS runs
+MISSION=roles.nasdara              # which mission the VPS runs (full name)
 SERVER_NAME="My Roles Server"        # shown in the server browser
 SERVER_PASSWORD=""                 # empty = public
 ADMIN_PASSWORD="change-me"
 GAME_PORT=2302
 QUERY_PORT=27016                   # Steam query port: this is what the browsers and DZSA talk to
-TIMEZONE=Australia/Brisbane        # the server clock: nightly 05:00 restart and Friday 17:00 wipe are in this zone
-MOTD="Server restarts daily at 5am Brisbane time (AEST, UTC+10)|Full wipe every Friday at 5pm Brisbane time (AEST, UTC+10)"
+TIMEZONE=Australia/Brisbane        # the server clock: the nightly 05:00 restart is in this zone
+MOTD="Server restarts daily at 5am Brisbane time (AEST, UTC+10)"
 
 RCON_PASSWORD="change-me-too"   # BattlEye RCon, used from the VPS itself for the restart/wipe warnings (tools/rcon.py)
 RCON_PORT=2306

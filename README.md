@@ -119,6 +119,18 @@ at random. `lib/Roles.c` loads and applies it; `tools/test.sh roles` checks ever
 exists and every container actually takes what it is given. The cars come from `vehicles.json`
 via `tools/vehicle_spots.py roles` (see bikespawns below).
 
+### roles.nasdara (stable)
+
+`roles` moved to Nasdara: this is what the public server runs. Same 22 roles and the same idea, with
+what's map-specific redone: 200 vehicle spots generated from Nasdara's own map data
+(`tools/vehicle_spots.py`; no LHDs or water requirement for the Vodniks, there's next to no water),
+and a helicopter at each of the three helipads (`objprobe.nasdara -findmodel=decal_heli`). Two pads
+have objects standing on them, so those aircraft park on clear ground beside the H. Expansion
+generates Nasdara-aware AI patrols and airdrops by itself, so `expansion/settings/` isn't overridden.
+`db/events.xml` is vanilla with the six car and truck `max` values raised; loot is otherwise vanilla,
+plus the Hand Truck and Molotov entries in `custom/`. Mods: the `roles` list plus Expansion Book, Name
+Tags, Hand Truck and Molotov.
+
 ### roles-exp.chernarusplus (1.30 Experimental)
 The same roles on 1.30, without the cars. 1.30 has motorbikes but, as of 2026-09-23, also
 zombie attacks that land from where the attack started and doors whose interaction point is
@@ -197,38 +209,42 @@ or every named place on the map with type and position (`-names=1`; the names ar
 
 ## The public server (VPS)
 
-`roles` runs on a rented Linux VPS (4 vCPU / 8 GB / 60 GB) as `dayz.service`. The host, server
+`roles.nasdara` runs on a rented Linux VPS (4 vCPU / 8 GB / 60 GB) as `dayz.service`
+(`MISSION` in `vps.conf` needs the full name: a bare `roles` resolves to Chernarus). The host, server
 name, admin password and ports live in `tools/vps.conf` (git-ignored; see `vps.conf.example`)
 and, on the box, in `/opt/dayz/vps.env`. No join password: the DayZ launcher's password
 dialog crashes under Proton (`PlatformNotSupportedException`), so a passworded server can't
 be joined through the launcher on Linux at all; use the whitelist if it ever needs closing. Live since 2026-09-25, game port
-2302 and Steam query port 27016 reachable from the internet. It runs at ~5 GB RSS fresh and
-~6.4 GB after an evening, with a 4 GB swapfile as headroom; the box is DayZ-only since
-2026-09-29 (the old web apps and caddy were removed). The server clock is `TIMEZONE` from
+2302 and Steam query port 27016 reachable from the internet. It runs at ~7 GB RSS with its 16 mods, whether or
+not anyone is on, and leans on a 4 GB swapfile: fine for a handful of players, more RAM is the fix
+for a bigger group. The box is DayZ-only (reinstalled 2026-11-08, replacing a Valheim server). The server clock is `TIMEZONE` from
 `vps.conf` (Australia/Brisbane). It is persistent: `dayz-restart.timer` restarts it nightly
 at 05:00 (the redeploy keeps `storage_1`; cars and helicopters are only added where they are
-missing) and `dayz-wipe.timer` wipes it every Friday at 17:00 (stop, delete `storage_*`,
-start). Both timers fire 30 minutes early and run `tools/server_cycle.sh` on the box, which
+missing). There is no scheduled wipe (the weekly one was turned off on 2026-11-09;
+`vps_install.sh` keeps `dayz-wipe.timer` disabled). The timer fires 30 minutes early and runs
+`tools/server_cycle.sh` on the box, which
 warns everyone in game at 30, 10, 5 and 1 minutes through BattlEye RCon (`tools/rcon.py`;
 `RCON_PASSWORD`/`RCON_PORT` in `vps.conf`, written to `battleye/beserver_x64.cfg` by
 `run_server.sh` at each start; the host firewall keeps that port closed to the internet -
 only ssh, the game ports and the query port are open) and then does the deed - anyone still on is kicked when the
 server stops. `tools/vps_restart.sh` and `tools/vps_wipe.sh` start the same countdown by
 hand (`-n` skips the warnings, `-c` cancels a running countdown); `tools/vps_players.sh`
-shows who is on. `MOTD` in `vps.conf` (lines separated by `|`) tells players both times; it
+shows who is on. `MOTD` in `vps.conf` (lines separated by `|`) tells players the restart time; it
 lands in the generated `serverDZ.roles.cfg` as `motd[]` every 5 minutes.
 
 - `tools/vps_sync.sh` ships the stable server, the mission's Workshop mods, this project and
   the signed builds of our mods to `/opt/dayz` (a Steam-library layout, `STEAM=/opt/dayz`) and
-  (re)installs the service; re-run it after any change. `SKIP_INSTALL=1` only ships files.
+  (re)installs the service; re-run it after any change. `SKIP_INSTALL=1` only ships files;
+  `NO_BUILD=1` ships `build/` as it is (a rebuild overwrites PBOs a running local server has open).
   No SteamCMD on the VPS (it can't fetch DayZ's server or Workshop mods anonymously).
 - Logs: `journalctl -u dayz -f`; script log in `/opt/dayz/steamapps/common/DayZServer/profiles/`.
-- Connect: `tools/run_client.sh roles <host> <password>`; everyone else uses DZSA's direct
-  connect or the in-game browser. The eight mods, including our own VehicleShootingAnywhere
-  (on the Workshop; published with `tools/workshop_publish.sh` via SteamCMD - first run from a
+- Connect: `tools/run_client.sh roles.nasdara <host> <password>`; everyone else uses DZSA's direct
+  connect or the in-game browser. The sixteen mods, including our own VehicleShootingAnywhere,
+  Hand Truck and Molotov (on the Workshop; published with `tools/workshop_publish.sh` via SteamCMD - first run from a
   real terminal for the Steam Guard prompt, later runs use cached credentials), are installed
-  by the launcher. The server loads our own signed build (`local` in `mods.txt`); its `meta.cpp`
-  carries the Workshop id, so launchers match it.
+  by the launcher. The server loads our own signed builds (`local` in `mods.txt`); their
+  `meta.cpp` carries the Workshop id, so launchers match them. After changing one of those mods,
+  publish it and sync the VPS together: the server and players need the same build.
 
 ## Open items
 
