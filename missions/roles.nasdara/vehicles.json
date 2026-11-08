@@ -1,0 +1,78 @@
+{
+ "rules": [
+  {
+   "name": "cars at the vanilla car spawn points",
+   "events": [
+    "VehicleCivilianSedan",
+    "VehicleHatchback02",
+    "VehicleOffroadHatchback",
+    "VehicleSedan02",
+    "VehicleOffroad02"
+   ],
+   "types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+   "count": 1,
+   "min_spacing": 30,
+   "max": 120
+  },
+  {
+   "name": "trucks at the vanilla truck spawn points",
+   "events": [
+    "VehicleTruck01"
+   ],
+   "types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+   "count": 1,
+   "min_spacing": 30,
+   "max": 30
+  },
+  {
+   "name": "buses at bus stations",
+   "buildings": [
+    "Land_BusStation_building",
+    "Land_BusStation_wall_bench",
+    "Land_BusStop_City"
+   ],
+   "types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+   "count": 1,
+   "min_spacing": 60,
+   "max": 16
+  },
+  {
+   "name": "tractors at farm hoppers and big closed sheds",
+   "buildings": [
+    "Land_Farm_Hopper2",
+    "Land_Shed_Closed",
+    "Land_Shed_M4"
+   ],
+   "types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+   "count": 1,
+   "min_spacing": 300,
+   "max": 22
+  },
+  {
+   "name": "Vodniks at military sites",
+   "buildings": [
+    "Land_Mil_Barracks1",
+    "Land_Mil_Barracks2",
+    "Land_Mil_Barracks3",
+    "Land_Mil_Barracks4",
+    "Land_Mil_Barracks5",
+    "Land_Mil_Barracks5_Desert",
+    "Land_Mil_Barracks6_Old",
+    "Land_Mil_Barracks_Round_Desert",
+    "Land_Mil_Guardhouse1",
+    "Land_Mil_Guardhouse2",
+    "Land_Mil_GuardHouse3",
+    "Land_Mil_Tent_Big1_1_Desert",
+    "Land_Mil_Tent_Big2_1_Desert",
+    "Land_Mil_Tent_Big3_Desert",
+    "Land_Mil_Tent_Big4_Desert",
+    "Land_Mil_Fortified_Nest_Watchtower_Desert",
+    "Land_Mil_GuardTower"
+   ],
+   "types": "ExpansionVodnik|ExpansionVodnik_Camo",
+   "count": 1,
+   "min_spacing": 600,
+   "max": 20
+  }
+ ]
+}

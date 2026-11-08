@@ -1,0 +1,17 @@
+<!-- Add this to the mission's db/types.xml (or a cfgeconomycore.xml-registered file).
+     Molotovs never spawn as loot (nominal 0): they are crafted from vanilla glass bottles,
+     petrol and rags. The entry lets the economy keep crafted ones, for the same lifetime
+     as the vanilla torch (4 hours on the ground). -->
+<types>
+	<type name="Molotov">
+		<nominal>0</nominal>
+		<lifetime>14400</lifetime>
+		<restock>0</restock>
+		<min>0</min>
+		<quantmin>-1</quantmin>
+		<quantmax>-1</quantmax>
+		<cost>100</cost>
+		<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="1" deloot="0"/>
+		<category name="tools"/>
+	</type>
+</types>

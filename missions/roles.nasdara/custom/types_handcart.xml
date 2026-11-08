@@ -1,0 +1,45 @@
+<!-- Add these to the mission's db/types.xml (or a cfgeconomycore.xml-registered file) to spawn hand trucks as loot.
+     Lifetime matches sea chests (45 days): a truck left loaded on the ground despawns with its load.
+     Spawns where power generators do (tools, Industrial), but only at floor-level spots: indoor
+     floors and the open-air ground spots (every one of those is tagged floor too), no shelves. -->
+<types>
+	<type name="HandCart_HandTruck_Blue">
+		<nominal>3</nominal>
+		<lifetime>3888000</lifetime>
+		<restock>1800</restock>
+		<min>1</min>
+		<quantmin>-1</quantmin>
+		<quantmax>-1</quantmax>
+		<cost>100</cost>
+		<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
+		<category name="tools"/>
+		<tag name="floor"/>
+		<usage name="Industrial"/>
+	</type>
+	<type name="HandCart_HandTruck_Red">
+		<nominal>3</nominal>
+		<lifetime>3888000</lifetime>
+		<restock>1800</restock>
+		<min>1</min>
+		<quantmin>-1</quantmin>
+		<quantmax>-1</quantmax>
+		<cost>100</cost>
+		<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
+		<category name="tools"/>
+		<tag name="floor"/>
+		<usage name="Industrial"/>
+	</type>
+	<type name="HandCart_HandTruck_Yellow">
+		<nominal>3</nominal>
+		<lifetime>3888000</lifetime>
+		<restock>1800</restock>
+		<min>1</min>
+		<quantmin>-1</quantmin>
+		<quantmax>-1</quantmax>
+		<cost>100</cost>
+		<flags count_in_cargo="0" count_in_hoarder="0" count_in_map="1" count_in_player="0" crafted="0" deloot="0"/>
+		<category name="tools"/>
+		<tag name="floor"/>
+		<usage name="Industrial"/>
+	</type>
+</types>

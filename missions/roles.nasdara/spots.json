@@ -1,0 +1,2804 @@
+{
+	"spots": [
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3170.84,
+				0.0,
+				10236.37
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3343.24,
+				0.0,
+				12912.93
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3440.97,
+				0.0,
+				11341.28
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3594.99,
+				0.0,
+				11086.93
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4026.59,
+				0.0,
+				13706.66
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4455.45,
+				0.0,
+				7633.56
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4490.69,
+				0.0,
+				10962.89
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4954.33,
+				0.0,
+				6459.97
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5089.34,
+				0.0,
+				13321.43
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5125.37,
+				0.0,
+				10146.02
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5431.54,
+				0.0,
+				8079.41
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5682.47,
+				0.0,
+				12657.7
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5722.21,
+				0.0,
+				9809.12
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6230.92,
+				0.0,
+				5776.98
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7284.97,
+				0.0,
+				13222.17
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7325.83,
+				0.0,
+				13224.49
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8605.29,
+				0.0,
+				12782.95
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9062.65,
+				0.0,
+				11949.29
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9150.92,
+				0.0,
+				11948.9
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9908.71,
+				0.0,
+				12035.72
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10102.9,
+				0.0,
+				12651.43
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10114.0,
+				0.0,
+				12413.52
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10132.62,
+				0.0,
+				12708.01
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10418.73,
+				0.0,
+				10497.55
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10429.21,
+				0.0,
+				7891.4
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10776.98,
+				0.0,
+				8507.9
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				11418.38,
+				0.0,
+				12338.6
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				11599.66,
+				0.0,
+				9971.61
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleCivilianSedan",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				13257.36,
+				0.0,
+				11987.16
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4999.14,
+				0.0,
+				6385.69
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5102.16,
+				0.0,
+				6597.56
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6160.93,
+				0.0,
+				5745.02
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6582.74,
+				0.0,
+				5505.91
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6791.06,
+				0.0,
+				5020.95
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6998.79,
+				0.0,
+				4503.05
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7178.72,
+				0.0,
+				5837.95
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7206.19,
+				0.0,
+				12255.63
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7421.15,
+				0.0,
+				8721.9
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7504.77,
+				0.0,
+				8813.21
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7789.08,
+				0.0,
+				6810.91
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7846.5,
+				0.0,
+				7933.74
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7892.22,
+				0.0,
+				12431.39
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8301.39,
+				0.0,
+				9507.48
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8415.66,
+				0.0,
+				12347.42
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8520.28,
+				0.0,
+				4854.83
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8845.1,
+				0.0,
+				12483.27
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9108.55,
+				0.0,
+				12114.59
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9212.79,
+				0.0,
+				7529.46
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9371.78,
+				0.0,
+				11127.93
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9415.29,
+				0.0,
+				11844.42
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9432.69,
+				0.0,
+				12089.32
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9497.84,
+				0.0,
+				3392.75
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10096.06,
+				0.0,
+				9314.3
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10170.79,
+				0.0,
+				4258.79
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10313.71,
+				0.0,
+				7899.85
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10399.06,
+				0.0,
+				10357.21
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10410.65,
+				0.0,
+				10674.34
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10541.68,
+				0.0,
+				10725.99
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				13186.25,
+				0.0,
+				12162.5
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleHatchback02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				13698.98,
+				0.0,
+				12728.5
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				2941.09,
+				0.0,
+				9114.87
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3972.14,
+				0.0,
+				5178.37
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4338.21,
+				0.0,
+				12924.76
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5292.18,
+				0.0,
+				5494.98
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6110.07,
+				0.0,
+				9141.92
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6178.3,
+				0.0,
+				9184.88
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6342.27,
+				0.0,
+				12759.57
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7404.3,
+				0.0,
+				7516.63
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7820.77,
+				0.0,
+				11827.81
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10191.75,
+				0.0,
+				8168.48
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				12038.59,
+				0.0,
+				10902.56
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroad02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				12818.17,
+				0.0,
+				6755.49
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				2890.77,
+				0.0,
+				15744.53
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3507.65,
+				0.0,
+				12882.11
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3516.54,
+				0.0,
+				11425.82
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3698.73,
+				0.0,
+				11125.87
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3990.17,
+				0.0,
+				13963.32
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4056.08,
+				0.0,
+				9346.43
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4327.25,
+				0.0,
+				7685.97
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4941.95,
+				0.0,
+				8998.32
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4965.06,
+				0.0,
+				10013.13
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5217.6,
+				0.0,
+				13594.76
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5359.87,
+				0.0,
+				8061.37
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5647.97,
+				0.0,
+				12711.56
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6794.35,
+				0.0,
+				7092.72
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6859.43,
+				0.0,
+				3705.36
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7098.57,
+				0.0,
+				5792.28
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7859.68,
+				0.0,
+				13346.41
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8301.93,
+				0.0,
+				6510.12
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8473.35,
+				0.0,
+				8517.13
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8777.15,
+				0.0,
+				13038.79
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8798.92,
+				0.0,
+				8735.61
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9055.33,
+				0.0,
+				9600.27
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9209.34,
+				0.0,
+				3160.19
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9968.69,
+				0.0,
+				12025.85
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				12278.8,
+				0.0,
+				12721.59
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				13982.84,
+				0.0,
+				13199.3
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleOffroadHatchback",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				14190.0,
+				0.0,
+				13291.79
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				3798.0,
+				0.0,
+				5082.17
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4442.46,
+				0.0,
+				10330.89
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				4552.15,
+				0.0,
+				6582.0
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5313.27,
+				0.0,
+				8103.26
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5696.48,
+				0.0,
+				12712.01
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				5779.69,
+				0.0,
+				9735.62
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6248.21,
+				0.0,
+				8177.76
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				6952.0,
+				0.0,
+				12005.69
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7237.59,
+				0.0,
+				5804.97
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				7471.47,
+				0.0,
+				5420.62
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8298.11,
+				0.0,
+				10162.44
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8387.06,
+				0.0,
+				11447.15
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				8855.15,
+				0.0,
+				3763.05
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9139.71,
+				0.0,
+				3101.28
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9273.28,
+				0.0,
+				12173.3
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9349.25,
+				0.0,
+				7657.03
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9477.65,
+				0.0,
+				3339.03
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				9641.27,
+				0.0,
+				11295.2
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10084.25,
+				0.0,
+				9356.69
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10554.73,
+				0.0,
+				8256.43
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				10555.62,
+				0.0,
+				7842.07
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleSedan02",
+			"types": "CivilianSedan|CivilianSedan_Black|CivilianSedan_Wine|Hatchback_02|Hatchback_02_Black|Hatchback_02_Blue|OffroadHatchback|OffroadHatchback_Blue|OffroadHatchback_White|Sedan_02|Sedan_02_Grey|Sedan_02_Red|Offroad_02",
+			"count": 1,
+			"pos": [
+				13973.2,
+				0.0,
+				13152.73
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				3680.2,
+				0.0,
+				4951.69
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				3774.71,
+				0.0,
+				6215.74
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				5052.32,
+				0.0,
+				6654.69
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				5347.25,
+				0.0,
+				9442.66
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				5624.44,
+				0.0,
+				9373.85
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6294.76,
+				0.0,
+				9989.35
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6455.53,
+				0.0,
+				10176.39
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6581.97,
+				0.0,
+				10433.57
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6645.44,
+				0.0,
+				7695.92
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6908.66,
+				0.0,
+				10593.04
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6935.51,
+				0.0,
+				5196.85
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				6972.33,
+				0.0,
+				4363.92
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				7264.89,
+				0.0,
+				4319.8
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				7796.35,
+				0.0,
+				9991.58
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				8114.69,
+				0.0,
+				4351.5
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				8981.01,
+				0.0,
+				4147.83
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				9006.26,
+				0.0,
+				4448.58
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				9604.77,
+				0.0,
+				7193.86
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				9747.32,
+				0.0,
+				6416.43
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				10313.36,
+				0.0,
+				6851.82
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				10327.05,
+				0.0,
+				7928.53
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				10497.22,
+				0.0,
+				10583.97
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				10552.56,
+				0.0,
+				10729.37
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				10664.42,
+				0.0,
+				6089.74
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				10949.23,
+				0.0,
+				3457.16
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				11134.69,
+				0.0,
+				9646.97
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "VehicleTruck01",
+			"types": "Truck_01_Covered|Truck_01_Covered_Blue|Truck_01_Covered_Orange",
+			"count": 1,
+			"pos": [
+				11564.68,
+				0.0,
+				9375.57
+			],
+			"heading": 0.0,
+			"exact": true,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				3855.28,
+				281.01,
+				12133.54
+			],
+			"heading": -160.94,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				4231.77,
+				304.37,
+				12333.99
+			],
+			"heading": 119.45,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				4412.93,
+				333.47,
+				10247.5
+			],
+			"heading": 176.5,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				4403.06,
+				304.17,
+				12403.21
+			],
+			"heading": -70.11,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				4509.92,
+				329.86,
+				10213.29
+			],
+			"heading": -172.54,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				6638.19,
+				244.64,
+				7591.08
+			],
+			"heading": -158.1,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				7434.73,
+				199.24,
+				6366.54
+			],
+			"heading": -139.47,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				7548.62,
+				194.44,
+				6050.08
+			],
+			"heading": 14.97,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				7522.89,
+				195.48,
+				6118.27
+			],
+			"heading": -171.64,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStation_wall_bench",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				10321.15,
+				157.39,
+				4315.69
+			],
+			"heading": 110.43,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_BusStop_City",
+			"types": "ExpansionBus|ExpansionBus_Blue|ExpansionBus_Red",
+			"count": 1,
+			"pos": [
+				10392.55,
+				170.76,
+				7885.34
+			],
+			"heading": 165.93,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_Hopper2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				2854.91,
+				390.34,
+				15713.78
+			],
+			"heading": -163.52,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				3510.13,
+				276.52,
+				11579.77
+			],
+			"heading": 164.51,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				3724.66,
+				280.67,
+				5005.81
+			],
+			"heading": -38.53,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				4519.71,
+				332.14,
+				10089.16
+			],
+			"heading": -74.75,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				5903.08,
+				299.7,
+				9897.83
+			],
+			"heading": -133.74,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				6354.9,
+				249.38,
+				10440.17
+			],
+			"heading": 22.58,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				6834.99,
+				229.28,
+				6992.71
+			],
+			"heading": -146.95,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				7293.47,
+				297.43,
+				13183.46
+			],
+			"heading": -16.17,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				7560.27,
+				249.44,
+				10324.94
+			],
+			"heading": -22.41,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				8546.87,
+				281.5,
+				13145.41
+			],
+			"heading": 172.12,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				9201.81,
+				212.78,
+				10655.38
+			],
+			"heading": 34.44,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				9607.64,
+				159.45,
+				6676.11
+			],
+			"heading": -81.33,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				9976.8,
+				206.23,
+				11801.85
+			],
+			"heading": 16.53,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Farm_Hopper2",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				10118.77,
+				194.16,
+				10625.75
+			],
+			"heading": -6.69,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				10391.84,
+				161.67,
+				4356.8
+			],
+			"heading": 108.88,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				10545.93,
+				282.44,
+				13438.67
+			],
+			"heading": 1.44,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				10726.28,
+				175.0,
+				10692.25
+			],
+			"heading": -0.44,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				11070.27,
+				186.41,
+				9742.81
+			],
+			"heading": -6.33,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				11412.47,
+				197.78,
+				9028.05
+			],
+			"heading": -6.07,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				11600.55,
+				185.86,
+				9864.98
+			],
+			"heading": -72.79,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_M4",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				12241.78,
+				182.25,
+				12785.18
+			],
+			"heading": -160.06,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Shed_Closed",
+			"types": "ExpansionTractor|ExpansionTractor_Blue|ExpansionTractor_Green|ExpansionTractor_Red",
+			"count": 1,
+			"pos": [
+				13198.73,
+				181.87,
+				12172.79
+			],
+			"heading": 123.26,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks5",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				2758.14,
+				414.5,
+				9172.4
+			],
+			"heading": -83.78,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Fortified_Nest_Watchtower_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3026.05,
+				292.64,
+				4567.71
+			],
+			"heading": -83.85,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big2_1_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3417.91,
+				402.11,
+				14270.34
+			],
+			"heading": -128.58,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				3780.2,
+				280.6,
+				11618.96
+			],
+			"heading": 157.88,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4193.89,
+				304.0,
+				12319.62
+			],
+			"heading": -54.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				4600.05,
+				266.69,
+				10990.93
+			],
+			"heading": 155.62,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				5725.5,
+				305.52,
+				12754.96
+			],
+			"heading": 71.31,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big2_1_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6170.54,
+				272.02,
+				9954.3
+			],
+			"heading": -36.72,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6603.94,
+				244.72,
+				7739.91
+			],
+			"heading": 10.2,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big2_1_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				6744.98,
+				199.99,
+				4884.48
+			],
+			"heading": 150.46,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big2_1_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				7385.51,
+				272.87,
+				7559.8
+			],
+			"heading": -129.16,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big4_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				8205.12,
+				263.56,
+				5694.89
+			],
+			"heading": -142.12,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				8587.96,
+				173.69,
+				4833.31
+			],
+			"heading": 180.0,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse2",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				9054.65,
+				228.95,
+				11934.88
+			],
+			"heading": -85.52,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_GuardHouse3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10062.97,
+				171.37,
+				8030.62
+			],
+			"heading": 135.25,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_GuardHouse3",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10580.1,
+				191.73,
+				11452.52
+			],
+			"heading": 33.02,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Tent_Big1_1_Desert",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10635.22,
+				171.19,
+				7729.07
+			],
+			"heading": 47.84,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				10850.27,
+				297.8,
+				13959.08
+			],
+			"heading": 60.74,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Barracks4",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11209.7,
+				182.42,
+				9682.85
+			],
+			"heading": -94.99,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		},
+		{
+			"building": "Land_Mil_Guardhouse1",
+			"types": "ExpansionVodnik|ExpansionVodnik_Camo",
+			"count": 1,
+			"pos": [
+				11741.96,
+				171.85,
+				10530.5
+			],
+			"heading": 46.43,
+			"exact": false,
+			"nearWater": 0,
+			"offshore": false
+		}
+	]
+}

@@ -1,0 +1,343 @@
+// Roles on Nasdara (stable)
+// Vanilla Nasdara, except that every new character spawns as a role - police officer,
+// doctor, soldier, lumberjack... - wearing the matching outfit and carrying a few things
+// that fit the job. The roles live in roles.json next to this file. And there are ready
+// to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json),
+// Expansion buses, tractors and Vodniks where they belong,
+// and a DayZ Expansion helicopter on each of the three helipads on the map. The server is
+// persistent: a restart only puts back what is missing (see lib/VehicleSpots.c).
+#include "lib/JsonFile.c"
+#include "lib/RoadFinder.c"
+#include "lib/Spawner.c"
+#include "lib/Placement.c"
+#include "lib/VehicleSpots.c"
+#include "lib/Roles.c"
+
+// Vanilla cars, kitted out the way the debug menu does it and every fluid topped up.
+class CarFactory: VehicleFactory
+{
+	override EntityAI Spawn(string type, vector pos, float heading)
+	{
+		int flags = ECE_PLACE_ON_SURFACE | ECE_SETUP;
+		if (GetGame().SurfaceIsSea(pos[0], pos[2]))
+			flags = ECE_CREATEPHYSICS | ECE_KEEPHEIGHT | ECE_NOSURFACEALIGN | ECE_SETUP; // ships: on the water, not the seabed
+		pos[1] = pos[1] + 0.3; // created a hair below the ground, a vehicle falls through the map
+		CarScript car = CarScript.Cast(GetGame().CreateObjectEx(type, pos, flags));
+		if (!car)
+		{
+			Print("[Cars] failed to create " + type);
+			return null;
+		}
+		car.SetOrientation(Vector(heading, 0, 0));
+		car.SetLifetime(Spawner.LIFETIME);
+		car.OnDebugSpawn();
+		Refill(car);
+		return car;
+	}
+
+	override float FuelFraction(EntityAI vehicle)
+	{
+		return CarScript.Cast(vehicle).GetFluidFraction(CarFluid.FUEL);
+	}
+
+	override void Refill(EntityAI vehicle)
+	{
+		CarScript car = CarScript.Cast(vehicle);
+		car.Fill(CarFluid.FUEL, car.GetFluidCapacity(CarFluid.FUEL));
+		car.Fill(CarFluid.OIL, car.GetFluidCapacity(CarFluid.OIL));
+		car.Fill(CarFluid.COOLANT, car.GetFluidCapacity(CarFluid.COOLANT));
+		car.Fill(CarFluid.BRAKE, car.GetFluidCapacity(CarFluid.BRAKE));
+	}
+
+	// Expansion keeps a linked list of every CarScript on the server (cars, helicopters
+	// and its boats alike), including the ones loaded from persistence
+	override array<EntityAI> Existing()
+	{
+		return AllVehicles();
+	}
+
+	static array<EntityAI> AllVehicles()
+	{
+		array<EntityAI> all = new array<EntityAI>();
+		auto node = CarScript.s_Expansion_AllVehicles.m_Head;
+		while (node)
+		{
+			if (node.m_Value)
+				all.Insert(node.m_Value);
+			node = node.m_Next;
+		}
+		return all;
+	}
+
+	// clearance boxes: width, height, length - from ClippingInfo of the spawned vehicles
+	override vector Size(string type)
+	{
+		if (type.Contains("LHD"))
+			return "70 60 310";
+		if (type.Contains("Bus"))
+			return "3.2 3.5 16";
+		if (type.Contains("Vodnik"))
+			return "3.0 3.0 8";
+		if (type.Contains("Truck"))
+			return "2.6 3.0 7.5";
+		if (type.Contains("Tractor"))
+			return "2.6 3.0 5.5";
+		return "2.0 1.8 4.6";
+	}
+}
+
+void main()
+{
+	//INIT ECONOMY--------------------------------------
+	Hive ce = CreateHive();
+	if ( ce )
+		ce.InitOffline();
+
+	//DATE RESET AFTER ECONOMY INIT-------------------------
+	int year, month, day, hour, minute;
+	int reset_month = 4, reset_day = 30; // Nasdara's vanilla season
+	GetGame().GetWorld().GetDate(year, month, day, hour, minute);
+
+	if ((month == reset_month) && (day < reset_day))
+	{
+		GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+	}
+	else
+	{
+		if ((month == reset_month + 1) && (day > reset_day))
+		{
+			GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+		}
+		else
+		{
+			if ((month < reset_month) || (month > reset_month + 1))
+			{
+				GetGame().GetWorld().SetDate(year, reset_month, reset_day, hour, minute);
+			}
+		}
+	}
+}
+
+class CustomMission: MissionServer
+{
+	static const int MAX_CARS = 240; // to keep the server load sane
+
+	// Nasdara has three helipads (decal_heli_army; objprobe.nasdara -findmodel=decal_heli).
+	// Headings are the orientation of the H. The first and third pads have objects
+	// standing on them (an armory container, an unnamed prop), so those aircraft are parked on
+	// the clear ground beside the H.
+	protected ref array<CarScript> m_Helis = new array<CarScript>();
+
+	protected string m_Path; // mission folder, e.g. "./mpmissions/roles.chernarusplus"
+	protected ref VehicleSpots m_Cars;
+
+	// path is the mission script, "./mpmissions/<mission>/mission.c"; keep its folder
+	void CustomMission(string path)
+	{
+		m_Path = path.Substring(0, path.LastIndexOf("/"));
+	}
+
+	override void OnInit()
+	{
+		super.OnInit();
+
+		int count = Roles.Load(m_Path + "/roles.json");
+		Print("[Roles] loaded " + count + " roles from " + m_Path);
+
+		m_Cars = new VehicleSpots("Cars", new CarFactory());
+		m_Cars.Start(m_Path + "/spots.json", MAX_CARS);
+
+		// like the cars: not in the first seconds after startup, or they come up empty
+		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(SpawnHelis, VehicleSpots.START_DELAY_MS, false);
+
+		string value;
+		if (GetGame().CommandlineGetParam("missiontest", value))
+			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(TestReport, 5000, true);
+		else
+			GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).CallLater(Census, 600000, true);
+	}
+
+	// every 10 minutes: what is on the server, to see what persistence keeps and the economy culls
+	void Census()
+	{
+		array<EntityAI> all = CarFactory.AllVehicles();
+		int expansion = 0;
+		int helis = 0;
+		for (int i = 0; i < all.Count(); i++)
+		{
+			string type = all[i].GetType();
+			if (type.IndexOf("Expansion") == 0)
+				expansion++;
+			if (type == "ExpansionUh1h" || type == "ExpansionMh6" || type == "ExpansionMerlin" || type == "ExpansionGyrocopter")
+				helis++;
+		}
+		Print("[Census] " + all.Count() + " vehicles: " + (all.Count() - expansion) + " vanilla, " + (expansion - helis) + " Expansion ground/sea, " + helis + " helicopters; " + GetGame().GetTime() / 60000 + " min up");
+	}
+
+	// Instead of the vanilla random clothes, dress the new character as a random role.
+	override void EquipCharacter(MenuDefaultCharacterData char_data)
+	{
+		Role role = Roles.Pick();
+		if (role)
+		{
+			Roles.Equip(m_player, role);
+			NotificationSystem.SendNotificationToPlayerExtended(m_player, 10, "You are a " + role.name, "Check your pockets.");
+		}
+
+		StartingEquipSetup(m_player, true);
+	}
+
+	// everyone still gets the vanilla freshie basics
+	override void StartingEquipSetup(PlayerBase player, bool clothesChosen)
+	{
+		EntityAI itemEnt = player.GetInventory().CreateInInventory("BandageDressing");
+		player.SetQuickBarEntityShortcut(itemEnt, 1);
+
+		string chemlightArray[] = { "Chemlight_White", "Chemlight_Yellow", "Chemlight_Green", "Chemlight_Red" };
+		itemEnt = player.GetInventory().CreateInInventory(chemlightArray[Math.RandomInt(0, 4)]);
+		player.SetQuickBarEntityShortcut(itemEnt, 2);
+
+		string fruitArray[] = { "Apple", "Pear", "Plum" };
+		itemEnt = player.GetInventory().CreateInInventory(fruitArray[Math.RandomInt(0, 3)]);
+		player.SetQuickBarEntityShortcut(itemEnt, 3);
+	}
+
+	// One helicopter per pad, a shuffled pick of the types.
+	// With persistence, helicopters survive a restart wherever they were left, so only as
+	// many are added as are missing from the server, on the pads that are free, and the
+	// types nobody has first.
+	void SpawnHelis()
+	{
+		array<vector> pads = {"4728 0 7362", "11353.22 0 9107.85", "11328 0 9154"};
+		array<float> headings = {-134.85, -71.42, 0};
+		array<string> types = {"ExpansionUh1h", "ExpansionMh6", "ExpansionMerlin", "ExpansionGyrocopter"};
+
+		array<EntityAI> all = CarFactory.AllVehicles();
+		int existing = 0;
+		array<string> order = new array<string>();
+		for (int t = 0; t < types.Count(); t++)
+		{
+			int have = VehicleRegistry.CountOfType(all, types[t]);
+			existing += have;
+			if (have == 0)
+				order.Insert(types[t]);
+		}
+		while (existing + order.Count() < pads.Count())
+			order.Insert(types.GetRandomElement());
+		while (existing + order.Count() > pads.Count())
+			order.Remove(order.Count() - 1);
+		for (int shuffle = order.Count() - 1; shuffle > 0; shuffle--)
+			order.SwapItems(shuffle, Math.RandomInt(0, shuffle + 1));
+		Print("[Heli] " + existing + " helicopters on the server already, adding " + order.Count());
+
+		int next = 0;
+		for (int i = 0; i < pads.Count() && next < order.Count(); i++)
+		{
+			vector pos = pads[i];
+			if (VehicleRegistry.Near(all, "ExpansionUh1h|ExpansionMh6|ExpansionMerlin|ExpansionGyrocopter", pos, 15).Count() > 0)
+			{
+				Print("[Heli] the helipad at " + pos + " is still taken");
+				continue;
+			}
+			pos[1] = GetGame().SurfaceRoadY(pos[0], pos[2]);
+			CarScript heli = Spawner.Vehicle(order[next], pos, headings[i], HeliKit(order[next]));
+			next++;
+			if (heli)
+			{
+				m_Helis.Insert(heli);
+				Print("[Heli] " + heli.GetType() + " on the helipad at " + heli.GetPosition());
+			}
+		}
+	}
+
+	// what each Expansion helicopter needs to fly (from the mod's own debug spawn routines)
+	array<string> HeliKit(string type)
+	{
+		array<string> kit = new array<string>();
+		kit.Insert("ExpansionHelicopterBattery");
+		kit.Insert("HeadlightH7");
+		if (type == "ExpansionGyrocopter")
+		{
+			kit.Insert("SparkPlug");
+			return kit;
+		}
+		kit.Insert("ExpansionHydraulicHoses");
+		kit.Insert("ExpansionIgniterPlug");
+		if (type == "ExpansionMerlin")
+		{
+			kit.Insert("ExpansionMerlinFrontWheel");
+			kit.Insert("ExpansionMerlinFrontWheel");
+			kit.Insert("ExpansionMerlinBackWheel");
+			kit.Insert("ExpansionMerlinBackWheel");
+		}
+		return kit;
+	}
+
+	EntityAI NearestOfType(string typePrefix, vector near, float within)
+	{
+		EntityAI best;
+		float bestDistance = within;
+		array<EntityAI> vehicles = m_Cars.Vehicles();
+		for (int i = 0; i < vehicles.Count(); i++)
+		{
+			if (vehicles[i].GetType().IndexOf(typePrefix) != 0)
+				continue;
+			vector at = vehicles[i].GetPosition();
+			float d = vector.Distance(Vector(at[0], 0, at[2]), Vector(near[0], 0, near[2])); // ignore height
+			if (d < bestDistance)
+			{
+				bestDistance = d;
+				best = vehicles[i];
+			}
+		}
+		return best;
+	}
+
+	// -missiontest: check every role's class names and attachments and the cars, then quit
+	void TestReport()
+	{
+		if (!m_Cars.IsDone())
+			return;
+		GetGame().GetCallQueue(CALL_CATEGORY_GAMEPLAY).Remove(TestReport);
+		m_Cars.Report();
+		for (int h = 0; h < m_Helis.Count(); h++)
+		{
+			CarScript heli = m_Helis[h];
+			Print("[Heli] test: " + heli.GetType() + " pos " + heli.GetPosition() + " ori " + heli.GetOrientation() + " fuel " + heli.GetFluidFraction(CarFluid.FUEL) + " hydraulic " + heli.GetFluidFraction(CarFluid.OIL) + " attachments " + heli.GetInventory().AttachmentCount() + " above terrain " + (heli.GetPosition()[1] - GetGame().SurfaceY(heli.GetPosition()[0], heli.GetPosition()[2])));
+		}
+		array<EntityAI> now = CarFactory.AllVehicles();
+		Print("[Heli] test: " + m_Helis.Count() + " helicopters spawned, " + (VehicleRegistry.CountOfType(now, "ExpansionUh1h") + VehicleRegistry.CountOfType(now, "ExpansionMh6") + VehicleRegistry.CountOfType(now, "ExpansionMerlin") + VehicleRegistry.CountOfType(now, "ExpansionGyrocopter")) + " on the server, " + now.Count() + " vehicles in all");
+		array<ref Role> roles = Roles.All();
+		for (int i = 0; i < roles.Count(); i++)
+		{
+			Role role = roles[i];
+			string clothes = "";
+			for (int j = 0; j < role.clothing.Count(); j++)
+				clothes = clothes + " " + role.clothing[j];
+			Print("[Roles] " + role.name + " (weight " + role.weight.ToString() + "): " + role.items.Count() + " items;" + clothes);
+		}
+
+		// does Pick() actually spread across roles?
+		map<string, int> picks = new map<string, int>();
+		for (int n = 0; n < 200; n++)
+		{
+			Role picked = Roles.Pick();
+			int seen = 0;
+			picks.Find(picked.name, seen);
+			picks.Set(picked.name, seen + 1);
+		}
+		string histogram = "";
+		for (int k = 0; k < picks.Count(); k++)
+			histogram = histogram + " " + picks.GetKey(k) + "=" + picks.GetElement(k);
+		Print("[Roles] 200 picks (" + Math.RandomFloat(0, 22) + " " + Math.RandomFloat(0, 22) + "):" + histogram);
+
+		int problems = Roles.Validate("9343 0 4800");
+		Print("[Roles] validated " + Roles.All().Count() + " roles, " + problems + " problems");
+		GetGame().RequestExit(0);
+	}
+};
+
+Mission CreateCustomMission(string path)
+{
+	return new CustomMission(path);
+}
