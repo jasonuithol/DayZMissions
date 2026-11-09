@@ -1,6 +1,6 @@
 # <workshop id> <@Name>, in load order. Expansion for the helicopters; Vehicle Shooting
 # (which needs Survivor Animations) plus our VehicleShootingAnywhere to fire from any seat.
-# @HandCart and @Molotov are our own, built locally and published on the Workshop.
+# @HandCart, @Molotov and @ExplodingHeads are our own, built locally and published on the Workshop.
 # Dabs Framework isn't listed as a dependency on Steam, but Expansion Vehicles needs it.
 1559212036 @CF
 2545327648 @DabsFramework
@@ -18,3 +18,4 @@
 local @VehicleShootingAnywhere
 local @HandCart
 local @Molotov
+local @ExplodingHeads
