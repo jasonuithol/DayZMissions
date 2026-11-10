@@ -69,9 +69,10 @@ MBM_HondaCRF450R, Survivor Animations and Vehicle Shooting (ids in `mods.txt`).
   Experimental (1.30 reworked the vehicle script API). Expansion's own motorbikes are disabled
   in the mod (`scope 0`), hence the Honda.
 - Vehicle Shooting only allows pistols, in vehicles with vanilla seat animations. Our own
-  `mods/VehicleShootingAnywhere` (built into `build/` by `tools/build_mod.py`, listed as `local`
-  in `mods.txt`) opens it up to every passenger seat and every firearm. Other players need a
-  copy of `build/@VehicleShootingAnywhere` (it is not on the Workshop yet).
+  VehicleShootingAnywhere opens it up to every passenger seat and every firearm. It has its own
+  repo, `~/Projects/DayZVehicleShootingAnywhere`: `mods/VehicleShootingAnywhere` is a symlink
+  into it, built into `build/` by `tools/build_mod.py` and listed as `local` in `mods.txt`.
+  Players get it from the Workshop.
 - `mods/HeliHuntCompat` retunes the Honda's steering and tyres (more lock, faster response, open
   centre differential, more grip) - the values are in `mods/HeliHuntCompat/config.cpp`.
 - The bikes are the handlebar variants, which need Survivor Animations for the riding pose;
@@ -110,8 +111,7 @@ The map settings (`expansion/settings/MapSettings.json`, same place) are Expansi
 server markers were tried for the roadside military tent sites and dropped - Expansion draws its
 own markers at every zoom, unlike the map's built-in landmark layers, and matching them needed a
 client mod that wasn't worth it. Passengers can shoot from every vehicle (Vehicle Shooting +
-Survivor Animations + our unsigned `VehicleShootingAnywhere`, as in helihunt, so
-`build/@VehicleShootingAnywhere` for other players). Players spawn at the vanilla coastal spawn points.
+Survivor Animations + our `VehicleShootingAnywhere`, as in helihunt). Players spawn at the vanilla coastal spawn points.
 
 The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
 `items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
