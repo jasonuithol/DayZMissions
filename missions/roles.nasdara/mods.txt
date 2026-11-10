@@ -21,3 +21,5 @@ local @Molotov
 local @ExplodingHeads
 # the spawn roles: our own DayZ of Our Lives, server-side only
 local @DayZOfOurLives server
+# Expansion vehicles burn down to wrecks too (Molotov add-on)
+local @Molotov_Expansion
