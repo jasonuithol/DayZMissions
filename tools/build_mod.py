@@ -15,6 +15,8 @@ def build(src, dst_root):
     for root, dirs, names in os.walk(src):
         if root == src and 'extras' in dirs:
             dirs.remove('extras')  # shipped beside addons/, not packed
+        if root == src and 'screenshots' in dirs:
+            dirs.remove('screenshots')  # for the repo and the Workshop page, not the game
         for n in sorted(names):
             if root == src and (n.startswith('workshop.') or n in ('preview.png', 'CHANGELOG.md')):
                 continue  # Workshop metadata, not mod content
