@@ -17,9 +17,11 @@ resolve_mission "$MISSION"
 [ "$GAME" = stable ] || { echo "the VPS runs the stable server; $MISSION is GAME=$GAME" >&2; exit 1; }
 
 # a "local" mod that isn't on the Workshop yet would make the public server unjoinable
-# through the launcher (it can't fetch the mod), so refuse to ship such a mods.txt
-while read -r id name; do
+# through the launcher (it can't fetch the mod), so refuse to ship such a mods.txt. Server-side
+# mods are exempt: players never download them.
+while read -r id name kind; do
 	[ "$id" = local ] || continue
+	[ "$kind" = server ] && continue
 	[ -s "$PROJECT_DIR/mods/${name#@}/workshop.id" ] || { echo "$name is in $MISSION/mods.txt but has no mods/${name#@}/workshop.id - publish it first (tools/workshop_publish.sh), or take it out of mods.txt" >&2; exit 1; }
 done < "$PROJECT_DIR/missions/$MISSION/mods.txt"
 
@@ -37,7 +39,7 @@ $RSYNC --exclude 'profiles/' --exclude 'mpmissions/*/storage_*' --exclude 'mpmis
 
 echo "==> mods for $MISSION"
 if [ -f "$PROJECT_DIR/missions/$MISSION/mods.txt" ]; then
-	while read -r id name; do
+	while read -r id name kind; do
 		case "$id" in ""|\#*|local) continue ;; esac
 		echo "    $name ($id)"
 		$RSYNC "$WORKSHOP_DIR/$id/" "$VPS:$REMOTE/steamapps/workshop/content/221100/$id/"

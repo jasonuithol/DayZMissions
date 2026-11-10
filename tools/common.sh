@@ -48,9 +48,10 @@ resolve_mission() {
 
 WORKSHOP_DIR="${WORKSHOP_DIR:-$STEAM/steamapps/workshop/content/221100}"
 
-# Reads missions/<mission>/mods.txt (lines of "<workshop id> <@Name>", in load order;
-# "local <@Name>" is one of our own mods, built from mods/<Name> into build/),
-# links each mod into game_dir as @Name and sets MOD_ARGS to the -mod= argument.
+# Reads missions/<mission>/mods.txt (lines of "<workshop id> <@Name> [server]", in load order;
+# "local <@Name>" is one of our own mods, built from mods/<Name> into build/; "server" marks a
+# server-side mod, loaded with -serverMod= and left out on clients), links each mod into
+# game_dir as @Name and sets MOD_ARGS (and SERVERMOD_ARGS) to the -mod= (-serverMod=) argument.
 # @Name is a real folder of symlinks with lower-cased names, because some mods ship
 # "Addons"/"Keys" and the Linux server only looks for "addons".
 # With install_keys=1 the mods' .bikey files are copied into game_dir/keys (server only).
@@ -63,13 +64,16 @@ setup_mods() {
 	local link_dir="$game_dir${subdir:+/$subdir}"
 	mkdir -p "$link_dir"
 	local list="$PROJECT_DIR/missions/$MISSION/mods.txt"
-	local mods="" id name entry
+	local mods="" servermods="" id name kind entry
 	MOD_ARGS=()
+	SERVERMOD_ARGS=()
 	[ -n "$NOMODS" ] && return 0
 	[ -f "$list" ] || return 0
 
-	while read -r id name; do
+	while read -r id name kind; do
 		case "$id" in ""|\#*) continue ;; esac
+		# server-side mods: only on the server (install_keys=1 is the server)
+		[ "$kind" = server ] && [ "$install_keys" != 1 ] && continue
 		local src="$WORKSHOP_DIR/$id"
 		if [ "$id" = local ]; then
 			# NO_BUILD (the VPS): use the signed build shipped from the dev machine as is
@@ -87,9 +91,14 @@ setup_mods() {
 		if [ "$install_keys" = 1 ]; then
 			find "$src/" -iname '*.bikey' -exec cp -u {} "$game_dir/keys/" ';'
 		fi
-		mods="$mods${mods:+;}${subdir:+$subdir/}$name"
+		if [ "$kind" = server ]; then
+			servermods="$servermods${servermods:+;}$name"
+		else
+			mods="$mods${mods:+;}${subdir:+$subdir/}$name"
+		fi
 	done < "$list"
 
 	[ -n "$mods" ] && MOD_ARGS=("-mod=$mods")
+	[ -n "$servermods" ] && SERVERMOD_ARGS=("-serverMod=$servermods")
 	return 0
 }

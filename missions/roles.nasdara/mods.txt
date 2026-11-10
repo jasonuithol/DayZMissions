@@ -19,3 +19,5 @@ local @VehicleShootingAnywhere
 local @HandCart
 local @Molotov
 local @ExplodingHeads
+# the spawn roles: our own DayZ of Our Lives, server-side only
+local @DayZOfOurLives server

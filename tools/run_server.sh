@@ -42,5 +42,5 @@ if [ -n "$RCON_PASSWORD" ]; then
 fi
 
 exec ./DayZServer "-config=$CONFIG" "-port=${GAME_PORT:-2302}" -profiles=profiles \
-	"-mission=./mpmissions/$MISSION" "${MOD_ARGS[@]}" \
+	"-mission=./mpmissions/$MISSION" "${MOD_ARGS[@]}" "${SERVERMOD_ARGS[@]}" \
 	-cpuCount=8 -limitFPS=200 -dologs -adminlog -freezecheck "$@"

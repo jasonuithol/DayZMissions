@@ -41,7 +41,9 @@ wipe those before restarting.
 
 A mission opts into mods with a `mods.txt` next to its `init.c`: one `<workshop id> <@Name>`
 per line, in load order. Subscribe to them in Steam; the scripts symlink them into the server and
-client folders, install the server keys and pass `-mod=`. `NOMODS=1` ignores the file.
+client folders, install the server keys and pass `-mod=`. `NOMODS=1` ignores the file. A third
+column `server` makes it a server-side mod: passed with `-serverMod=`, left out on clients, and
+exempt from `vps_sync.sh`'s check that our own mods are on the Workshop.
 
 ## Missions
 
@@ -113,10 +115,13 @@ own markers at every zoom, unlike the map's built-in landmark layers, and matchi
 client mod that wasn't worth it. Passengers can shoot from every vehicle (Vehicle Shooting +
 Survivor Animations + our `VehicleShootingAnywhere`, as in helihunt). Players spawn at the vanilla coastal spawn points.
 
-The roles are data: `roles.json` next to `init.c`, one entry per role with `clothing` and
-`items` (each item can have `attachments`, `cargo` and `hands: true`). `"A|B|C"` picks one
-at random. `lib/Roles.c` loads and applies it; `tools/test.sh roles` checks every class name
-exists and every container actually takes what it is given. The cars come from `vehicles.json`
+The roles themselves are a mod since 2026-11-10: **DayZ of Our Lives**
+(`~/Projects/DayZOfOurLives`, its own repo; `mods/DayZOfOurLives` links to it), loaded
+server-side (`local @DayZOfOurLives server` in `mods.txt`), so players download nothing. The
+server writes the roles to `profiles/DayZOfOurLives/Roles.json` on first start: one entry per
+role with `clothing` and `items` (each item can have `attachments`, `cargo` and `hands: true`),
+`"A|B|C"` picks one at random. `tools/test.sh roles` still checks every class name exists and
+every container takes what it is given (`DOOL_Roles.Validate`). The cars come from `vehicles.json`
 via `tools/vehicle_spots.py roles` (see bikespawns below).
 
 ### roles.nasdara (stable)

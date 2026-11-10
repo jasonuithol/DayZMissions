@@ -1,7 +1,7 @@
 // Roles (stable)
 // Vanilla Chernarus, except that every new character spawns as a role - police officer,
 // doctor, soldier, lumberjack... - wearing the matching outfit and carrying a few things
-// that fit the job. The roles live in roles.json next to this file. And there are ready
+// that fit the job. The roles come from the DayZ of Our Lives mod (server-side). And there are ready
 // to drive cars at ~150 of the vanilla car spawn points (spots.json, from vehicles.json),
 // Expansion buses, tractors and Vodniks where they belong and an LHD off every port,
 // and a DayZ Expansion helicopter on each of the five helipads on the map. The server is
@@ -11,7 +11,6 @@
 #include "lib/Spawner.c"
 #include "lib/Placement.c"
 #include "lib/VehicleSpots.c"
-#include "lib/Roles.c"
 
 // Vanilla cars, kitted out the way the debug menu does it and every fluid topped up.
 class CarFactory: VehicleFactory
@@ -142,9 +141,6 @@ class CustomMission: MissionServer
 	{
 		super.OnInit();
 
-		int count = Roles.Load(m_Path + "/roles.json");
-		Print("[Roles] loaded " + count + " roles from " + m_Path);
-
 		m_Cars = new VehicleSpots("Cars", new CarFactory());
 		m_Cars.Start(m_Path + "/spots.json", MAX_CARS);
 
@@ -173,19 +169,6 @@ class CustomMission: MissionServer
 				helis++;
 		}
 		Print("[Census] " + all.Count() + " vehicles: " + (all.Count() - expansion) + " vanilla, " + (expansion - helis) + " Expansion ground/sea, " + helis + " helicopters; " + GetGame().GetTime() / 60000 + " min up");
-	}
-
-	// Instead of the vanilla random clothes, dress the new character as a random role.
-	override void EquipCharacter(MenuDefaultCharacterData char_data)
-	{
-		Role role = Roles.Pick();
-		if (role)
-		{
-			Roles.Equip(m_player, role);
-			NotificationSystem.SendNotificationToPlayerExtended(m_player, 10, "You are a " + role.name, "Check your pockets.");
-		}
-
-		StartingEquipSetup(m_player, true);
 	}
 
 	// everyone still gets the vanilla freshie basics
@@ -314,10 +297,10 @@ class CustomMission: MissionServer
 		else
 			Print("[Spawn] test: NO bus within 60 m of the Chernogorsk bus station");
 
-		array<ref Role> roles = Roles.All();
+		array<ref DOOL_Role> roles = DOOL_Roles.All();
 		for (int i = 0; i < roles.Count(); i++)
 		{
-			Role role = roles[i];
+			DOOL_Role role = roles[i];
 			string clothes = "";
 			for (int j = 0; j < role.clothing.Count(); j++)
 				clothes = clothes + " " + role.clothing[j];
@@ -328,7 +311,7 @@ class CustomMission: MissionServer
 		map<string, int> picks = new map<string, int>();
 		for (int n = 0; n < 200; n++)
 		{
-			Role picked = Roles.Pick();
+			DOOL_Role picked = DOOL_Roles.Pick();
 			int seen = 0;
 			picks.Find(picked.name, seen);
 			picks.Set(picked.name, seen + 1);
@@ -338,8 +321,8 @@ class CustomMission: MissionServer
 			histogram = histogram + " " + picks.GetKey(k) + "=" + picks.GetElement(k);
 		Print("[Roles] 200 picks (" + Math.RandomFloat(0, 22) + " " + Math.RandomFloat(0, 22) + "):" + histogram);
 
-		int problems = Roles.Validate("8500 0 2796");
-		Print("[Roles] validated " + Roles.All().Count() + " roles, " + problems + " problems");
+		int problems = DOOL_Roles.Validate("8500 0 2796");
+		Print("[Roles] validated " + DOOL_Roles.All().Count() + " roles, " + problems + " problems");
 		GetGame().RequestExit(0);
 	}
 };

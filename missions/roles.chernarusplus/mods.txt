@@ -13,3 +13,5 @@
 2918418331 @SurvivorAnimations
 3436144357 @VehicleShooting
 local @VehicleShootingAnywhere
+# the spawn roles: our own DayZ of Our Lives, server-side only
+local @DayZOfOurLives server
