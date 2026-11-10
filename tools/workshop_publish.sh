@@ -99,3 +99,5 @@ if [ -n "$NEW" ] && [ "$NEW" != "0" ] && [ "$NEW" != "$ID" ]; then
 else
 	echo "==> updated https://steamcommunity.com/sharedfiles/filedetails/?id=$ID"
 fi
+# SteamCMD can't set tags: they go on through the desktop client (back online first)
+echo "==> tags: once Steam is back online, run tools/workshop_tags.py $NAME ${TAGS[*]}"
