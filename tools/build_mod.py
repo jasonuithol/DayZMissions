@@ -16,7 +16,7 @@ def build(src, dst_root):
         if root == src and 'extras' in dirs:
             dirs.remove('extras')  # shipped beside addons/, not packed
         for n in sorted(names):
-            if root == src and (n.startswith('workshop.') or n == 'preview.png'):
+            if root == src and (n.startswith('workshop.') or n in ('preview.png', 'CHANGELOG.md')):
                 continue  # Workshop metadata, not mod content
             full = os.path.join(root, n)
             files.append((os.path.relpath(full, src).replace('/', '\\'), open(full, 'rb').read()))

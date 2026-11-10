@@ -15,7 +15,8 @@
 # Dependencies ("required items") can't be set from here: add them on the item's Workshop
 # page afterwards (VehicleShootingAnywhere needs Vehicle Shooting + Survivor Animations).
 # The "Mod" tag is essential: the DayZ launcher ignores untagged items ("waiting" forever).
-# Optional files in mods/<ModName>/: workshop.txt (description), workshop.title (title,
+# Optional files in mods/<ModName>/: CHANGELOG.md (change notes, see below; not packed),
+# workshop.txt (description), workshop.title (title,
 # default the mod's name), workshop.tags (tags on one line, default Mod Vehicle Mechanics)
 # and preview.png (under 1 MB).
 # NOTE: logging in with SteamCMD knocks the desktop Steam client offline - don't publish
@@ -41,15 +42,23 @@ done
 # The commit and version of the repo the mod lives in (mods/<ModName> may link into
 # another project)
 COMMIT="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --short HEAD 2>/dev/null || true)"
+# The change log: mods/<ModName>/CHANGELOG.md for a mod that shares this repo (its newest
+# "## <version> - <date>" entry is then also the default version), else the CHANGELOG.md of
+# the mod's own repo, with the version from its git tags.
+REPO="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --show-toplevel 2>/dev/null || true)"
+LOG="$PROJECT_DIR/mods/$NAME/CHANGELOG.md"
+if [ -f "$LOG" ]; then
+	[ -n "$VERSION" ] || VERSION="v$(awk '/^## /{ print $2; exit }' "$LOG")"
+else
+	LOG="$REPO/CHANGELOG.md"
+fi
 [ -n "$VERSION" ] || VERSION="$(git -C "$PROJECT_DIR/mods/$NAME/" describe --tags 2>/dev/null || true)"
 [ -n "$VERSION" ] && DESC+=$'\n\n'"Version: $VERSION"
 CHANGENOTE="Uploaded with SteamCMD${COMMIT:+ from $COMMIT}"
 [ -n "$VERSION" ] && CHANGENOTE="$VERSION: $CHANGENOTE"
-# With a "## <version> - <date>" entry in the CHANGELOG.md of the mod's repo, that entry is
-# the change note instead
-REPO="$(git -C "$PROJECT_DIR/mods/$NAME/" rev-parse --show-toplevel 2>/dev/null || true)"
-if [ -n "$VERSION" ] && [ -f "$REPO/CHANGELOG.md" ]; then
-	NOTES="$(awk -v v="${VERSION#v}" '/^## /{ on = ($2 == v); next } on' "$REPO/CHANGELOG.md" | sed '/./,$!d')"
+# With an entry for this version in the change log, that entry is the change note instead
+if [ -n "$VERSION" ] && [ -f "$LOG" ]; then
+	NOTES="$(awk -v v="${VERSION#v}" '/^## /{ on = ($2 == v); next } on' "$LOG" | sed '/./,$!d')"
 	[ -n "$NOTES" ] && CHANGENOTE="$VERSION"$'\n\n'"$NOTES"
 fi
 PREVIEW="$PROJECT_DIR/mods/$NAME/preview.png"
