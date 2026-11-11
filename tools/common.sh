@@ -63,7 +63,7 @@ setup_mods() {
 	local game_dir="$1" install_keys="$2" subdir="$3"
 	local link_dir="$game_dir${subdir:+/$subdir}"
 	mkdir -p "$link_dir"
-	local list="$PROJECT_DIR/missions/$MISSION/mods.txt"
+	local list="${MODS_LIST:-$PROJECT_DIR/missions/$MISSION/mods.txt}"   # MODS_LIST: any other list
 	local mods="" servermods="" id name kind entry
 	MOD_ARGS=()
 	SERVERMOD_ARGS=()

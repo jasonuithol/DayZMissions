@@ -9,6 +9,7 @@ server-side `init.c` scripting; some are pure vanilla, some load Workshop mods.
 tools/run_server.sh coastbikes            # deploy + start the right server for a mission
 tools/run_client.sh coastbikes [ip]       # start the matching client (no launcher) and connect; default 127.0.0.1
 tools/test.sh coastbikes                  # headless smoke test, prints the mission's log lines
+tools/run_editor.sh [Mod ...]             # stable client offline with the DayZ Editor (+ our mods/<Mod>)
 ```
 
 Each mission picks its game with `GAME=exp|stable` in `mission.conf` (default `exp`). Servers and
